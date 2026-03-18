@@ -1,6 +1,10 @@
 import { expect, test } from "vite-plus/test";
-import { fn } from "../src";
+import { cn } from "../src/index.js";
 
-test("fn", () => {
-  expect(fn()).toBe("Hello, tsdown!");
+test("cn merges class names", () => {
+  expect(cn("px-2", "py-1")).toBe("px-2 py-1");
+});
+
+test("cn handles conflicting tailwind classes", () => {
+  expect(cn("px-2", "px-4")).toBe("px-4");
 });
