@@ -17,28 +17,18 @@
     "src"
   ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.mts"
     },
-    "./components/*": {
-      "import": "./dist/components/*.mjs",
-      "types": "./dist/components/*.d.mts"
-    },
-    "./lib/utils": {
-      "import": "./dist/lib/utils.mjs",
-      "types": "./dist/lib/utils.d.mts"
-    },
-    "./hooks/use-mobile": {
-      "import": "./dist/hooks/use-mobile.mjs",
-      "types": "./dist/hooks/use-mobile.d.mts"
-    },
     "./styles.css": "./src/index.css",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "vp pack",
+    "gen": "vp exec tsx scripts/gen-index.ts",
+    "build": "vp exec tsx scripts/gen-index.ts && vp pack",
     "dev": "vp pack --watch",
     "test": "vp test",
     "typecheck": "tsc --noEmit",
@@ -76,6 +66,7 @@
     "@typescript/native-preview": "7.0.0-dev.20260316.1",
     "bumpp": "^11.0.1",
     "shadcn": "^4.0.8",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite-plus": "latest",
     "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
