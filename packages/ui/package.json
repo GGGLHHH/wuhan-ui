@@ -32,7 +32,7 @@
     "dev": "vp pack --watch",
     "test": "vp test",
     "typecheck": "tsc --noEmit",
-    "release": "bumpp",
+    "release": "bumpp --no-verify",
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
