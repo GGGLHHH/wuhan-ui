@@ -52,7 +52,7 @@ function ChartContainer({
         data-slot="chart"
         data-chart={chartId}
         className={cn(
-          'wuhanui:flex wuhanui:aspect-video wuhanui:justify-center wuhanui:text-xs wuhanui:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground wuhanui:[&_.recharts-cartesian-grid_line[stroke=#ccc]]:stroke-border/50 wuhanui:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border wuhanui:[&_.recharts-dot[stroke=#fff]]:stroke-transparent wuhanui:[&_.recharts-layer]:outline-hidden wuhanui:[&_.recharts-polar-grid_[stroke=#ccc]]:stroke-border wuhanui:[&_.recharts-radial-bar-background-sector]:fill-muted wuhanui:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted wuhanui:[&_.recharts-reference-line_[stroke=#ccc]]:stroke-border wuhanui:[&_.recharts-sector]:outline-hidden wuhanui:[&_.recharts-sector[stroke=#fff]]:stroke-transparent wuhanui:[&_.recharts-surface]:outline-hidden',
+          'wuhanui:flex wuhanui:aspect-video wuhanui:justify-center wuhanui:text-xs wuhanui:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground wuhanui:[&_.recharts-cartesian-grid_line[stroke="%23ccc"]]:stroke-border/50 wuhanui:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border wuhanui:[&_.recharts-dot[stroke="%23fff"]]:stroke-transparent wuhanui:[&_.recharts-layer]:outline-hidden wuhanui:[&_.recharts-polar-grid_[stroke="%23ccc"]]:stroke-border wuhanui:[&_.recharts-radial-bar-background-sector]:fill-muted wuhanui:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted wuhanui:[&_.recharts-reference-line_[stroke="%23ccc"]]:stroke-border wuhanui:[&_.recharts-sector]:outline-hidden wuhanui:[&_.recharts-sector[stroke="%23fff"]]:stroke-transparent wuhanui:[&_.recharts-surface]:outline-hidden',
           className,
         )}
         {...props}

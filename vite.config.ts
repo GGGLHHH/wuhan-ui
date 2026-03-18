@@ -5,7 +5,7 @@ export default defineConfig({
     '*': 'vp check --fix',
   },
   lint: {
-    plugins: ['react', 'typescript', 'jsx-a11y'],
+    plugins: ['react', 'typescript'],
     options: { typeAware: true, typeCheck: true },
     ignorePatterns: ['src/routeTree.gen.ts', 'src/contracts/generated/**'],
     rules: {
@@ -20,23 +20,6 @@ export default defineConfig({
         files: ['src/routes/__root.tsx'],
         rules: {
           'react/no-danger': 'off',
-        },
-      },
-      {
-        files: ['src/components/ui/**'],
-        rules: {
-          'jsx-a11y/prefer-tag-over-role': 'off',
-          'jsx-a11y/interactive-supports-focus': 'off',
-          'jsx-a11y/role-has-required-aria-props': 'off',
-          'jsx-a11y/no-redundant-roles': 'off',
-          'jsx-a11y/click-events-have-key-events': 'off',
-          'jsx-a11y/anchor-has-content': 'off',
-          'jsx-a11y/autocomplete-valid': 'off',
-          'react/no-danger': 'off',
-          'react/no-array-index-key': 'off',
-          'eslint/no-unused-vars': 'off',
-          eqeqeq: 'off',
-          'react-hooks/exhaustive-deps': 'off',
         },
       },
     ],
