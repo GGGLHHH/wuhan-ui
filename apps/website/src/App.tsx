@@ -1,4 +1,4 @@
-import { Button } from 'ui'
+import { Button } from '@gedatou/ui'
 
 export function App() {
   return (

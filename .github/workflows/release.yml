@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  release:
+    name: Publish @gedatou/ui to npm
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+
+      - name: Setup Vite+
+        run: npm install --global vite-plus@latest
+
+      - name: Install dependencies
+        run: vp install --frozen-lockfile
+
+      - name: Verify tag matches package version
+        shell: bash
+        run: |
+          tag_version="${GITHUB_REF_NAME#v}"
+          package_version="$(node -p "require('./packages/ui/package.json').version")"
+
+          if [ "$tag_version" != "$package_version" ]; then
+            echo "Tag version $tag_version does not match packages/ui/package.json version $package_version"
+            exit 1
+          fi
+
+      - name: Build ui package
+        run: vp run --filter ./packages/ui build
+
+      - name: Publish ui package
+        working-directory: packages/ui
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
+        run: vp pm publish . --access public --no-git-checks -- --ignore-scripts
