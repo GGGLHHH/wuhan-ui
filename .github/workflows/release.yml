@@ -28,7 +28,7 @@ jobs:
           cache: 'npm'
 
       - name: Setup Vite+
-        run: npm install --global vite-plus@latest
+        run: npm install --global vite-plus@0.1.12
 
       - name: Install dependencies
         run: vp install --frozen-lockfile
@@ -45,11 +45,11 @@ jobs:
           fi
 
       - name: Build ui package
-        run: vp run --filter ./packages/ui build
+        run: ./node_modules/.bin/vp run --filter ./packages/ui build
 
       - name: Publish ui package
         working-directory: packages/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: 'true'
-        run: vp pm publish . --access public --no-git-checks -- --ignore-scripts
+        run: ../../node_modules/.bin/vp pm publish . --access public --no-git-checks -- --ignore-scripts
