@@ -4,6 +4,10 @@
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/inter';
 
+@source '../src/components/**/*.tsx';
+@source '../src/lib/**/*.ts';
+@source '../src/hooks/**/*.ts';
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -119,12 +123,12 @@
 
 @layer base {
   * {
-    @apply wuhanui:border-border wuhanui:outline-ring/50 border-border outline-ring/50;
+    @apply wuhanui:border-border wuhanui:outline-ring/50;
   }
   body {
-    @apply wuhanui:bg-background wuhanui:text-foreground bg-background text-foreground;
+    @apply wuhanui:bg-background wuhanui:text-foreground;
   }
   html {
-    @apply wuhanui:font-sans font-sans;
+    @apply wuhanui:font-sans;
   }
 }
