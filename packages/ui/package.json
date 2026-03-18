@@ -22,6 +22,18 @@
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.mts"
     },
+    "./components/*": {
+      "import": "./dist/components/*.mjs",
+      "types": "./dist/components/*.d.mts"
+    },
+    "./lib/utils": {
+      "import": "./dist/lib/utils.mjs",
+      "types": "./dist/lib/utils.d.mts"
+    },
+    "./hooks/use-mobile": {
+      "import": "./dist/hooks/use-mobile.mjs",
+      "types": "./dist/hooks/use-mobile.d.mts"
+    },
     "./styles.css": "./src/index.css",
     "./package.json": "./package.json"
   },
