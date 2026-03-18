@@ -4,13 +4,14 @@ import { Slot } from 'radix-ui'
 import * as React from 'react'
 
 const buttonVariants = cva(
-  'wuhanui:group/button wuhanui:inline-flex wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-md wuhanui:border wuhanui:border-transparent wuhanui:bg-clip-padding wuhanui:text-sm wuhanui:font-medium wuhanui:whitespace-nowrap wuhanui:transition-all wuhanui:outline-none wuhanui:select-none wuhanui:focus-visible:border-ring wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:active:translate-y-px wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50 wuhanui:aria-invalid:border-destructive wuhanui:aria-invalid:ring-3 wuhanui:aria-invalid:ring-destructive/20 wuhanui:dark:aria-invalid:border-destructive/50 wuhanui:dark:aria-invalid:ring-destructive/40 wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg]:shrink-0 wuhanui:[&_svg:not([class*=size-])]:size-4',
+  'wuhanui:group/button wuhanui:inline-flex wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-lg wuhanui:border wuhanui:border-transparent wuhanui:bg-clip-padding wuhanui:text-sm wuhanui:font-medium wuhanui:whitespace-nowrap wuhanui:transition-all wuhanui:outline-none wuhanui:select-none wuhanui:focus-visible:border-ring wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:active:translate-y-px wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50 wuhanui:aria-invalid:border-destructive wuhanui:aria-invalid:ring-3 wuhanui:aria-invalid:ring-destructive/20 wuhanui:dark:aria-invalid:border-destructive/50 wuhanui:dark:aria-invalid:ring-destructive/40 wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg]:shrink-0 wuhanui:[&_svg:not([class*=size-])]:size-4',
   {
     variants: {
       variant: {
-        default: 'wuhanui:bg-primary wuhanui:text-primary-foreground wuhanui:hover:bg-primary/80',
+        default:
+          'wuhanui:bg-primary wuhanui:text-primary-foreground wuhanui:[a]:hover:bg-primary/80',
         outline:
-          'wuhanui:border-border wuhanui:bg-background wuhanui:shadow-xs wuhanui:hover:bg-muted wuhanui:hover:text-foreground wuhanui:aria-expanded:bg-muted wuhanui:aria-expanded:text-foreground wuhanui:dark:border-input wuhanui:dark:bg-input/30 wuhanui:dark:hover:bg-input/50',
+          'wuhanui:border-border wuhanui:bg-background wuhanui:hover:bg-muted wuhanui:hover:text-foreground wuhanui:aria-expanded:bg-muted wuhanui:aria-expanded:text-foreground wuhanui:dark:border-input wuhanui:dark:bg-input/30 wuhanui:dark:hover:bg-input/50',
         secondary:
           'wuhanui:bg-secondary wuhanui:text-secondary-foreground wuhanui:hover:bg-secondary/80 wuhanui:aria-expanded:bg-secondary wuhanui:aria-expanded:text-secondary-foreground',
         ghost:
@@ -21,16 +22,16 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          'wuhanui:h-9 wuhanui:gap-1.5 wuhanui:px-2.5 wuhanui:in-data-[slot=button-group]:rounded-md wuhanui:has-data-[icon=inline-end]:pr-2 wuhanui:has-data-[icon=inline-start]:pl-2',
-        xs: 'wuhanui:h-6 wuhanui:gap-1 wuhanui:rounded-[min(var(--radius-md),8px)] wuhanui:px-2 wuhanui:text-xs wuhanui:in-data-[slot=button-group]:rounded-md wuhanui:has-data-[icon=inline-end]:pr-1.5 wuhanui:has-data-[icon=inline-start]:pl-1.5 wuhanui:[&_svg:not([class*=size-])]:size-3',
-        sm: 'wuhanui:h-8 wuhanui:gap-1 wuhanui:rounded-[min(var(--radius-md),10px)] wuhanui:px-2.5 wuhanui:in-data-[slot=button-group]:rounded-md wuhanui:has-data-[icon=inline-end]:pr-1.5 wuhanui:has-data-[icon=inline-start]:pl-1.5',
-        lg: 'wuhanui:h-10 wuhanui:gap-1.5 wuhanui:px-2.5 wuhanui:has-data-[icon=inline-end]:pr-3 wuhanui:has-data-[icon=inline-start]:pl-3',
-        icon: 'wuhanui:size-9',
+          'wuhanui:h-8 wuhanui:gap-1.5 wuhanui:px-2.5 wuhanui:has-data-[icon=inline-end]:pr-2 wuhanui:has-data-[icon=inline-start]:pl-2',
+        xs: 'wuhanui:h-6 wuhanui:gap-1 wuhanui:rounded-[min(var(--radius-md),10px)] wuhanui:px-2 wuhanui:text-xs wuhanui:in-data-[slot=button-group]:rounded-lg wuhanui:has-data-[icon=inline-end]:pr-1.5 wuhanui:has-data-[icon=inline-start]:pl-1.5 wuhanui:[&_svg:not([class*=size-])]:size-3',
+        sm: 'wuhanui:h-7 wuhanui:gap-1 wuhanui:rounded-[min(var(--radius-md),12px)] wuhanui:px-2.5 wuhanui:text-[0.8rem] wuhanui:in-data-[slot=button-group]:rounded-lg wuhanui:has-data-[icon=inline-end]:pr-1.5 wuhanui:has-data-[icon=inline-start]:pl-1.5 wuhanui:[&_svg:not([class*=size-])]:size-3.5',
+        lg: 'wuhanui:h-9 wuhanui:gap-1.5 wuhanui:px-2.5 wuhanui:has-data-[icon=inline-end]:pr-3 wuhanui:has-data-[icon=inline-start]:pl-3',
+        icon: 'wuhanui:size-8',
         'icon-xs':
-          'wuhanui:size-6 wuhanui:rounded-[min(var(--radius-md),8px)] wuhanui:in-data-[slot=button-group]:rounded-md wuhanui:[&_svg:not([class*=size-])]:size-3',
+          'wuhanui:size-6 wuhanui:rounded-[min(var(--radius-md),10px)] wuhanui:in-data-[slot=button-group]:rounded-lg wuhanui:[&_svg:not([class*=size-])]:size-3',
         'icon-sm':
-          'wuhanui:size-8 wuhanui:rounded-[min(var(--radius-md),10px)] wuhanui:in-data-[slot=button-group]:rounded-md',
-        'icon-lg': 'wuhanui:size-10',
+          'wuhanui:size-7 wuhanui:rounded-[min(var(--radius-md),12px)] wuhanui:in-data-[slot=button-group]:rounded-lg',
+        'icon-lg': 'wuhanui:size-9',
       },
     },
     defaultVariants: {

@@ -5,7 +5,7 @@ export default defineConfig({
   format: ['esm'],
   unbundle: true,
   dts: {
-    tsgo: true,
+    // tsgo: true,
   },
   deps: {
     neverBundle: ['react', 'react-dom', 'react/jsx-runtime'],
