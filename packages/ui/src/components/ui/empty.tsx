@@ -1,50 +1,52 @@
-import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from '@/lib/utils'
+import { cva, type VariantProps } from 'class-variance-authority'
 
-import { cn } from "@/lib/utils";
-
-function Empty({ className, ...props }: React.ComponentProps<"div">) {
+function Empty({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty"
       className={cn(
-        "flex w-full min-w-0 flex-1 flex-col items-center justify-center gap-4 rounded-xl border-dashed p-6 text-center text-balance",
+        'wuhanui:flex wuhanui:w-full wuhanui:min-w-0 wuhanui:flex-1 wuhanui:flex-col wuhanui:items-center wuhanui:justify-center wuhanui:gap-4 wuhanui:rounded-lg wuhanui:border-dashed wuhanui:p-12 wuhanui:text-center wuhanui:text-balance',
         className,
       )}
       {...props}
     />
-  );
+  )
 }
 
-function EmptyHeader({ className, ...props }: React.ComponentProps<"div">) {
+function EmptyHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-header"
-      className={cn("flex max-w-sm flex-col items-center gap-2", className)}
+      className={cn(
+        'wuhanui:flex wuhanui:max-w-sm wuhanui:flex-col wuhanui:items-center wuhanui:gap-2',
+        className,
+      )}
       {...props}
     />
-  );
+  )
 }
 
 const emptyMediaVariants = cva(
-  "mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  'wuhanui:mb-2 wuhanui:flex wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: "bg-transparent",
-        icon: "flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground [&_svg:not([class*='size-'])]:size-4",
+        default: 'wuhanui:bg-transparent',
+        icon: 'wuhanui:flex wuhanui:size-10 wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-lg wuhanui:bg-muted wuhanui:text-foreground wuhanui:[&_svg:not([class*=size-])]:size-6',
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: 'default',
     },
   },
-);
+)
 
 function EmptyMedia({
   className,
-  variant = "default",
+  variant = 'default',
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof emptyMediaVariants>) {
+}: React.ComponentProps<'div'> & VariantProps<typeof emptyMediaVariants>) {
   return (
     <div
       data-slot="empty-icon"
@@ -52,43 +54,43 @@ function EmptyMedia({
       className={cn(emptyMediaVariants({ variant, className }))}
       {...props}
     />
-  );
+  )
 }
 
-function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
+function EmptyTitle({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-title"
-      className={cn("text-sm font-medium tracking-tight", className)}
+      className={cn('wuhanui:text-lg wuhanui:font-medium wuhanui:tracking-tight', className)}
       {...props}
     />
-  );
+  )
 }
 
-function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
+function EmptyDescription({ className, ...props }: React.ComponentProps<'p'>) {
   return (
     <div
       data-slot="empty-description"
       className={cn(
-        "text-sm/relaxed text-muted-foreground [&>a]:underline [&>a]:underline-offset-4 [&>a:hover]:text-primary",
+        'wuhanui:text-sm/relaxed wuhanui:text-muted-foreground wuhanui:[&>a]:underline wuhanui:[&>a]:underline-offset-4 wuhanui:[&>a:hover]:text-primary',
         className,
       )}
       {...props}
     />
-  );
+  )
 }
 
-function EmptyContent({ className, ...props }: React.ComponentProps<"div">) {
+function EmptyContent({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-content"
       className={cn(
-        "flex w-full max-w-sm min-w-0 flex-col items-center gap-2.5 text-sm text-balance",
+        'wuhanui:flex wuhanui:w-full wuhanui:max-w-sm wuhanui:min-w-0 wuhanui:flex-col wuhanui:items-center wuhanui:gap-4 wuhanui:text-sm wuhanui:text-balance',
         className,
       )}
       {...props}
     />
-  );
+  )
 }
 
-export { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia };
+export { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia }

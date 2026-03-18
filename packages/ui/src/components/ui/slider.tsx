@@ -1,9 +1,8 @@
-"use client";
+'use client'
 
-import * as React from "react";
-import { Slider as SliderPrimitive } from "radix-ui";
-
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
+import { Slider as SliderPrimitive } from 'radix-ui'
+import * as React from 'react'
 
 function Slider({
   className,
@@ -16,7 +15,7 @@ function Slider({
   const _values = React.useMemo(
     () => (Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min, max]),
     [value, defaultValue, min, max],
-  );
+  )
 
   return (
     <SliderPrimitive.Root
@@ -26,29 +25,29 @@ function Slider({
       min={min}
       max={max}
       className={cn(
-        "relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col",
+        'wuhanui:relative wuhanui:flex wuhanui:w-full wuhanui:touch-none wuhanui:items-center wuhanui:select-none wuhanui:data-disabled:opacity-50 wuhanui:data-vertical:h-full wuhanui:data-vertical:min-h-40 wuhanui:data-vertical:w-auto wuhanui:data-vertical:flex-col',
         className,
       )}
       {...props}
     >
       <SliderPrimitive.Track
         data-slot="slider-track"
-        className="relative grow overflow-hidden rounded-full bg-muted data-horizontal:h-1 data-horizontal:w-full data-vertical:h-full data-vertical:w-1"
+        className="wuhanui:relative wuhanui:grow wuhanui:overflow-hidden wuhanui:rounded-full wuhanui:bg-muted wuhanui:data-horizontal:h-1.5 wuhanui:data-horizontal:w-full wuhanui:data-vertical:h-full wuhanui:data-vertical:w-1.5"
       >
         <SliderPrimitive.Range
           data-slot="slider-range"
-          className="absolute bg-primary select-none data-horizontal:h-full data-vertical:w-full"
+          className="wuhanui:absolute wuhanui:bg-primary wuhanui:select-none wuhanui:data-horizontal:h-full wuhanui:data-vertical:w-full"
         />
       </SliderPrimitive.Track>
       {Array.from({ length: _values.length }, (_, index) => (
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
           key={index}
-          className="relative block size-3 shrink-0 rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] select-none after:absolute after:-inset-2 hover:ring-3 focus-visible:ring-3 focus-visible:outline-hidden active:ring-3 disabled:pointer-events-none disabled:opacity-50"
+          className="wuhanui:block wuhanui:size-4 wuhanui:shrink-0 wuhanui:rounded-full wuhanui:border wuhanui:border-primary wuhanui:bg-white wuhanui:shadow-sm wuhanui:ring-ring/50 wuhanui:transition-[color,box-shadow] wuhanui:select-none wuhanui:hover:ring-4 wuhanui:focus-visible:ring-4 wuhanui:focus-visible:outline-hidden wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50"
         />
       ))}
     </SliderPrimitive.Root>
-  );
+  )
 }
 
-export { Slider };
+export { Slider }

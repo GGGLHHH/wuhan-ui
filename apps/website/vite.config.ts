@@ -3,8 +3,6 @@ import path from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite-plus'
 
-import tsdownConfig from './tsdown.config.js'
-
 export default defineConfig({
   plugins: [tailwindcss()],
   resolve: {
@@ -12,5 +10,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  pack: tsdownConfig,
 })

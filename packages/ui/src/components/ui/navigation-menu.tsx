@@ -1,9 +1,8 @@
-import * as React from "react";
-import { cva } from "class-variance-authority";
-import { NavigationMenu as NavigationMenuPrimitive } from "radix-ui";
-
-import { cn } from "@/lib/utils";
-import { ChevronDownIcon } from "lucide-react";
+import { cn } from '@/lib/utils'
+import { cva } from 'class-variance-authority'
+import { ChevronDownIcon } from 'lucide-react'
+import { NavigationMenu as NavigationMenuPrimitive } from 'radix-ui'
+import * as React from 'react'
 
 function NavigationMenu({
   className,
@@ -11,14 +10,14 @@ function NavigationMenu({
   viewport = true,
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Root> & {
-  viewport?: boolean;
+  viewport?: boolean
 }) {
   return (
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
       data-viewport={viewport}
       className={cn(
-        "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
+        'wuhanui:group/navigation-menu wuhanui:relative wuhanui:flex wuhanui:max-w-max wuhanui:flex-1 wuhanui:items-center wuhanui:justify-center',
         className,
       )}
       {...props}
@@ -26,7 +25,7 @@ function NavigationMenu({
       {children}
       {viewport && <NavigationMenuViewport />}
     </NavigationMenuPrimitive.Root>
-  );
+  )
 }
 
 function NavigationMenuList({
@@ -36,10 +35,13 @@ function NavigationMenuList({
   return (
     <NavigationMenuPrimitive.List
       data-slot="navigation-menu-list"
-      className={cn("group flex flex-1 list-none items-center justify-center gap-0", className)}
+      className={cn(
+        'wuhanui:group wuhanui:flex wuhanui:flex-1 wuhanui:list-none wuhanui:items-center wuhanui:justify-center wuhanui:gap-0',
+        className,
+      )}
       {...props}
     />
-  );
+  )
 }
 
 function NavigationMenuItem({
@@ -49,15 +51,15 @@ function NavigationMenuItem({
   return (
     <NavigationMenuPrimitive.Item
       data-slot="navigation-menu-item"
-      className={cn("relative", className)}
+      className={cn('wuhanui:relative', className)}
       {...props}
     />
-  );
+  )
 }
 
 const navigationMenuTriggerStyle = cva(
-  "group/navigation-menu-trigger inline-flex h-9 w-max items-center justify-center rounded-lg bg-background px-2.5 py-1.5 text-sm font-medium transition-all outline-none hover:bg-muted focus:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-popup-open:bg-muted/50 data-popup-open:hover:bg-muted data-open:bg-muted/50 data-open:hover:bg-muted data-open:focus:bg-muted",
-);
+  'wuhanui:group/navigation-menu-trigger wuhanui:inline-flex wuhanui:h-9 wuhanui:w-max wuhanui:items-center wuhanui:justify-center wuhanui:rounded-md wuhanui:bg-background wuhanui:px-4 wuhanui:py-2 wuhanui:text-sm wuhanui:font-medium wuhanui:transition-all wuhanui:outline-none wuhanui:hover:bg-muted wuhanui:focus:bg-muted wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:focus-visible:outline-1 wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50 wuhanui:data-popup-open:bg-muted/50 wuhanui:data-popup-open:hover:bg-muted wuhanui:data-open:bg-muted/50 wuhanui:data-open:hover:bg-muted wuhanui:data-open:focus:bg-muted',
+)
 
 function NavigationMenuTrigger({
   className,
@@ -67,16 +69,16 @@ function NavigationMenuTrigger({
   return (
     <NavigationMenuPrimitive.Trigger
       data-slot="navigation-menu-trigger"
-      className={cn(navigationMenuTriggerStyle(), "group", className)}
+      className={cn(navigationMenuTriggerStyle(), 'wuhanui:group', className)}
       {...props}
     >
-      {children}{" "}
+      {children}{' '}
       <ChevronDownIcon
-        className="relative top-px ml-1 size-3 transition duration-300 group-data-popup-open/navigation-menu-trigger:rotate-180 group-data-open/navigation-menu-trigger:rotate-180"
+        className="wuhanui:relative wuhanui:top-px wuhanui:ml-1 wuhanui:size-3 wuhanui:transition wuhanui:duration-300 wuhanui:group-data-popup-open/navigation-menu-trigger:rotate-180 wuhanui:group-data-open/navigation-menu-trigger:rotate-180"
         aria-hidden="true"
       />
     </NavigationMenuPrimitive.Trigger>
-  );
+  )
 }
 
 function NavigationMenuContent({
@@ -87,12 +89,12 @@ function NavigationMenuContent({
     <NavigationMenuPrimitive.Content
       data-slot="navigation-menu-content"
       className={cn(
-        "top-0 left-0 w-full p-1 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-lg group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:ring-1 group-data-[viewport=false]/navigation-menu:ring-foreground/10 group-data-[viewport=false]/navigation-menu:duration-300 data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none md:absolute md:w-auto group-data-[viewport=false]/navigation-menu:data-open:animate-in group-data-[viewport=false]/navigation-menu:data-open:fade-in-0 group-data-[viewport=false]/navigation-menu:data-open:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-closed:animate-out group-data-[viewport=false]/navigation-menu:data-closed:fade-out-0 group-data-[viewport=false]/navigation-menu:data-closed:zoom-out-95",
+        'wuhanui:top-0 wuhanui:left-0 wuhanui:w-full wuhanui:p-2 wuhanui:pr-2.5 wuhanui:ease-[cubic-bezier(0.22,1,0.36,1)] wuhanui:group-data-[viewport=false]/navigation-menu:top-full wuhanui:group-data-[viewport=false]/navigation-menu:mt-1.5 wuhanui:group-data-[viewport=false]/navigation-menu:overflow-hidden wuhanui:group-data-[viewport=false]/navigation-menu:rounded-md wuhanui:group-data-[viewport=false]/navigation-menu:bg-popover wuhanui:group-data-[viewport=false]/navigation-menu:text-popover-foreground wuhanui:group-data-[viewport=false]/navigation-menu:shadow wuhanui:group-data-[viewport=false]/navigation-menu:ring-1 wuhanui:group-data-[viewport=false]/navigation-menu:ring-foreground/10 wuhanui:group-data-[viewport=false]/navigation-menu:duration-300 wuhanui:data-[motion=from-end]:slide-in-from-right-52 wuhanui:data-[motion=from-start]:slide-in-from-left-52 wuhanui:data-[motion=to-end]:slide-out-to-right-52 wuhanui:data-[motion=to-start]:slide-out-to-left-52 wuhanui:data-[motion^=from-]:animate-in wuhanui:data-[motion^=from-]:fade-in wuhanui:data-[motion^=to-]:animate-out wuhanui:data-[motion^=to-]:fade-out wuhanui:**:data-[slot=navigation-menu-link]:focus:ring-0 wuhanui:**:data-[slot=navigation-menu-link]:focus:outline-none wuhanui:md:absolute wuhanui:md:w-auto wuhanui:group-data-[viewport=false]/navigation-menu:data-open:animate-in wuhanui:group-data-[viewport=false]/navigation-menu:data-open:fade-in-0 wuhanui:group-data-[viewport=false]/navigation-menu:data-open:zoom-in-95 wuhanui:group-data-[viewport=false]/navigation-menu:data-closed:animate-out wuhanui:group-data-[viewport=false]/navigation-menu:data-closed:fade-out-0 wuhanui:group-data-[viewport=false]/navigation-menu:data-closed:zoom-out-95',
         className,
       )}
       {...props}
     />
-  );
+  )
 }
 
 function NavigationMenuViewport({
@@ -100,17 +102,21 @@ function NavigationMenuViewport({
   ...props
 }: React.ComponentProps<typeof NavigationMenuPrimitive.Viewport>) {
   return (
-    <div className={cn("absolute top-full left-0 isolate z-50 flex justify-center")}>
+    <div
+      className={cn(
+        'wuhanui:absolute wuhanui:top-full wuhanui:left-0 wuhanui:isolate wuhanui:z-50 wuhanui:flex wuhanui:justify-center',
+      )}
+    >
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          "origin-top-center relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-lg bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-(--radix-navigation-menu-viewport-width) data-open:animate-in data-open:zoom-in-90 data-closed:animate-out data-closed:zoom-out-90",
+          'wuhanui:origin-top-center wuhanui:relative wuhanui:mt-1.5 wuhanui:h-(--radix-navigation-menu-viewport-height) wuhanui:w-full wuhanui:overflow-hidden wuhanui:rounded-lg wuhanui:bg-popover wuhanui:text-popover-foreground wuhanui:shadow wuhanui:ring-1 wuhanui:ring-foreground/10 wuhanui:duration-100 wuhanui:md:w-(--radix-navigation-menu-viewport-width) wuhanui:data-open:animate-in wuhanui:data-open:zoom-in-90 wuhanui:data-closed:animate-out wuhanui:data-closed:zoom-out-90',
           className,
         )}
         {...props}
       />
     </div>
-  );
+  )
 }
 
 function NavigationMenuLink({
@@ -121,12 +127,12 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "flex items-center gap-2 rounded-lg p-2 text-sm transition-all outline-none hover:bg-muted focus:bg-muted focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-1 in-data-[slot=navigation-menu-content]:rounded-md data-active:bg-muted/50 data-active:hover:bg-muted data-active:focus:bg-muted [&_svg:not([class*='size-'])]:size-4",
+        'wuhanui:flex wuhanui:items-center wuhanui:gap-1.5 wuhanui:rounded-sm wuhanui:p-2 wuhanui:text-sm wuhanui:transition-all wuhanui:outline-none wuhanui:hover:bg-muted wuhanui:focus:bg-muted wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:focus-visible:outline-1 wuhanui:data-[active=true]:bg-muted/50 wuhanui:data-[active=true]:hover:bg-muted wuhanui:data-[active=true]:focus:bg-muted wuhanui:[&_svg:not([class*=size-])]:size-4',
         className,
       )}
       {...props}
     />
-  );
+  )
 }
 
 function NavigationMenuIndicator({
@@ -137,14 +143,14 @@ function NavigationMenuIndicator({
     <NavigationMenuPrimitive.Indicator
       data-slot="navigation-menu-indicator"
       className={cn(
-        "top-full z-1 flex h-1.5 items-end justify-center overflow-hidden data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:animate-in data-[state=visible]:fade-in",
+        'wuhanui:top-full wuhanui:z-1 wuhanui:flex wuhanui:h-1.5 wuhanui:items-end wuhanui:justify-center wuhanui:overflow-hidden wuhanui:data-[state=hidden]:animate-out wuhanui:data-[state=hidden]:fade-out wuhanui:data-[state=visible]:animate-in wuhanui:data-[state=visible]:fade-in',
         className,
       )}
       {...props}
     >
-      <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" />
+      <div className="wuhanui:relative wuhanui:top-[60%] wuhanui:h-2 wuhanui:w-2 wuhanui:rotate-45 wuhanui:rounded-tl-sm wuhanui:bg-border wuhanui:shadow-md" />
     </NavigationMenuPrimitive.Indicator>
-  );
+  )
 }
 
 export {
@@ -157,4 +163,4 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
-};
+}

@@ -1,17 +1,16 @@
-import * as React from "react";
+import { cn } from '@/lib/utils'
+import { ChevronDownIcon } from 'lucide-react'
+import * as React from 'react'
 
-import { cn } from "@/lib/utils";
-import { ChevronDownIcon } from "lucide-react";
+type NativeSelectProps = Omit<React.ComponentProps<'select'>, 'size'> & {
+  size?: 'sm' | 'default'
+}
 
-type NativeSelectProps = Omit<React.ComponentProps<"select">, "size"> & {
-  size?: "sm" | "default";
-};
-
-function NativeSelect({ className, size = "default", ...props }: NativeSelectProps) {
+function NativeSelect({ className, size = 'default', ...props }: NativeSelectProps) {
   return (
     <div
       className={cn(
-        "group/native-select relative w-fit has-[select:disabled]:opacity-50",
+        'wuhanui:group/native-select wuhanui:relative wuhanui:w-fit wuhanui:has-[select:disabled]:opacity-50',
         className,
       )}
       data-slot="native-select-wrapper"
@@ -20,24 +19,24 @@ function NativeSelect({ className, size = "default", ...props }: NativeSelectPro
       <select
         data-slot="native-select"
         data-size={size}
-        className="h-8 w-full min-w-0 appearance-none rounded-lg border border-input bg-transparent py-1 pr-8 pl-2.5 text-sm transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40"
+        className="wuhanui:h-9 wuhanui:w-full wuhanui:min-w-0 wuhanui:appearance-none wuhanui:rounded-md wuhanui:border wuhanui:border-input wuhanui:bg-transparent wuhanui:py-1 wuhanui:pr-8 wuhanui:pl-2.5 wuhanui:text-sm wuhanui:shadow-xs wuhanui:transition-[color,box-shadow] wuhanui:outline-none wuhanui:select-none wuhanui:selection:bg-primary wuhanui:selection:text-primary-foreground wuhanui:placeholder:text-muted-foreground wuhanui:focus-visible:border-ring wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:disabled:pointer-events-none wuhanui:disabled:cursor-not-allowed wuhanui:aria-invalid:border-destructive wuhanui:aria-invalid:ring-3 wuhanui:aria-invalid:ring-destructive/20 wuhanui:data-[size=sm]:h-8 wuhanui:dark:bg-input/30 wuhanui:dark:hover:bg-input/50 wuhanui:dark:aria-invalid:border-destructive/50 wuhanui:dark:aria-invalid:ring-destructive/40"
         {...props}
       />
       <ChevronDownIcon
-        className="pointer-events-none absolute top-1/2 right-2.5 size-4 -translate-y-1/2 text-muted-foreground select-none"
+        className="wuhanui:pointer-events-none wuhanui:absolute wuhanui:top-1/2 wuhanui:right-2.5 wuhanui:size-4 wuhanui:-translate-y-1/2 wuhanui:text-muted-foreground wuhanui:select-none"
         aria-hidden="true"
         data-slot="native-select-icon"
       />
     </div>
-  );
+  )
 }
 
-function NativeSelectOption({ ...props }: React.ComponentProps<"option">) {
-  return <option data-slot="native-select-option" {...props} />;
+function NativeSelectOption({ ...props }: React.ComponentProps<'option'>) {
+  return <option data-slot="native-select-option" {...props} />
 }
 
-function NativeSelectOptGroup({ className, ...props }: React.ComponentProps<"optgroup">) {
-  return <optgroup data-slot="native-select-optgroup" className={cn(className)} {...props} />;
+function NativeSelectOptGroup({ className, ...props }: React.ComponentProps<'optgroup'>) {
+  return <optgroup data-slot="native-select-optgroup" className={cn(className)} {...props} />
 }
 
-export { NativeSelect, NativeSelectOptGroup, NativeSelectOption };
+export { NativeSelect, NativeSelectOptGroup, NativeSelectOption }
