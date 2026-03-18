@@ -2,15 +2,15 @@
   "name": "ui",
   "version": "0.0.3",
   "description": "A starter for creating a TypeScript package.",
-  "homepage": "https://github.com/author/library#readme",
+  "homepage": "https://github.com/GGGLHHH/wuhan-ui#readme",
   "bugs": {
-    "url": "https://github.com/author/library/issues"
+    "url": "https://github.com/GGGLHHH/wuhan-ui/issues"
   },
   "license": "MIT",
-  "author": "Author Name <author.name@mail.com>",
+  "author": "ge Datou (https://github.com/GGGLHHH)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/author/library.git"
+    "url": "git+https://github.com/GGGLHHH/wuhan-ui.git"
   },
   "files": [
     "dist",
