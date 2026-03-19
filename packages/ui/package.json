@@ -32,7 +32,7 @@
   "scripts": {
     "gen": "vp exec tsx scripts/gen-index.ts",
     "build": "vp exec tsx scripts/gen-index.ts && vp pack",
-    "dev": "vp pack --watch",
+    "dev": "vp exec tsx scripts/gen-index.ts --watch & vp pack --watch",
     "test": "vp test",
     "typecheck": "tsc --noEmit",
     "release": "bumpp --no-verify",
