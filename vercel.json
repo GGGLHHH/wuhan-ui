@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd packages/ui && npx tsx scripts/gen-index.ts && npx tsdown && cd ../../apps/website && npx vite build",
-  "outputDirectory": "apps/website/dist",
-  "installCommand": "npm install",
-  "framework": "vite"
+  "framework": "vite",
+  "buildCommand": "./node_modules/.bin/vp run --filter ./apps/website build",
+  "outputDirectory": "apps/website/dist"
 }
