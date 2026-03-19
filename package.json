@@ -12,7 +12,8 @@
     "ready": "vp fmt && vp lint && vp run test -r && vp run build -r",
     "dev": "vp run website#dev",
     "prepare": "vp config",
-    "fmt": "vp fmt"
+    "fmt": "vp fmt",
+    "check:fix": "vp lint --fix --fix-suggestions --fix-dangerously && vp check --fix"
   },
   "devDependencies": {
     "vite-plus": "latest"

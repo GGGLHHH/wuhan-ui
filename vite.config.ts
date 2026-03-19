@@ -10,10 +10,12 @@ export default defineConfig({
     ignorePatterns: ['src/routeTree.gen.ts', 'src/contracts/generated/**'],
     rules: {
       '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/consistent-type-imports': 'off',
+      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-base-to-string': 'off',
       'jsx-a11y/autocomplete-valid': 'off',
+      'no-unused-vars': ['error', { fix: { imports: 'fix' } }],
+      'restrict-template-expressions': 'off',
     },
     overrides: [
       {
