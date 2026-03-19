@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "vp run build -r && cd apps/website && vp build",
+  "buildCommand": "npx vp run build -r && cd apps/website && npx vp build",
   "outputDirectory": "apps/website/dist",
-  "installCommand": "vp install",
+  "installCommand": "npm install && npm install -g vite-plus",
   "framework": "vite"
 }
