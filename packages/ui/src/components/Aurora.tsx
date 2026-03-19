@@ -203,7 +203,7 @@ export default function Aurora(props: AuroraProps) {
       }
       gl.getExtension('WEBGL_lose_context')?.loseContext()
     }
-  }, [amplitude, blend, colorStops])
+  }, [amplitude])
 
   return <div ref={ctnDom} className="wuhanui:w-full wuhanui:h-full" />
 }
