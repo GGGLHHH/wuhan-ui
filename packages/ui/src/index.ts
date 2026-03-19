@@ -8,6 +8,7 @@ export { cn } from './lib/utils'
 export * from './hooks/use-mobile'
 
 // components
+export * from './components/ui/Aurora'
 export * from './components/ui/accordion'
 export * from './components/ui/alert-dialog'
 export * from './components/ui/alert'
