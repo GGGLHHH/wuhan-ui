@@ -1,4 +1,4 @@
-import Content from '@/content/docs/components/loading-page.mdx'
+import Content from '@/content/docs/loading-page.mdx'
 import { createFileRoute } from '@tanstack/react-router'
 import { Loader } from 'lucide-react'
 

@@ -1,4 +1,4 @@
-import Content from '@/content/docs/components/silk.mdx'
+import Content from '@/content/docs/silk.mdx'
 import { createFileRoute } from '@tanstack/react-router'
 import { Waves } from 'lucide-react'
 

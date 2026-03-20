@@ -1,4 +1,4 @@
-import Content from '@/content/docs/components/aurora.mdx'
+import Content from '@/content/docs/aurora.mdx'
 import { createFileRoute } from '@tanstack/react-router'
 import { Sparkles } from 'lucide-react'
 
