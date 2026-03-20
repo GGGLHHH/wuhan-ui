@@ -38,6 +38,7 @@
     "react-day-picker": "catalog:",
     "react-dom": "catalog:",
     "react-resizable-panels": "catalog:",
+    "react-shiki": "^0.9.2",
     "recharts": "catalog:",
     "shadcn": "catalog:",
     "sonner": "catalog:",

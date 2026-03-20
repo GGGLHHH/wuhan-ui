@@ -1,13 +1,15 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@gedatou/ui'
 import { Check, Clipboard } from 'lucide-react'
 import { type ReactNode, useCallback, useState } from 'react'
+import ShikiHighlighter from 'react-shiki/web'
 
 interface ComponentPreviewProps {
   children: ReactNode
   code: string
+  language?: string
 }
 
-export function ComponentPreview({ children, code }: ComponentPreviewProps) {
+export function ComponentPreview({ children, code, language = 'tsx' }: ComponentPreviewProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = useCallback(() => {
@@ -39,10 +41,15 @@ export function ComponentPreview({ children, code }: ComponentPreviewProps) {
           </div>
         </TabsContent>
         <TabsContent value="code">
-          <div className="bg-muted overflow-x-auto rounded-lg p-4">
-            <pre className="text-sm">
-              <code>{code}</code>
-            </pre>
+          <div className="overflow-x-auto rounded-lg text-sm [&_pre]:!rounded-lg [&_pre]:!p-4">
+            <ShikiHighlighter
+              language={language}
+              theme={{ light: 'github-light', dark: 'github-dark' }}
+              defaultColor="light-dark()"
+              showLineNumbers
+            >
+              {code.trim()}
+            </ShikiHighlighter>
           </div>
         </TabsContent>
       </Tabs>
