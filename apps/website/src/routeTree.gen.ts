@@ -14,7 +14,6 @@ import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
 import { Route as DashboardAboutRouteImport } from './routes/_dashboard/about'
 import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
 import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
-import { Route as DashboardDocsButtonRouteImport } from './routes/_dashboard/docs.button'
 import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
 
 const DashboardRoute = DashboardRouteImport.update({
@@ -42,11 +41,6 @@ const DashboardDocsLoadingPageRoute =
     path: '/docs/loading-page',
     getParentRoute: () => DashboardRoute,
   } as any)
-const DashboardDocsButtonRoute = DashboardDocsButtonRouteImport.update({
-  id: '/docs/button',
-  path: '/docs/button',
-  getParentRoute: () => DashboardRoute,
-} as any)
 const DashboardDocsAuroraRoute = DashboardDocsAuroraRouteImport.update({
   id: '/docs/aurora',
   path: '/docs/aurora',
@@ -57,7 +51,6 @@ export interface FileRoutesByFullPath {
   '/': typeof DashboardIndexRoute
   '/about': typeof DashboardAboutRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
-  '/docs/button': typeof DashboardDocsButtonRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
 }
@@ -65,7 +58,6 @@ export interface FileRoutesByTo {
   '/about': typeof DashboardAboutRoute
   '/': typeof DashboardIndexRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
-  '/docs/button': typeof DashboardDocsButtonRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
 }
@@ -75,7 +67,6 @@ export interface FileRoutesById {
   '/_dashboard/about': typeof DashboardAboutRoute
   '/_dashboard/': typeof DashboardIndexRoute
   '/_dashboard/docs/aurora': typeof DashboardDocsAuroraRoute
-  '/_dashboard/docs/button': typeof DashboardDocsButtonRoute
   '/_dashboard/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/_dashboard/docs/silk': typeof DashboardDocsSilkRoute
 }
@@ -85,24 +76,16 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/docs/aurora'
-    | '/docs/button'
     | '/docs/loading-page'
     | '/docs/silk'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/about'
-    | '/'
-    | '/docs/aurora'
-    | '/docs/button'
-    | '/docs/loading-page'
-    | '/docs/silk'
+  to: '/about' | '/' | '/docs/aurora' | '/docs/loading-page' | '/docs/silk'
   id:
     | '__root__'
     | '/_dashboard'
     | '/_dashboard/about'
     | '/_dashboard/'
     | '/_dashboard/docs/aurora'
-    | '/_dashboard/docs/button'
     | '/_dashboard/docs/loading-page'
     | '/_dashboard/docs/silk'
   fileRoutesById: FileRoutesById
@@ -148,13 +131,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDocsLoadingPageRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/_dashboard/docs/button': {
-      id: '/_dashboard/docs/button'
-      path: '/docs/button'
-      fullPath: '/docs/button'
-      preLoaderRoute: typeof DashboardDocsButtonRouteImport
-      parentRoute: typeof DashboardRoute
-    }
     '/_dashboard/docs/aurora': {
       id: '/_dashboard/docs/aurora'
       path: '/docs/aurora'
@@ -169,7 +145,6 @@ interface DashboardRouteChildren {
   DashboardAboutRoute: typeof DashboardAboutRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
   DashboardDocsAuroraRoute: typeof DashboardDocsAuroraRoute
-  DashboardDocsButtonRoute: typeof DashboardDocsButtonRoute
   DashboardDocsLoadingPageRoute: typeof DashboardDocsLoadingPageRoute
   DashboardDocsSilkRoute: typeof DashboardDocsSilkRoute
 }
@@ -178,7 +153,6 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardAboutRoute: DashboardAboutRoute,
   DashboardIndexRoute: DashboardIndexRoute,
   DashboardDocsAuroraRoute: DashboardDocsAuroraRoute,
-  DashboardDocsButtonRoute: DashboardDocsButtonRoute,
   DashboardDocsLoadingPageRoute: DashboardDocsLoadingPageRoute,
   DashboardDocsSilkRoute: DashboardDocsSilkRoute,
 }
