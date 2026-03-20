@@ -3,5 +3,6 @@
   "framework": "vite",
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "./node_modules/.bin/vp run --filter ./packages/ui build && ./node_modules/.bin/vp run --filter ./apps/website build",
-  "outputDirectory": "apps/website/dist"
+  "outputDirectory": "apps/website/dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
