@@ -7,17 +7,17 @@ A starter for creating a TypeScript package.
 - Install dependencies:
 
 ```bash
-npm install
+vp install
 ```
 
 - Run the unit tests:
 
 ```bash
-npm run test
+vp run --filter ./packages/ui test
 ```
 
 - Build the library:
 
 ```bash
-npm run build
+vp run --filter ./packages/ui build
 ```

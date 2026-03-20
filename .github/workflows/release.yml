@@ -20,15 +20,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.32.1
+          run_install: false
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Setup Vite+
-        run: npm install --global vite-plus@0.1.12
+        run: pnpm add --global vite-plus@0.1.13
 
       - name: Install dependencies
         run: vp install --frozen-lockfile
@@ -45,11 +51,11 @@ jobs:
           fi
 
       - name: Build ui package
-        run: ./node_modules/.bin/vp run --filter ./packages/ui build
+        run: vp run --filter ./packages/ui build
 
       - name: Publish ui package
         working-directory: packages/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: 'true'
-        run: npm publish --access public --ignore-scripts
+        run: vp pm publish --access public --ignore-scripts --no-git-checks
