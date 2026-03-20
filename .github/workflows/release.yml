@@ -51,11 +51,11 @@ jobs:
           fi
 
       - name: Build ui package
-        run: vp run --filter ./packages/ui build
+        run: ./node_modules/.bin/vp run --filter ./packages/ui build
 
       - name: Publish ui package
         working-directory: packages/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: 'true'
-        run: vp pm publish --access public --ignore-scripts --no-git-checks
+        run: ../../node_modules/.bin/vp pm publish --access public --ignore-scripts --no-git-checks
