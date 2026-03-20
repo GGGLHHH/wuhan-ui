@@ -1,0 +1,35 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import LoadingPageDemo from '@/registry/examples/loading-page-demo'
+import LoadingPageDemoSource from '@/registry/examples/loading-page-demo.tsx?raw'
+
+# LoadingPage
+
+基于 Lottie 的加载动画组件，使用 `@lottiefiles/dotlottie-react` 渲染。
+
+## Import
+
+```tsx
+import { LoadingPage } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={LoadingPageDemoSource}>
+  <LoadingPageDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'src',
+      type: 'string',
+      default: '(内置 Lottie URL)',
+      description: '自定义 Lottie 动画资源地址',
+    },
+    { prop: 'loop', type: 'boolean', default: 'true', description: '是否循环播放' },
+    { prop: 'autoplay', type: 'boolean', default: 'true', description: '是否自动播放' },
+  ]}
+/>

@@ -1,0 +1,32 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SilkDemo from '@/registry/examples/silk-demo'
+import SilkDemoSource from '@/registry/examples/silk-demo.tsx?raw'
+
+# Silk
+
+基于 Three.js 的丝绸纹理动画背景组件，使用 `@react-three/fiber` 渲染。
+
+## Import
+
+```tsx
+import { Silk } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SilkDemoSource}>
+  <SilkDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    { prop: 'speed', type: 'number', default: '5', description: '动画速度' },
+    { prop: 'scale', type: 'number', default: '1', description: '纹理缩放' },
+    { prop: 'color', type: 'string', default: "'#7B7481'", description: '丝绸颜色（hex）' },
+    { prop: 'noiseIntensity', type: 'number', default: '1.5', description: '噪声强度' },
+    { prop: 'rotation', type: 'number', default: '0', description: '旋转角度' },
+  ]}
+/>

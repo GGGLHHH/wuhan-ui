@@ -1,0 +1,42 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import AuroraDemo from '@/registry/examples/aurora-demo'
+import AuroraDemoSource from '@/registry/examples/aurora-demo.tsx?raw'
+
+# Aurora
+
+基于 WebGL 的极光动画背景组件，使用 OGL 渲染。
+
+## Import
+
+```tsx
+import { Aurora } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={AuroraDemoSource}>
+  <AuroraDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'colorStops',
+      type: 'string[]',
+      default: "['#5227FF', '#7cff67', '#5227FF']",
+      description: '渐变色停靠点（hex 颜色数组）',
+    },
+    { prop: 'amplitude', type: 'number', default: '1.0', description: '波动幅度' },
+    { prop: 'blend', type: 'number', default: '0.5', description: '混合程度' },
+    { prop: 'speed', type: 'number', default: '1.0', description: '动画速度' },
+    {
+      prop: 'time',
+      type: 'number',
+      default: 'undefined',
+      description: '手动控制时间（覆盖内部计时）',
+    },
+  ]}
+/>
