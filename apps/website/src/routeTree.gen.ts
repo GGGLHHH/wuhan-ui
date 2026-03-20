@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
-import { Route as DashboardAboutRouteImport } from './routes/_dashboard/about'
 import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
 import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
 import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
@@ -23,11 +22,6 @@ const DashboardRoute = DashboardRouteImport.update({
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => DashboardRoute,
-} as any)
-const DashboardAboutRoute = DashboardAboutRouteImport.update({
-  id: '/about',
-  path: '/about',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardDocsSilkRoute = DashboardDocsSilkRouteImport.update({
@@ -49,13 +43,11 @@ const DashboardDocsAuroraRoute = DashboardDocsAuroraRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof DashboardIndexRoute
-  '/about': typeof DashboardAboutRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
 }
 export interface FileRoutesByTo {
-  '/about': typeof DashboardAboutRoute
   '/': typeof DashboardIndexRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
@@ -64,7 +56,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_dashboard': typeof DashboardRouteWithChildren
-  '/_dashboard/about': typeof DashboardAboutRoute
   '/_dashboard/': typeof DashboardIndexRoute
   '/_dashboard/docs/aurora': typeof DashboardDocsAuroraRoute
   '/_dashboard/docs/loading-page': typeof DashboardDocsLoadingPageRoute
@@ -72,18 +63,12 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/docs/aurora'
-    | '/docs/loading-page'
-    | '/docs/silk'
+  fullPaths: '/' | '/docs/aurora' | '/docs/loading-page' | '/docs/silk'
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/' | '/docs/aurora' | '/docs/loading-page' | '/docs/silk'
+  to: '/' | '/docs/aurora' | '/docs/loading-page' | '/docs/silk'
   id:
     | '__root__'
     | '/_dashboard'
-    | '/_dashboard/about'
     | '/_dashboard/'
     | '/_dashboard/docs/aurora'
     | '/_dashboard/docs/loading-page'
@@ -108,13 +93,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof DashboardIndexRouteImport
-      parentRoute: typeof DashboardRoute
-    }
-    '/_dashboard/about': {
-      id: '/_dashboard/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof DashboardAboutRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/docs/silk': {
@@ -142,7 +120,6 @@ declare module '@tanstack/react-router' {
 }
 
 interface DashboardRouteChildren {
-  DashboardAboutRoute: typeof DashboardAboutRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
   DashboardDocsAuroraRoute: typeof DashboardDocsAuroraRoute
   DashboardDocsLoadingPageRoute: typeof DashboardDocsLoadingPageRoute
@@ -150,7 +127,6 @@ interface DashboardRouteChildren {
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
-  DashboardAboutRoute: DashboardAboutRoute,
   DashboardIndexRoute: DashboardIndexRoute,
   DashboardDocsAuroraRoute: DashboardDocsAuroraRoute,
   DashboardDocsLoadingPageRoute: DashboardDocsLoadingPageRoute,
