@@ -58,4 +58,4 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: 'true'
-        run: ../../node_modules/.bin/vp pm publish --access public --ignore-scripts --no-git-checks
+        run: vp pm publish --access public --ignore-scripts --no-git-checks
