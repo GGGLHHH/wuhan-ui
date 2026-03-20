@@ -1,14 +1,14 @@
 import { AppSidebar } from '@/components/app-sidebar'
 import { BreadcrumbNav } from '@/components/layouts/breadcrumb-nav'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { getFixedTabs } from '@/utils/route-utils'
+import { buildIconMap, getFixedTabs } from '@/utils/route-utils'
 import { Separator, SidebarInset, SidebarProvider } from '@gedatou/ui'
 import { useEffect, useState } from 'react'
 
 import { FullscreenTrigger } from '../fullscreen-trigger'
 import { SidebarTrigger } from '../sidebar-trigger'
 import { TabContent } from '../tabs/tab-content'
-import { initializeFixedTabs } from '../tabs/tabs-store'
+import { initializeFixedTabs, restoreTabIcons } from '../tabs/tabs-store'
 import { useRouteTabs } from '../tabs/use-route-tabs'
 
 const SIDEBAR_STORAGE_KEY = 'sidebar_open_state'
@@ -28,8 +28,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     localStorage.setItem(SIDEBAR_STORAGE_KEY, JSON.stringify(open))
   }
 
-  // Initialize fixed tabs on mount
+  // Initialize fixed tabs and restore icons on mount
   useEffect(() => {
+    const iconMap = buildIconMap()
+    restoreTabIcons(iconMap)
     const fixedTabs = getFixedTabs()
     initializeFixedTabs(fixedTabs)
   }, [])

@@ -133,3 +133,26 @@ export function getFixedTabs(): ITabsItem[] {
   const fixedTabs = collectFixedTabs(allMenuItems)
   return orderBy(fixedTabs, [(item) => item.order ?? DEFAULT_ORDER], ['asc']) as ITabsItem[]
 }
+
+/**
+ * Build a map of route id → icon from the menu items tree
+ * Used to restore non-serializable icon references after loading from localStorage
+ */
+export function buildIconMap(): Map<string, LucideIcon> {
+  const allMenuItems = buildMenuItems()
+  const map = new Map<string, LucideIcon>()
+
+  function collect(items: IMenuItem[]) {
+    for (const item of items) {
+      if (item.icon) {
+        map.set(item.id, item.icon)
+      }
+      if (item.children) {
+        collect(item.children)
+      }
+    }
+  }
+
+  collect(allMenuItems)
+  return map
+}

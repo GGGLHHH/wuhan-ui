@@ -1,4 +1,5 @@
 import { Store } from '@tanstack/react-store'
+import type { LucideIcon } from 'lucide-react'
 
 import type { ITabsItem } from './types'
 
@@ -285,7 +286,7 @@ export function initializeFixedTabs(fixedTabs: ITabsItem[]) {
         existingTabsMap.set(fixedTab.id, fixedTab)
       } else {
         const existing = existingTabsMap.get(fixedTab.id)!
-        existingTabsMap.set(fixedTab.id, { ...existing, fixedTab: true })
+        existingTabsMap.set(fixedTab.id, { ...existing, ...fixedTab })
       }
     }
 
@@ -329,4 +330,24 @@ export function clearTabsCache() {
   } catch (error) {
     console.error('Failed to clear tabs cache:', error)
   }
+}
+
+// Restore non-serializable icon references from route tree after loading from localStorage
+export function restoreTabIcons(iconMap: Map<string, LucideIcon>) {
+  tabsStore.setState((state) => {
+    const hasTabsWithoutIcon = state.tabs.some((tab) => !tab.icon && iconMap.has(tab.id))
+    if (!hasTabsWithoutIcon) {
+      return state
+    }
+
+    return {
+      ...state,
+      tabs: state.tabs.map((tab) => {
+        if (!tab.icon && iconMap.has(tab.id)) {
+          return { ...tab, icon: iconMap.get(tab.id) }
+        }
+        return tab
+      }),
+    }
+  })
 }
