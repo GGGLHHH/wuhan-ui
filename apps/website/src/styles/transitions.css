@@ -50,6 +50,13 @@ html:active-view-transition-type(scale-fade) {
 }
 
 /* Theme transition: circular clip-path animation */
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 .theme-transitioning [data-page-content] {
   view-transition-name: none !important;
 }
