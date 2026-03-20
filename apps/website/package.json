@@ -49,6 +49,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "catalog:",
     "code-inspector-plugin": "^1.4.5",
+    "rehype-slug": "^6.0.0",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
