@@ -53,7 +53,7 @@ function HomePage() {
 
         {/* Usage */}
         <section>
-          <h2 className="text-xl font-bold">使用示范</h2>
+          <h2 className="text-xl font-bold">例如:</h2>
           <CodeBlock code={LoadingPageDemoSource} className="mt-4" />
         </section>
       </div>
