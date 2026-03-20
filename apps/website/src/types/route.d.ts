@@ -11,6 +11,7 @@ declare module '@tanstack/react-router' {
     order?: number
     title?: string
     icon?: LucideIcon
+    group?: string
   }
 
   interface HistoryState {

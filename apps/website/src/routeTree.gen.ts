@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
 import { Route as DashboardAboutRouteImport } from './routes/_dashboard/about'
+import { Route as DashboardDocsButtonRouteImport } from './routes/_dashboard/docs.button'
 
 const DashboardRoute = DashboardRouteImport.update({
   id: '/_dashboard',
@@ -27,27 +28,40 @@ const DashboardAboutRoute = DashboardAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardDocsButtonRoute = DashboardDocsButtonRouteImport.update({
+  id: '/docs/button',
+  path: '/docs/button',
+  getParentRoute: () => DashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof DashboardIndexRoute
   '/about': typeof DashboardAboutRoute
+  '/docs/button': typeof DashboardDocsButtonRoute
 }
 export interface FileRoutesByTo {
   '/about': typeof DashboardAboutRoute
   '/': typeof DashboardIndexRoute
+  '/docs/button': typeof DashboardDocsButtonRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_dashboard/about': typeof DashboardAboutRoute
   '/_dashboard/': typeof DashboardIndexRoute
+  '/_dashboard/docs/button': typeof DashboardDocsButtonRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths: '/' | '/about' | '/docs/button'
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/'
-  id: '__root__' | '/_dashboard' | '/_dashboard/about' | '/_dashboard/'
+  to: '/about' | '/' | '/docs/button'
+  id:
+    | '__root__'
+    | '/_dashboard'
+    | '/_dashboard/about'
+    | '/_dashboard/'
+    | '/_dashboard/docs/button'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,17 +91,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardAboutRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/docs/button': {
+      id: '/_dashboard/docs/button'
+      path: '/docs/button'
+      fullPath: '/docs/button'
+      preLoaderRoute: typeof DashboardDocsButtonRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
 interface DashboardRouteChildren {
   DashboardAboutRoute: typeof DashboardAboutRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardDocsButtonRoute: typeof DashboardDocsButtonRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardAboutRoute: DashboardAboutRoute,
   DashboardIndexRoute: DashboardIndexRoute,
+  DashboardDocsButtonRoute: DashboardDocsButtonRoute,
 }
 
 const DashboardRouteWithChildren = DashboardRoute._addFileChildren(

@@ -1,0 +1,54 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ButtonDemo from '@/registry/examples/button-demo'
+import ButtonDemoSource from '@/registry/examples/button-demo.tsx?raw'
+import ButtonVariants from '@/registry/examples/button-variants'
+import ButtonVariantsSource from '@/registry/examples/button-variants.tsx?raw'
+
+# Button
+
+按钮用于触发操作或事件。
+
+## Import
+
+```tsx
+import { Button } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ButtonDemoSource}>
+  <ButtonDemo />
+</ComponentPreview>
+
+## Variants
+
+<ComponentPreview code={ButtonVariantsSource}>
+  <ButtonVariants />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link'",
+      default: "'default'",
+      description: '按钮样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg' | 'icon'",
+      default: "'default'",
+      description: '按钮尺寸',
+    },
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '将样式传递给子元素而非渲染 button 标签',
+    },
+    { prop: 'disabled', type: 'boolean', default: 'false', description: '禁用状态' },
+  ]}
+/>

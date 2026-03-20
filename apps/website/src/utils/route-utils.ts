@@ -14,6 +14,12 @@ export type IMenuItem = StaticDataRouteOption & {
   fixedTab?: boolean
   titleKey?: string
   icon?: LucideIcon
+  group?: string
+}
+
+export interface IMenuGroup {
+  label?: string
+  items: IMenuItem[]
 }
 
 const DEFAULT_ICON: LucideIcon = CircleHelp
@@ -101,6 +107,7 @@ function convertRouteToMenuItem(route: RouteTreeType): IMenuItem | null {
     order: staticData.order,
     id: route.id,
     fixedTab: staticData.fixedTab,
+    group: staticData.group,
   }
 
   // 递归处理子路由
@@ -155,4 +162,29 @@ export function buildIconMap(): Map<string, LucideIcon> {
 
   collect(allMenuItems)
   return map
+}
+
+/**
+ * 将菜单项按 group 字段分组
+ * 无 group 的项归入默认分组（label 为 undefined）
+ * 保持分组出现的顺序
+ */
+export function buildGroupedMenuItems(tree: RouteTreeType = routeTree): IMenuGroup[] {
+  const items = buildMenuItems(tree)
+  const groupMap = new Map<string | undefined, IMenuItem[]>()
+  const groupOrder: (string | undefined)[] = []
+
+  for (const item of items) {
+    const key = item.group
+    if (!groupMap.has(key)) {
+      groupMap.set(key, [])
+      groupOrder.push(key)
+    }
+    groupMap.get(key)!.push(item)
+  }
+
+  return groupOrder.map((label) => ({
+    label,
+    items: groupMap.get(label)!,
+  }))
 }

@@ -5,6 +5,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -167,7 +168,7 @@ const NavMenuItem = React.memo(({ item }: { item: IMenuItem }) => {
 NavMenuItem.displayName = 'NavMenuItem'
 
 // 主导航菜单组件
-export function NavMain({ items }: { items: IMenuItem[] }) {
+export function NavMain({ items, label }: { items: IMenuItem[]; label?: string }) {
   const { isMobile, openMobile, setOpenMobile } = useSidebar()
 
   const navigation = useSidebarNavigation({
@@ -179,6 +180,7 @@ export function NavMain({ items }: { items: IMenuItem[] }) {
   return (
     <SidebarNavigationContext value={navigation}>
       <SidebarGroup>
+        {label && <SidebarGroupLabel>{label}</SidebarGroupLabel>}
         <SidebarMenu>
           {items.map((item) => (
             <NavMenuItem key={item.id} item={item} />

@@ -1,12 +1,10 @@
 import { NavMain } from '@/components/nav-main'
-import { NavUser } from '@/components/nav-user'
 import { useNow } from '@/hooks/use-now'
 import { routeTree } from '@/routeTree.gen'
-import { buildMenuItems } from '@/utils/route-utils'
+import { buildGroupedMenuItems } from '@/utils/route-utils'
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -17,7 +15,7 @@ import { format } from 'date-fns'
 import * as React from 'react'
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const menuItems = React.useMemo(() => buildMenuItems(routeTree), [])
+  const menuGroups = React.useMemo(() => buildGroupedMenuItems(routeTree), [])
   const { open } = useSidebar()
   const { now, pause, resume } = useNow({
     interval: 1000,
@@ -45,11 +43,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={menuItems} />
+        {menuGroups.map((group) => (
+          <NavMain key={group.label ?? '__default'} label={group.label} items={group.items} />
+        ))}
       </SidebarContent>
-      <SidebarFooter>
-        <NavUser />
-      </SidebarFooter>
     </Sidebar>
   )
 }
