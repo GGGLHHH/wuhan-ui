@@ -30,7 +30,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         <div className="via-border absolute top-12 bottom-0 left-0 hidden w-px bg-linear-to-b from-transparent to-transparent lg:block" />
         <div
           data-page-content
-          className="flex min-h-0 min-w-0 flex-1 flex-col gap-4 overflow-x-hidden overflow-y-auto p-4"
+          className="flex min-h-0 min-w-0 flex-1 flex-col gap-4 overflow-x-hidden overflow-y-auto p-8"
         >
           {children}
         </div>
