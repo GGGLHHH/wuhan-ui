@@ -1,0 +1,82 @@
+/* View Transitions API */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-group(root) {
+  animation-duration: 0s;
+}
+
+[data-page-content] {
+  view-transition-name: page-content;
+  isolation: isolate;
+}
+
+[data-slot='sidebar-inset'] {
+  isolation: isolate;
+}
+
+/* Page content slide animation */
+html:active-view-transition-type(slide) {
+  &::view-transition-old(page-content) {
+    animation: 300ms cubic-bezier(0.4, 0, 1, 1) both slide-out-left;
+    overflow: clip;
+  }
+
+  &::view-transition-new(page-content) {
+    animation: 300ms cubic-bezier(0.4, 0, 1, 1) both slide-in-left;
+    overflow: clip;
+  }
+}
+
+::view-transition-group(page-content) {
+  overflow: clip;
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Theme transition: circular clip-path animation */
+.theme-transitioning [data-page-content] {
+  view-transition-name: none !important;
+}
+
+.theme-transitioning::view-transition-old(root),
+.theme-transitioning::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+.theme-transitioning::view-transition-group(root) {
+  animation-duration: 0s;
+}
+
+.theme-transitioning::view-transition-old(root) {
+  z-index: 1;
+}
+
+.theme-transitioning::view-transition-new(root) {
+  z-index: 9999;
+}

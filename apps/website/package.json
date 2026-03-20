@@ -6,20 +6,26 @@
   "scripts": {
     "dev": "vp dev",
     "build": "tsc && vp build",
-    "preview": "vp preview"
+    "preview": "vp preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "catalog:",
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "@fontsource-variable/geist": "catalog:",
     "@gedatou/ui": "workspace:*",
     "@tanstack/react-router": "^1.168.1",
     "@tanstack/react-router-devtools": "^1.166.10",
+    "@tanstack/react-store": "^0.9.2",
     "@tanstack/router-plugin": "^1.167.1",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "cmdk": "catalog:",
     "date-fns": "catalog:",
     "embla-carousel-react": "catalog:",
+    "es-toolkit": "^1.45.1",
     "input-otp": "catalog:",
     "lucide-react": "catalog:",
     "next-themes": "catalog:",
