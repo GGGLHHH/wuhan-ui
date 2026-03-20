@@ -1,6 +1,6 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@gedatou/ui'
+import { Button } from '@gedatou/ui'
 import { Check, Clipboard } from 'lucide-react'
-import { type ReactNode, useCallback, useState } from 'react'
+import { type ReactNode, useCallback, useRef, useState } from 'react'
 import ShikiHighlighter from 'react-shiki/web'
 
 interface ComponentPreviewProps {
@@ -9,50 +9,76 @@ interface ComponentPreviewProps {
   language?: string
 }
 
+const COLLAPSED_HEIGHT = 150
+
 export function ComponentPreview({ children, code, language = 'tsx' }: ComponentPreviewProps) {
   const [copied, setCopied] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
+  const codeRef = useRef<HTMLDivElement>(null)
 
   const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(code)
+    void navigator.clipboard.writeText(code)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }, [code])
 
   return (
-    <div className="not-prose">
-      <Tabs defaultValue="preview">
-        <div className="flex items-center justify-between">
-          <TabsList>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-            <TabsTrigger value="code">Code</TabsTrigger>
-          </TabsList>
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-sm transition-colors"
-          >
-            {copied ? <Check className="size-4" /> : <Clipboard className="size-4" />}
-            {copied ? 'Copied' : 'Copy'}
-          </button>
-        </div>
-        <TabsContent value="preview">
-          <div className="border-border flex min-h-[120px] items-center justify-center rounded-lg border p-6">
-            {children}
-          </div>
-        </TabsContent>
-        <TabsContent value="code">
-          <div className="overflow-x-auto rounded-lg text-sm [&_pre]:!rounded-lg [&_pre]:!p-4">
+    <div className="not-prose mt-4 mb-12 flex flex-col overflow-hidden rounded-xl border">
+      {/* Preview */}
+      <div className="flex min-h-[280px] items-center justify-center">{children}</div>
+      {/* Code */}
+      <div className="relative">
+        {/* Copy button */}
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="bg-muted/80 hover:bg-muted absolute top-3 right-3 z-10 inline-flex size-7 items-center justify-center rounded-md transition-colors"
+        >
+          {copied ? <Check className="size-3.5" /> : <Clipboard className="size-3.5" />}
+        </button>
+        <div
+          ref={codeRef}
+          className="overflow-hidden border-t transition-[max-height] duration-300 ease-in-out [&_pre]:!m-0 [&_pre]:!rounded-none [&_pre]:!border-0"
+          style={{ maxHeight: isExpanded ? codeRef.current?.scrollHeight : COLLAPSED_HEIGHT }}
+        >
+          <div className="text-sm">
             <ShikiHighlighter
               language={language}
               theme={{ light: 'github-light', dark: 'github-dark' }}
               defaultColor="light-dark()"
               showLineNumbers
+              showLanguage={false}
             >
               {code.trim()}
             </ShikiHighlighter>
           </div>
-        </TabsContent>
-      </Tabs>
+        </div>
+        {/* Expand overlay */}
+        <div
+          className={`to-background absolute inset-x-0 bottom-0 flex h-20 items-end justify-center bg-linear-to-b from-transparent pb-3 transition-opacity duration-300 ${
+            isExpanded ? 'pointer-events-none opacity-0' : 'cursor-pointer opacity-100'
+          }`}
+          onClick={() => !isExpanded && setIsExpanded(true)}
+        >
+          <Button variant="outline" size="sm" className="rounded-lg shadow-none">
+            View Code
+          </Button>
+        </div>
+      </div>
+      <div
+        className={`overflow-hidden border-t transition-all duration-300 ${
+          isExpanded ? 'max-h-12 opacity-100' : 'max-h-0 border-t-transparent opacity-0'
+        }`}
+      >
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-muted-foreground w-full rounded-none"
+          onClick={() => setIsExpanded(false)}
+        >
+          Collapse
+        </Button>
+      </div>
     </div>
   )
 }
