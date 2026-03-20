@@ -19,42 +19,33 @@
   isolation: isolate;
 }
 
-/* Page content slide animation */
-html:active-view-transition-type(slide) {
-  &::view-transition-old(page-content) {
-    animation: 300ms cubic-bezier(0.4, 0, 1, 1) both slide-out-left;
-    overflow: clip;
-  }
-
-  &::view-transition-new(page-content) {
-    animation: 300ms cubic-bezier(0.4, 0, 1, 1) both slide-in-left;
-    overflow: clip;
-  }
-}
-
+/* Shared group styles */
 ::view-transition-group(page-content) {
   overflow: clip;
 }
 
-@keyframes slide-out-left {
-  from {
-    transform: translateX(0);
-    opacity: 1;
+/* Scale Fade */
+html:active-view-transition-type(scale-fade) {
+  &::view-transition-old(page-content) {
+    animation: 300ms ease-in-out both scale-fade-out;
   }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
+
+  &::view-transition-new(page-content) {
+    animation: 300ms ease-in-out both scale-fade-in;
   }
 }
 
-@keyframes slide-in-left {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
+@keyframes scale-fade-out {
   to {
-    transform: translateX(0);
-    opacity: 1;
+    opacity: 0;
+    scale: 0.92;
+  }
+}
+
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    scale: 1.06;
   }
 }
 
