@@ -16,11 +16,7 @@
     "check:fix": "vp lint --fix --fix-suggestions --fix-dangerously && vp check --fix"
   },
   "devDependencies": {
-    "vite-plus": "latest"
-  },
-  "overrides": {
-    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    "vite-plus": "catalog:"
   },
   "engines": {
     "node": ">=22.12.0"
