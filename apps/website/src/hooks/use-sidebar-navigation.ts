@@ -1,4 +1,4 @@
-import { useNavigate } from '@tanstack/react-router'
+import { useMatchRoute, useNavigate } from '@tanstack/react-router'
 import { useCallback, useRef, useState } from 'react'
 
 interface SidebarNavigationOptions {
@@ -14,6 +14,7 @@ interface SidebarNavigationOptions {
  */
 export function useSidebarNavigation(options?: SidebarNavigationOptions) {
   const navigate = useNavigate()
+  const matchRoute = useMatchRoute()
   const { isMobile, openMobile, setOpenMobile } = options || {}
 
   const [pendingPath, setPendingPath] = useState<string | null>(null)
@@ -21,6 +22,9 @@ export function useSidebarNavigation(options?: SidebarNavigationOptions) {
 
   const handleNavigate = useCallback(
     (path: string) => {
+      // Skip navigation if already on this page
+      if (matchRoute({ to: path }) !== false) return
+
       if (isMobile && openMobile && setOpenMobile) {
         setOpenMobile(false)
       }
@@ -36,7 +40,7 @@ export function useSidebarNavigation(options?: SidebarNavigationOptions) {
         setPendingPath(null)
       }, 400)
     },
-    [navigate, isMobile, openMobile, setOpenMobile],
+    [navigate, matchRoute, isMobile, openMobile, setOpenMobile],
   )
 
   const isPending = useCallback(
