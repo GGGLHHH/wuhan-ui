@@ -45,7 +45,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           <header className="bg-background flex h-16 shrink-0 items-center gap-2 border-b px-4">
             <SidebarTrigger className="-ml-1" />
             <FullscreenTrigger />
-            <Separator className="mr-2 h-4" orientation="vertical" />
+            <Separator className="mr-2 h-full" orientation="vertical" />
             <BreadcrumbNav />
             <div className="ml-auto flex items-center gap-1">
               <ThemeToggle />
