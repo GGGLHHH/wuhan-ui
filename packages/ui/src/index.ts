@@ -10,6 +10,7 @@ export * from './hooks/use-mobile'
 // components
 export * from './components/Aurora'
 export { default as Aurora } from './components/Aurora'
+export * from './components/LoadingPage'
 export * from './components/Silk'
 export { default as Silk } from './components/Silk'
 export * from './components/ui/accordion'
