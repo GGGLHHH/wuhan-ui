@@ -31,7 +31,7 @@ catalog:
   react-dom: ^19.2.4
   react-resizable-panels: ^4.7.3
   recharts: ^2.15.4
-  shadcn: ^4.0.8
+  shadcn: ^4.1.0
   sonner: ^2.0.7
   tailwind-merge: ^3.5.0
   tailwindcss: ^4.2.2
@@ -43,7 +43,6 @@ catalog:
   vite: npm:@voidzero-dev/vite-plus-core@0.1.13
   vite-plus: 0.1.13
   vitest: npm:@voidzero-dev/vite-plus-test@0.1.13
-catalogMode: strict
 cleanupUnusedCatalogs: true
 onlyBuiltDependencies:
   - esbuild
