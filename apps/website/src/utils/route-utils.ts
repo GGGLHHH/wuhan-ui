@@ -1,4 +1,3 @@
-import type { ITabsItem } from '@/components/tabs/types'
 import type { FileRouteTypes } from '@/routeTree.gen'
 import { routeTree } from '@/routeTree.gen'
 import type { StaticDataRouteOption } from '@tanstack/react-router'
@@ -11,7 +10,6 @@ export type IMenuItem = StaticDataRouteOption & {
   titleParams?: Record<string, unknown>
   id: FileRouteTypes['id']
   children?: IMenuItem[]
-  fixedTab?: boolean
   titleKey?: string
   icon?: LucideIcon
   group?: string
@@ -106,7 +104,6 @@ function convertRouteToMenuItem(route: RouteTreeType): IMenuItem | null {
     icon: staticData.icon || DEFAULT_ICON,
     order: staticData.order,
     id: route.id,
-    fixedTab: staticData.fixedTab,
     group: staticData.group,
   }
 
@@ -120,48 +117,6 @@ function convertRouteToMenuItem(route: RouteTreeType): IMenuItem | null {
   }
 
   return menuItem
-}
-
-/**
- * Get all fixed tabs from the route tree
- * Fixed tabs are tabs that cannot be closed and are shown on initialization
- */
-export function getFixedTabs(): ITabsItem[] {
-  const allMenuItems = buildMenuItems()
-
-  function collectFixedTabs(items: IMenuItem[]): IMenuItem[] {
-    return flatMap(items, (item) => {
-      const fixed = item.fixedTab ? [item] : []
-      const childFixed = item.children ? collectFixedTabs(item.children) : []
-      return [...fixed, ...childFixed]
-    })
-  }
-
-  const fixedTabs = collectFixedTabs(allMenuItems)
-  return orderBy(fixedTabs, [(item) => item.order ?? DEFAULT_ORDER], ['asc']) as ITabsItem[]
-}
-
-/**
- * Build a map of route id → icon from the menu items tree
- * Used to restore non-serializable icon references after loading from localStorage
- */
-export function buildIconMap(): Map<string, LucideIcon> {
-  const allMenuItems = buildMenuItems()
-  const map = new Map<string, LucideIcon>()
-
-  function collect(items: IMenuItem[]) {
-    for (const item of items) {
-      if (item.icon) {
-        map.set(item.id, item.icon)
-      }
-      if (item.children) {
-        collect(item.children)
-      }
-    }
-  }
-
-  collect(allMenuItems)
-  return map
 }
 
 /**

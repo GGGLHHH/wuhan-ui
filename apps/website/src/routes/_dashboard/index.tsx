@@ -6,7 +6,6 @@ export const Route = createFileRoute('/_dashboard/')({
     title: 'Home',
     icon: Home,
     order: 1,
-    fixedTab: true,
   },
   component: HomePage,
 })
