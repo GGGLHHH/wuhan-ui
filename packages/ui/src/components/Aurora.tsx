@@ -107,7 +107,7 @@ void main() {
 }
 `
 
-interface AuroraProps {
+export interface AuroraProps {
   colorStops?: string[]
   amplitude?: number
   blend?: number

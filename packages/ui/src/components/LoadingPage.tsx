@@ -1,5 +1,8 @@
 import { DotLottieReact as DR, type DotLottieReactProps } from '@lottiefiles/dotlottie-react'
-export const LoadingPage = (props: DotLottieReactProps) => {
+
+export type LoadingPageProps = DotLottieReactProps
+
+export const LoadingPage = (props: LoadingPageProps) => {
   return (
     <DR
       {...props}
