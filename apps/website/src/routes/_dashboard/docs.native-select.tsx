@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/native-select')({
   staticData: {
     title: 'NativeSelect',
     icon: ChevronDown,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

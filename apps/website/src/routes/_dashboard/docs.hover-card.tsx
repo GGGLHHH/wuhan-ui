@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/hover-card')({
   staticData: {
     title: 'HoverCard',
     icon: PanelTop,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/select')({
   staticData: {
     title: 'Select',
     icon: ChevronDown,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/dialog')({
   staticData: {
     title: 'Dialog',
     icon: PanelTopIcon,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

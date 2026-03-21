@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/input-otp')({
   staticData: {
     title: 'InputOTP',
     icon: KeyRound,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

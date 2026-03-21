@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/alert-dialog')({
   staticData: {
     title: 'AlertDialog',
     icon: TriangleAlert,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

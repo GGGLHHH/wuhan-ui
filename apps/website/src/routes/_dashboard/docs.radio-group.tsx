@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/radio-group')({
   staticData: {
     title: 'RadioGroup',
     icon: CircleDot,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

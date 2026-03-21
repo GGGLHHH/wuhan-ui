@@ -18,12 +18,10 @@ import { Route as DashboardDocsTextareaRouteImport } from './routes/_dashboard/d
 import { Route as DashboardDocsTabsRouteImport } from './routes/_dashboard/docs.tabs'
 import { Route as DashboardDocsTableRouteImport } from './routes/_dashboard/docs.table'
 import { Route as DashboardDocsSwitchRouteImport } from './routes/_dashboard/docs.switch'
-import { Route as DashboardDocsStaggerRevealRouteImport } from './routes/_dashboard/docs.stagger-reveal'
 import { Route as DashboardDocsSpinnerRouteImport } from './routes/_dashboard/docs.spinner'
 import { Route as DashboardDocsSonnerRouteImport } from './routes/_dashboard/docs.sonner'
 import { Route as DashboardDocsSliderRouteImport } from './routes/_dashboard/docs.slider'
 import { Route as DashboardDocsSkeletonRouteImport } from './routes/_dashboard/docs.skeleton'
-import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
 import { Route as DashboardDocsSidebarRouteImport } from './routes/_dashboard/docs.sidebar'
 import { Route as DashboardDocsSheetRouteImport } from './routes/_dashboard/docs.sheet'
 import { Route as DashboardDocsSeparatorRouteImport } from './routes/_dashboard/docs.separator'
@@ -37,7 +35,6 @@ import { Route as DashboardDocsPaginationRouteImport } from './routes/_dashboard
 import { Route as DashboardDocsNavigationMenuRouteImport } from './routes/_dashboard/docs.navigation-menu'
 import { Route as DashboardDocsNativeSelectRouteImport } from './routes/_dashboard/docs.native-select'
 import { Route as DashboardDocsMenubarRouteImport } from './routes/_dashboard/docs.menubar'
-import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
 import { Route as DashboardDocsLabelRouteImport } from './routes/_dashboard/docs.label'
 import { Route as DashboardDocsKbdRouteImport } from './routes/_dashboard/docs.kbd'
 import { Route as DashboardDocsItemRouteImport } from './routes/_dashboard/docs.item'
@@ -65,11 +62,14 @@ import { Route as DashboardDocsButtonRouteImport } from './routes/_dashboard/doc
 import { Route as DashboardDocsBreadcrumbRouteImport } from './routes/_dashboard/docs.breadcrumb'
 import { Route as DashboardDocsBadgeRouteImport } from './routes/_dashboard/docs.badge'
 import { Route as DashboardDocsAvatarRouteImport } from './routes/_dashboard/docs.avatar'
-import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
 import { Route as DashboardDocsAspectRatioRouteImport } from './routes/_dashboard/docs.aspect-ratio'
 import { Route as DashboardDocsAlertDialogRouteImport } from './routes/_dashboard/docs.alert-dialog'
 import { Route as DashboardDocsAlertRouteImport } from './routes/_dashboard/docs.alert'
 import { Route as DashboardDocsAccordionRouteImport } from './routes/_dashboard/docs.accordion'
+import { Route as DashboardCoustomCoustomStaggerRevealRouteImport } from './routes/_dashboard/_coustom/coustom.stagger-reveal'
+import { Route as DashboardCoustomCoustomSilkRouteImport } from './routes/_dashboard/_coustom/coustom.silk'
+import { Route as DashboardCoustomCoustomLoadingPageRouteImport } from './routes/_dashboard/_coustom/coustom.loading-page'
+import { Route as DashboardCoustomCoustomAuroraRouteImport } from './routes/_dashboard/_coustom/coustom.aurora'
 
 const DashboardRoute = DashboardRouteImport.update({
   id: '/_dashboard',
@@ -116,12 +116,6 @@ const DashboardDocsSwitchRoute = DashboardDocsSwitchRouteImport.update({
   path: '/docs/switch',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsStaggerRevealRoute =
-  DashboardDocsStaggerRevealRouteImport.update({
-    id: '/docs/stagger-reveal',
-    path: '/docs/stagger-reveal',
-    getParentRoute: () => DashboardRoute,
-  } as any)
 const DashboardDocsSpinnerRoute = DashboardDocsSpinnerRouteImport.update({
   id: '/docs/spinner',
   path: '/docs/spinner',
@@ -140,11 +134,6 @@ const DashboardDocsSliderRoute = DashboardDocsSliderRouteImport.update({
 const DashboardDocsSkeletonRoute = DashboardDocsSkeletonRouteImport.update({
   id: '/docs/skeleton',
   path: '/docs/skeleton',
-  getParentRoute: () => DashboardRoute,
-} as any)
-const DashboardDocsSilkRoute = DashboardDocsSilkRouteImport.update({
-  id: '/docs/silk',
-  path: '/docs/silk',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardDocsSidebarRoute = DashboardDocsSidebarRouteImport.update({
@@ -214,12 +203,6 @@ const DashboardDocsMenubarRoute = DashboardDocsMenubarRouteImport.update({
   path: '/docs/menubar',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsLoadingPageRoute =
-  DashboardDocsLoadingPageRouteImport.update({
-    id: '/docs/loading-page',
-    path: '/docs/loading-page',
-    getParentRoute: () => DashboardRoute,
-  } as any)
 const DashboardDocsLabelRoute = DashboardDocsLabelRouteImport.update({
   id: '/docs/label',
   path: '/docs/label',
@@ -359,11 +342,6 @@ const DashboardDocsAvatarRoute = DashboardDocsAvatarRouteImport.update({
   path: '/docs/avatar',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsAuroraRoute = DashboardDocsAuroraRouteImport.update({
-  id: '/docs/aurora',
-  path: '/docs/aurora',
-  getParentRoute: () => DashboardRoute,
-} as any)
 const DashboardDocsAspectRatioRoute =
   DashboardDocsAspectRatioRouteImport.update({
     id: '/docs/aspect-ratio',
@@ -386,6 +364,30 @@ const DashboardDocsAccordionRoute = DashboardDocsAccordionRouteImport.update({
   path: '/docs/accordion',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardCoustomCoustomStaggerRevealRoute =
+  DashboardCoustomCoustomStaggerRevealRouteImport.update({
+    id: '/_coustom/coustom/stagger-reveal',
+    path: '/coustom/stagger-reveal',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardCoustomCoustomSilkRoute =
+  DashboardCoustomCoustomSilkRouteImport.update({
+    id: '/_coustom/coustom/silk',
+    path: '/coustom/silk',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardCoustomCoustomLoadingPageRoute =
+  DashboardCoustomCoustomLoadingPageRouteImport.update({
+    id: '/_coustom/coustom/loading-page',
+    path: '/coustom/loading-page',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardCoustomCoustomAuroraRoute =
+  DashboardCoustomCoustomAuroraRouteImport.update({
+    id: '/_coustom/coustom/aurora',
+    path: '/coustom/aurora',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof DashboardIndexRoute
@@ -393,7 +395,6 @@ export interface FileRoutesByFullPath {
   '/docs/alert': typeof DashboardDocsAlertRoute
   '/docs/alert-dialog': typeof DashboardDocsAlertDialogRoute
   '/docs/aspect-ratio': typeof DashboardDocsAspectRatioRoute
-  '/docs/aurora': typeof DashboardDocsAuroraRoute
   '/docs/avatar': typeof DashboardDocsAvatarRoute
   '/docs/badge': typeof DashboardDocsBadgeRoute
   '/docs/breadcrumb': typeof DashboardDocsBreadcrumbRoute
@@ -421,7 +422,6 @@ export interface FileRoutesByFullPath {
   '/docs/item': typeof DashboardDocsItemRoute
   '/docs/kbd': typeof DashboardDocsKbdRoute
   '/docs/label': typeof DashboardDocsLabelRoute
-  '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/menubar': typeof DashboardDocsMenubarRoute
   '/docs/native-select': typeof DashboardDocsNativeSelectRoute
   '/docs/navigation-menu': typeof DashboardDocsNavigationMenuRoute
@@ -435,12 +435,10 @@ export interface FileRoutesByFullPath {
   '/docs/separator': typeof DashboardDocsSeparatorRoute
   '/docs/sheet': typeof DashboardDocsSheetRoute
   '/docs/sidebar': typeof DashboardDocsSidebarRoute
-  '/docs/silk': typeof DashboardDocsSilkRoute
   '/docs/skeleton': typeof DashboardDocsSkeletonRoute
   '/docs/slider': typeof DashboardDocsSliderRoute
   '/docs/sonner': typeof DashboardDocsSonnerRoute
   '/docs/spinner': typeof DashboardDocsSpinnerRoute
-  '/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
   '/docs/switch': typeof DashboardDocsSwitchRoute
   '/docs/table': typeof DashboardDocsTableRoute
   '/docs/tabs': typeof DashboardDocsTabsRoute
@@ -448,6 +446,10 @@ export interface FileRoutesByFullPath {
   '/docs/toggle': typeof DashboardDocsToggleRoute
   '/docs/toggle-group': typeof DashboardDocsToggleGroupRoute
   '/docs/tooltip': typeof DashboardDocsTooltipRoute
+  '/coustom/aurora': typeof DashboardCoustomCoustomAuroraRoute
+  '/coustom/loading-page': typeof DashboardCoustomCoustomLoadingPageRoute
+  '/coustom/silk': typeof DashboardCoustomCoustomSilkRoute
+  '/coustom/stagger-reveal': typeof DashboardCoustomCoustomStaggerRevealRoute
 }
 export interface FileRoutesByTo {
   '/': typeof DashboardIndexRoute
@@ -455,7 +457,6 @@ export interface FileRoutesByTo {
   '/docs/alert': typeof DashboardDocsAlertRoute
   '/docs/alert-dialog': typeof DashboardDocsAlertDialogRoute
   '/docs/aspect-ratio': typeof DashboardDocsAspectRatioRoute
-  '/docs/aurora': typeof DashboardDocsAuroraRoute
   '/docs/avatar': typeof DashboardDocsAvatarRoute
   '/docs/badge': typeof DashboardDocsBadgeRoute
   '/docs/breadcrumb': typeof DashboardDocsBreadcrumbRoute
@@ -483,7 +484,6 @@ export interface FileRoutesByTo {
   '/docs/item': typeof DashboardDocsItemRoute
   '/docs/kbd': typeof DashboardDocsKbdRoute
   '/docs/label': typeof DashboardDocsLabelRoute
-  '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/menubar': typeof DashboardDocsMenubarRoute
   '/docs/native-select': typeof DashboardDocsNativeSelectRoute
   '/docs/navigation-menu': typeof DashboardDocsNavigationMenuRoute
@@ -497,12 +497,10 @@ export interface FileRoutesByTo {
   '/docs/separator': typeof DashboardDocsSeparatorRoute
   '/docs/sheet': typeof DashboardDocsSheetRoute
   '/docs/sidebar': typeof DashboardDocsSidebarRoute
-  '/docs/silk': typeof DashboardDocsSilkRoute
   '/docs/skeleton': typeof DashboardDocsSkeletonRoute
   '/docs/slider': typeof DashboardDocsSliderRoute
   '/docs/sonner': typeof DashboardDocsSonnerRoute
   '/docs/spinner': typeof DashboardDocsSpinnerRoute
-  '/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
   '/docs/switch': typeof DashboardDocsSwitchRoute
   '/docs/table': typeof DashboardDocsTableRoute
   '/docs/tabs': typeof DashboardDocsTabsRoute
@@ -510,6 +508,10 @@ export interface FileRoutesByTo {
   '/docs/toggle': typeof DashboardDocsToggleRoute
   '/docs/toggle-group': typeof DashboardDocsToggleGroupRoute
   '/docs/tooltip': typeof DashboardDocsTooltipRoute
+  '/coustom/aurora': typeof DashboardCoustomCoustomAuroraRoute
+  '/coustom/loading-page': typeof DashboardCoustomCoustomLoadingPageRoute
+  '/coustom/silk': typeof DashboardCoustomCoustomSilkRoute
+  '/coustom/stagger-reveal': typeof DashboardCoustomCoustomStaggerRevealRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -519,7 +521,6 @@ export interface FileRoutesById {
   '/_dashboard/docs/alert': typeof DashboardDocsAlertRoute
   '/_dashboard/docs/alert-dialog': typeof DashboardDocsAlertDialogRoute
   '/_dashboard/docs/aspect-ratio': typeof DashboardDocsAspectRatioRoute
-  '/_dashboard/docs/aurora': typeof DashboardDocsAuroraRoute
   '/_dashboard/docs/avatar': typeof DashboardDocsAvatarRoute
   '/_dashboard/docs/badge': typeof DashboardDocsBadgeRoute
   '/_dashboard/docs/breadcrumb': typeof DashboardDocsBreadcrumbRoute
@@ -547,7 +548,6 @@ export interface FileRoutesById {
   '/_dashboard/docs/item': typeof DashboardDocsItemRoute
   '/_dashboard/docs/kbd': typeof DashboardDocsKbdRoute
   '/_dashboard/docs/label': typeof DashboardDocsLabelRoute
-  '/_dashboard/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/_dashboard/docs/menubar': typeof DashboardDocsMenubarRoute
   '/_dashboard/docs/native-select': typeof DashboardDocsNativeSelectRoute
   '/_dashboard/docs/navigation-menu': typeof DashboardDocsNavigationMenuRoute
@@ -561,12 +561,10 @@ export interface FileRoutesById {
   '/_dashboard/docs/separator': typeof DashboardDocsSeparatorRoute
   '/_dashboard/docs/sheet': typeof DashboardDocsSheetRoute
   '/_dashboard/docs/sidebar': typeof DashboardDocsSidebarRoute
-  '/_dashboard/docs/silk': typeof DashboardDocsSilkRoute
   '/_dashboard/docs/skeleton': typeof DashboardDocsSkeletonRoute
   '/_dashboard/docs/slider': typeof DashboardDocsSliderRoute
   '/_dashboard/docs/sonner': typeof DashboardDocsSonnerRoute
   '/_dashboard/docs/spinner': typeof DashboardDocsSpinnerRoute
-  '/_dashboard/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
   '/_dashboard/docs/switch': typeof DashboardDocsSwitchRoute
   '/_dashboard/docs/table': typeof DashboardDocsTableRoute
   '/_dashboard/docs/tabs': typeof DashboardDocsTabsRoute
@@ -574,6 +572,10 @@ export interface FileRoutesById {
   '/_dashboard/docs/toggle': typeof DashboardDocsToggleRoute
   '/_dashboard/docs/toggle-group': typeof DashboardDocsToggleGroupRoute
   '/_dashboard/docs/tooltip': typeof DashboardDocsTooltipRoute
+  '/_dashboard/_coustom/coustom/aurora': typeof DashboardCoustomCoustomAuroraRoute
+  '/_dashboard/_coustom/coustom/loading-page': typeof DashboardCoustomCoustomLoadingPageRoute
+  '/_dashboard/_coustom/coustom/silk': typeof DashboardCoustomCoustomSilkRoute
+  '/_dashboard/_coustom/coustom/stagger-reveal': typeof DashboardCoustomCoustomStaggerRevealRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -583,7 +585,6 @@ export interface FileRouteTypes {
     | '/docs/alert'
     | '/docs/alert-dialog'
     | '/docs/aspect-ratio'
-    | '/docs/aurora'
     | '/docs/avatar'
     | '/docs/badge'
     | '/docs/breadcrumb'
@@ -611,7 +612,6 @@ export interface FileRouteTypes {
     | '/docs/item'
     | '/docs/kbd'
     | '/docs/label'
-    | '/docs/loading-page'
     | '/docs/menubar'
     | '/docs/native-select'
     | '/docs/navigation-menu'
@@ -625,12 +625,10 @@ export interface FileRouteTypes {
     | '/docs/separator'
     | '/docs/sheet'
     | '/docs/sidebar'
-    | '/docs/silk'
     | '/docs/skeleton'
     | '/docs/slider'
     | '/docs/sonner'
     | '/docs/spinner'
-    | '/docs/stagger-reveal'
     | '/docs/switch'
     | '/docs/table'
     | '/docs/tabs'
@@ -638,6 +636,10 @@ export interface FileRouteTypes {
     | '/docs/toggle'
     | '/docs/toggle-group'
     | '/docs/tooltip'
+    | '/coustom/aurora'
+    | '/coustom/loading-page'
+    | '/coustom/silk'
+    | '/coustom/stagger-reveal'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -645,7 +647,6 @@ export interface FileRouteTypes {
     | '/docs/alert'
     | '/docs/alert-dialog'
     | '/docs/aspect-ratio'
-    | '/docs/aurora'
     | '/docs/avatar'
     | '/docs/badge'
     | '/docs/breadcrumb'
@@ -673,7 +674,6 @@ export interface FileRouteTypes {
     | '/docs/item'
     | '/docs/kbd'
     | '/docs/label'
-    | '/docs/loading-page'
     | '/docs/menubar'
     | '/docs/native-select'
     | '/docs/navigation-menu'
@@ -687,12 +687,10 @@ export interface FileRouteTypes {
     | '/docs/separator'
     | '/docs/sheet'
     | '/docs/sidebar'
-    | '/docs/silk'
     | '/docs/skeleton'
     | '/docs/slider'
     | '/docs/sonner'
     | '/docs/spinner'
-    | '/docs/stagger-reveal'
     | '/docs/switch'
     | '/docs/table'
     | '/docs/tabs'
@@ -700,6 +698,10 @@ export interface FileRouteTypes {
     | '/docs/toggle'
     | '/docs/toggle-group'
     | '/docs/tooltip'
+    | '/coustom/aurora'
+    | '/coustom/loading-page'
+    | '/coustom/silk'
+    | '/coustom/stagger-reveal'
   id:
     | '__root__'
     | '/_dashboard'
@@ -708,7 +710,6 @@ export interface FileRouteTypes {
     | '/_dashboard/docs/alert'
     | '/_dashboard/docs/alert-dialog'
     | '/_dashboard/docs/aspect-ratio'
-    | '/_dashboard/docs/aurora'
     | '/_dashboard/docs/avatar'
     | '/_dashboard/docs/badge'
     | '/_dashboard/docs/breadcrumb'
@@ -736,7 +737,6 @@ export interface FileRouteTypes {
     | '/_dashboard/docs/item'
     | '/_dashboard/docs/kbd'
     | '/_dashboard/docs/label'
-    | '/_dashboard/docs/loading-page'
     | '/_dashboard/docs/menubar'
     | '/_dashboard/docs/native-select'
     | '/_dashboard/docs/navigation-menu'
@@ -750,12 +750,10 @@ export interface FileRouteTypes {
     | '/_dashboard/docs/separator'
     | '/_dashboard/docs/sheet'
     | '/_dashboard/docs/sidebar'
-    | '/_dashboard/docs/silk'
     | '/_dashboard/docs/skeleton'
     | '/_dashboard/docs/slider'
     | '/_dashboard/docs/sonner'
     | '/_dashboard/docs/spinner'
-    | '/_dashboard/docs/stagger-reveal'
     | '/_dashboard/docs/switch'
     | '/_dashboard/docs/table'
     | '/_dashboard/docs/tabs'
@@ -763,6 +761,10 @@ export interface FileRouteTypes {
     | '/_dashboard/docs/toggle'
     | '/_dashboard/docs/toggle-group'
     | '/_dashboard/docs/tooltip'
+    | '/_dashboard/_coustom/coustom/aurora'
+    | '/_dashboard/_coustom/coustom/loading-page'
+    | '/_dashboard/_coustom/coustom/silk'
+    | '/_dashboard/_coustom/coustom/stagger-reveal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -834,13 +836,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDocsSwitchRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/_dashboard/docs/stagger-reveal': {
-      id: '/_dashboard/docs/stagger-reveal'
-      path: '/docs/stagger-reveal'
-      fullPath: '/docs/stagger-reveal'
-      preLoaderRoute: typeof DashboardDocsStaggerRevealRouteImport
-      parentRoute: typeof DashboardRoute
-    }
     '/_dashboard/docs/spinner': {
       id: '/_dashboard/docs/spinner'
       path: '/docs/spinner'
@@ -867,13 +862,6 @@ declare module '@tanstack/react-router' {
       path: '/docs/skeleton'
       fullPath: '/docs/skeleton'
       preLoaderRoute: typeof DashboardDocsSkeletonRouteImport
-      parentRoute: typeof DashboardRoute
-    }
-    '/_dashboard/docs/silk': {
-      id: '/_dashboard/docs/silk'
-      path: '/docs/silk'
-      fullPath: '/docs/silk'
-      preLoaderRoute: typeof DashboardDocsSilkRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/docs/sidebar': {
@@ -965,13 +953,6 @@ declare module '@tanstack/react-router' {
       path: '/docs/menubar'
       fullPath: '/docs/menubar'
       preLoaderRoute: typeof DashboardDocsMenubarRouteImport
-      parentRoute: typeof DashboardRoute
-    }
-    '/_dashboard/docs/loading-page': {
-      id: '/_dashboard/docs/loading-page'
-      path: '/docs/loading-page'
-      fullPath: '/docs/loading-page'
-      preLoaderRoute: typeof DashboardDocsLoadingPageRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/docs/label': {
@@ -1163,13 +1144,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDocsAvatarRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/_dashboard/docs/aurora': {
-      id: '/_dashboard/docs/aurora'
-      path: '/docs/aurora'
-      fullPath: '/docs/aurora'
-      preLoaderRoute: typeof DashboardDocsAuroraRouteImport
-      parentRoute: typeof DashboardRoute
-    }
     '/_dashboard/docs/aspect-ratio': {
       id: '/_dashboard/docs/aspect-ratio'
       path: '/docs/aspect-ratio'
@@ -1198,6 +1172,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDocsAccordionRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/_coustom/coustom/stagger-reveal': {
+      id: '/_dashboard/_coustom/coustom/stagger-reveal'
+      path: '/coustom/stagger-reveal'
+      fullPath: '/coustom/stagger-reveal'
+      preLoaderRoute: typeof DashboardCoustomCoustomStaggerRevealRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/_coustom/coustom/silk': {
+      id: '/_dashboard/_coustom/coustom/silk'
+      path: '/coustom/silk'
+      fullPath: '/coustom/silk'
+      preLoaderRoute: typeof DashboardCoustomCoustomSilkRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/_coustom/coustom/loading-page': {
+      id: '/_dashboard/_coustom/coustom/loading-page'
+      path: '/coustom/loading-page'
+      fullPath: '/coustom/loading-page'
+      preLoaderRoute: typeof DashboardCoustomCoustomLoadingPageRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/_coustom/coustom/aurora': {
+      id: '/_dashboard/_coustom/coustom/aurora'
+      path: '/coustom/aurora'
+      fullPath: '/coustom/aurora'
+      preLoaderRoute: typeof DashboardCoustomCoustomAuroraRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
@@ -1207,7 +1209,6 @@ interface DashboardRouteChildren {
   DashboardDocsAlertRoute: typeof DashboardDocsAlertRoute
   DashboardDocsAlertDialogRoute: typeof DashboardDocsAlertDialogRoute
   DashboardDocsAspectRatioRoute: typeof DashboardDocsAspectRatioRoute
-  DashboardDocsAuroraRoute: typeof DashboardDocsAuroraRoute
   DashboardDocsAvatarRoute: typeof DashboardDocsAvatarRoute
   DashboardDocsBadgeRoute: typeof DashboardDocsBadgeRoute
   DashboardDocsBreadcrumbRoute: typeof DashboardDocsBreadcrumbRoute
@@ -1235,7 +1236,6 @@ interface DashboardRouteChildren {
   DashboardDocsItemRoute: typeof DashboardDocsItemRoute
   DashboardDocsKbdRoute: typeof DashboardDocsKbdRoute
   DashboardDocsLabelRoute: typeof DashboardDocsLabelRoute
-  DashboardDocsLoadingPageRoute: typeof DashboardDocsLoadingPageRoute
   DashboardDocsMenubarRoute: typeof DashboardDocsMenubarRoute
   DashboardDocsNativeSelectRoute: typeof DashboardDocsNativeSelectRoute
   DashboardDocsNavigationMenuRoute: typeof DashboardDocsNavigationMenuRoute
@@ -1249,12 +1249,10 @@ interface DashboardRouteChildren {
   DashboardDocsSeparatorRoute: typeof DashboardDocsSeparatorRoute
   DashboardDocsSheetRoute: typeof DashboardDocsSheetRoute
   DashboardDocsSidebarRoute: typeof DashboardDocsSidebarRoute
-  DashboardDocsSilkRoute: typeof DashboardDocsSilkRoute
   DashboardDocsSkeletonRoute: typeof DashboardDocsSkeletonRoute
   DashboardDocsSliderRoute: typeof DashboardDocsSliderRoute
   DashboardDocsSonnerRoute: typeof DashboardDocsSonnerRoute
   DashboardDocsSpinnerRoute: typeof DashboardDocsSpinnerRoute
-  DashboardDocsStaggerRevealRoute: typeof DashboardDocsStaggerRevealRoute
   DashboardDocsSwitchRoute: typeof DashboardDocsSwitchRoute
   DashboardDocsTableRoute: typeof DashboardDocsTableRoute
   DashboardDocsTabsRoute: typeof DashboardDocsTabsRoute
@@ -1262,6 +1260,10 @@ interface DashboardRouteChildren {
   DashboardDocsToggleRoute: typeof DashboardDocsToggleRoute
   DashboardDocsToggleGroupRoute: typeof DashboardDocsToggleGroupRoute
   DashboardDocsTooltipRoute: typeof DashboardDocsTooltipRoute
+  DashboardCoustomCoustomAuroraRoute: typeof DashboardCoustomCoustomAuroraRoute
+  DashboardCoustomCoustomLoadingPageRoute: typeof DashboardCoustomCoustomLoadingPageRoute
+  DashboardCoustomCoustomSilkRoute: typeof DashboardCoustomCoustomSilkRoute
+  DashboardCoustomCoustomStaggerRevealRoute: typeof DashboardCoustomCoustomStaggerRevealRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
@@ -1270,7 +1272,6 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDocsAlertRoute: DashboardDocsAlertRoute,
   DashboardDocsAlertDialogRoute: DashboardDocsAlertDialogRoute,
   DashboardDocsAspectRatioRoute: DashboardDocsAspectRatioRoute,
-  DashboardDocsAuroraRoute: DashboardDocsAuroraRoute,
   DashboardDocsAvatarRoute: DashboardDocsAvatarRoute,
   DashboardDocsBadgeRoute: DashboardDocsBadgeRoute,
   DashboardDocsBreadcrumbRoute: DashboardDocsBreadcrumbRoute,
@@ -1298,7 +1299,6 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDocsItemRoute: DashboardDocsItemRoute,
   DashboardDocsKbdRoute: DashboardDocsKbdRoute,
   DashboardDocsLabelRoute: DashboardDocsLabelRoute,
-  DashboardDocsLoadingPageRoute: DashboardDocsLoadingPageRoute,
   DashboardDocsMenubarRoute: DashboardDocsMenubarRoute,
   DashboardDocsNativeSelectRoute: DashboardDocsNativeSelectRoute,
   DashboardDocsNavigationMenuRoute: DashboardDocsNavigationMenuRoute,
@@ -1312,12 +1312,10 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDocsSeparatorRoute: DashboardDocsSeparatorRoute,
   DashboardDocsSheetRoute: DashboardDocsSheetRoute,
   DashboardDocsSidebarRoute: DashboardDocsSidebarRoute,
-  DashboardDocsSilkRoute: DashboardDocsSilkRoute,
   DashboardDocsSkeletonRoute: DashboardDocsSkeletonRoute,
   DashboardDocsSliderRoute: DashboardDocsSliderRoute,
   DashboardDocsSonnerRoute: DashboardDocsSonnerRoute,
   DashboardDocsSpinnerRoute: DashboardDocsSpinnerRoute,
-  DashboardDocsStaggerRevealRoute: DashboardDocsStaggerRevealRoute,
   DashboardDocsSwitchRoute: DashboardDocsSwitchRoute,
   DashboardDocsTableRoute: DashboardDocsTableRoute,
   DashboardDocsTabsRoute: DashboardDocsTabsRoute,
@@ -1325,6 +1323,12 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDocsToggleRoute: DashboardDocsToggleRoute,
   DashboardDocsToggleGroupRoute: DashboardDocsToggleGroupRoute,
   DashboardDocsTooltipRoute: DashboardDocsTooltipRoute,
+  DashboardCoustomCoustomAuroraRoute: DashboardCoustomCoustomAuroraRoute,
+  DashboardCoustomCoustomLoadingPageRoute:
+    DashboardCoustomCoustomLoadingPageRoute,
+  DashboardCoustomCoustomSilkRoute: DashboardCoustomCoustomSilkRoute,
+  DashboardCoustomCoustomStaggerRevealRoute:
+    DashboardCoustomCoustomStaggerRevealRoute,
 }
 
 const DashboardRouteWithChildren = DashboardRoute._addFileChildren(

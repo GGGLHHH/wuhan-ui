@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/combobox')({
   staticData: {
     title: 'Combobox',
     icon: ListFilter,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

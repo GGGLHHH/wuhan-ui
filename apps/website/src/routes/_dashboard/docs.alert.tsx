@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/alert')({
   staticData: {
     title: 'Alert',
     icon: TriangleAlert,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

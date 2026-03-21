@@ -52,7 +52,7 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {menuGroups.map((group) => (
-            <CommandGroup key={group.label ?? '__default'} heading={group.label}>
+            <CommandGroup key={group.key} heading={group.label}>
               {group.items.map((item) => {
                 const Icon = item.icon
                 return (

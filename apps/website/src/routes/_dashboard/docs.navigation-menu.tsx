@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/navigation-menu')({
   staticData: {
     title: 'NavigationMenu',
     icon: Menu,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

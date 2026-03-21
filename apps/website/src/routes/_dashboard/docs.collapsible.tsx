@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/collapsible')({
   staticData: {
     title: 'Collapsible',
     icon: ChevronsUpDown,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

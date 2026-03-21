@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/tooltip')({
   staticData: {
     title: 'Tooltip',
     icon: MessageSquare,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

@@ -3,11 +3,11 @@ import Content from '@/content/docs/loading-page.mdx'
 import { createFileRoute } from '@tanstack/react-router'
 import { Loader } from 'lucide-react'
 
-export const Route = createFileRoute('/_dashboard/docs/loading-page')({
+export const Route = createFileRoute('/_dashboard/_coustom/coustom/loading-page')({
   staticData: {
-    title: 'LoadingPage',
+    title: '加载动画 LoadingPage',
     icon: Loader,
-    group: 'Components',
+    groupKey: 'customComponents',
   },
   component: () => (
     <DocsLayout>

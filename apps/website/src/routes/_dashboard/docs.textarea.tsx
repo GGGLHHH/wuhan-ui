@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/textarea')({
   staticData: {
     title: 'Textarea',
     icon: TextCursorInput,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

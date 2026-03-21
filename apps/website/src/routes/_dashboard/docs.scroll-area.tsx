@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/scroll-area')({
   staticData: {
     title: 'ScrollArea',
     icon: ScrollText,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

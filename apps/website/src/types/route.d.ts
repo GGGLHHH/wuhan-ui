@@ -9,7 +9,7 @@ declare module '@tanstack/react-router' {
     order?: number
     title?: string
     icon?: LucideIcon
-    group?: string
+    groupKey?: 'overview' | 'customComponents' | 'components'
   }
 
   interface HistoryState {

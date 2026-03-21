@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/aspect-ratio')({
   staticData: {
     title: 'AspectRatio',
     icon: Crop,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

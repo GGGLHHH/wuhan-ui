@@ -9,6 +9,7 @@ export const Route = createFileRoute('/_dashboard/')({
     title: 'Home',
     icon: Home,
     order: 1,
+    groupKey: 'overview',
   },
   component: HomePage,
 })
@@ -31,7 +32,7 @@ function HomePage() {
           <p className="text-3xl font-bold tracking-tight text-white/80 sm:text-4xl">Wuhan UI</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
-              to="/docs/aurora"
+              to="/coustom/aurora"
               className="inline-flex items-center gap-1.5 rounded-lg bg-green-400 px-5 py-2.5 text-sm font-semibold text-gray-900 transition-colors hover:bg-green-300"
             >
               Get Started

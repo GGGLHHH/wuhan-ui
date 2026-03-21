@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/switch')({
   staticData: {
     title: 'Switch',
     icon: ToggleLeft,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

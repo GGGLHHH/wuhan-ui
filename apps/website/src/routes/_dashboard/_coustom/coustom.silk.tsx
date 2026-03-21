@@ -3,11 +3,11 @@ import Content from '@/content/docs/silk.mdx'
 import { createFileRoute } from '@tanstack/react-router'
 import { Waves } from 'lucide-react'
 
-export const Route = createFileRoute('/_dashboard/docs/silk')({
+export const Route = createFileRoute('/_dashboard/_coustom/coustom/silk')({
   staticData: {
-    title: 'Silk',
+    title: '丝绸效果 Silk',
     icon: Waves,
-    group: 'Components',
+    groupKey: 'customComponents',
   },
   component: () => (
     <DocsLayout>

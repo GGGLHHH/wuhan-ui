@@ -1,3 +1,9 @@
+import {
+  DEFAULT_ROUTE_GROUP_INDEX,
+  DEFAULT_ROUTE_GROUP_KEY,
+  ROUTE_GROUPS,
+} from '@/constants/route-groups'
+import type { RouteGroupKey } from '@/constants/route-groups'
 import type { FileRouteTypes } from '@/routeTree.gen'
 import { routeTree } from '@/routeTree.gen'
 import type { StaticDataRouteOption } from '@tanstack/react-router'
@@ -12,10 +18,11 @@ export type IMenuItem = StaticDataRouteOption & {
   children?: IMenuItem[]
   titleKey?: string
   icon?: LucideIcon
-  group?: string
+  groupKey?: RouteGroupKey
 }
 
 export interface IMenuGroup {
+  key: string
   label?: string
   items: IMenuItem[]
 }
@@ -24,6 +31,11 @@ const DEFAULT_ICON: LucideIcon = CircleHelp
 const DEFAULT_ORDER = 999
 
 type RouteTreeType = typeof routeTree
+
+type ResolvedMenuGroup = {
+  appearanceIndex: number
+  groupIndex: number
+} & IMenuGroup
 
 /**
  * 从 TanStack Router 的路由树构建菜单项
@@ -104,7 +116,7 @@ function convertRouteToMenuItem(route: RouteTreeType): IMenuItem | null {
     icon: staticData.icon || DEFAULT_ICON,
     order: staticData.order,
     id: route.id,
-    group: staticData.group,
+    groupKey: staticData.groupKey,
   }
 
   // 递归处理子路由
@@ -119,27 +131,63 @@ function convertRouteToMenuItem(route: RouteTreeType): IMenuItem | null {
   return menuItem
 }
 
+function resolveMenuGroup(groupKey?: RouteGroupKey | (string & {})) {
+  if (!groupKey) {
+    return {
+      key: DEFAULT_ROUTE_GROUP_KEY,
+      label: undefined,
+      groupIndex: DEFAULT_ROUTE_GROUP_INDEX,
+    }
+  }
+
+  if (groupKey in ROUTE_GROUPS) {
+    const group = ROUTE_GROUPS[groupKey as RouteGroupKey]
+
+    return {
+      key: groupKey,
+      label: group.label,
+      groupIndex: group.groupIndex,
+    }
+  }
+
+  return {
+    key: groupKey,
+    label: groupKey,
+    groupIndex: DEFAULT_ROUTE_GROUP_INDEX,
+  }
+}
+
 /**
- * 将菜单项按 group 字段分组
- * 无 group 的项归入默认分组（label 为 undefined）
- * 保持分组出现的顺序
+ * 将菜单项按 groupKey 字段分组
+ * 无 groupKey 的项归入默认分组（label 为 undefined）
  */
 export function buildGroupedMenuItems(tree: RouteTreeType = routeTree): IMenuGroup[] {
   const items = buildMenuItems(tree)
-  const groupMap = new Map<string | undefined, IMenuItem[]>()
-  const groupOrder: (string | undefined)[] = []
+  const groupMap = new Map<string, ResolvedMenuGroup>()
 
   for (const item of items) {
-    const key = item.group
-    if (!groupMap.has(key)) {
-      groupMap.set(key, [])
-      groupOrder.push(key)
+    const resolvedGroup = resolveMenuGroup(item.groupKey)
+    const existingGroup = groupMap.get(resolvedGroup.key)
+
+    if (existingGroup) {
+      existingGroup.items.push(item)
+      continue
     }
-    groupMap.get(key)!.push(item)
+
+    groupMap.set(resolvedGroup.key, {
+      ...resolvedGroup,
+      appearanceIndex: groupMap.size,
+      items: [item],
+    })
   }
 
-  return groupOrder.map((label) => ({
+  return orderBy(
+    Array.from(groupMap.values()),
+    [(group) => group.groupIndex, (group) => group.appearanceIndex],
+    ['asc', 'asc'],
+  ).map(({ key, label, items }) => ({
+    key,
     label,
-    items: groupMap.get(label)!,
+    items,
   }))
 }

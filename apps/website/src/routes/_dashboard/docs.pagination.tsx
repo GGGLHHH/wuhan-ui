@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/pagination')({
   staticData: {
     title: 'Pagination',
     icon: ChevronsLeftRight,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/separator')({
   staticData: {
     title: 'Separator',
     icon: Minus,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

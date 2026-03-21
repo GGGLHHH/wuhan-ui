@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/popover')({
   staticData: {
     title: 'Popover',
     icon: MessageSquare,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/carousel')({
   staticData: {
     title: 'Carousel',
     icon: GalleryHorizontal,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

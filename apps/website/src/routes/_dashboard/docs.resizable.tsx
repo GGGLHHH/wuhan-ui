@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/resizable')({
   staticData: {
     title: 'Resizable',
     icon: GripVertical,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

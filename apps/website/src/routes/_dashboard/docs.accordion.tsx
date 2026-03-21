@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/accordion')({
   staticData: {
     title: 'Accordion',
     icon: ListCollapse,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

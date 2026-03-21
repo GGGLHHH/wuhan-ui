@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/input-group')({
   staticData: {
     title: 'InputGroup',
     icon: Group,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

@@ -3,11 +3,11 @@ import Content from '@/content/docs/stagger-reveal.mdx'
 import { createFileRoute } from '@tanstack/react-router'
 import { Layers } from 'lucide-react'
 
-export const Route = createFileRoute('/_dashboard/docs/stagger-reveal')({
+export const Route = createFileRoute('/_dashboard/_coustom/coustom/stagger-reveal')({
   staticData: {
-    title: 'StaggerReveal',
+    title: '交错揭示 StaggerReveal',
     icon: Layers,
-    group: 'Components',
+    groupKey: 'customComponents',
   },
   component: () => (
     <DocsLayout>

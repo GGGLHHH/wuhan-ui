@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/context-menu')({
   staticData: {
     title: 'ContextMenu',
     icon: MousePointerClick,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

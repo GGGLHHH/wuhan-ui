@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/toggle-group')({
   staticData: {
     title: 'ToggleGroup',
     icon: Group,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

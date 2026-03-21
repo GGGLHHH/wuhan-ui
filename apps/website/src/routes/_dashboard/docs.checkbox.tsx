@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/checkbox')({
   staticData: {
     title: 'Checkbox',
     icon: SquareCheck,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

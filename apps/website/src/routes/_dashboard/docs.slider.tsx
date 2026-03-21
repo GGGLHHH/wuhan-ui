@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/slider')({
   staticData: {
     title: 'Slider',
     icon: SlidersHorizontal,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

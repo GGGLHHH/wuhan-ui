@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/spinner')({
   staticData: {
     title: 'Spinner',
     icon: LoaderCircle,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

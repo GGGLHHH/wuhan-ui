@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/calendar')({
   staticData: {
     title: 'Calendar',
     icon: CalendarDays,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>

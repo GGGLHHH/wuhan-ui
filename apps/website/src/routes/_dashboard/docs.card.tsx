@@ -7,7 +7,7 @@ export const Route = createFileRoute('/_dashboard/docs/card')({
   staticData: {
     title: 'Card',
     icon: CreditCard,
-    group: 'Components',
+    groupKey: 'components',
   },
   component: () => (
     <DocsLayout>
