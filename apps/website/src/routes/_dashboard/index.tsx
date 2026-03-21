@@ -1,7 +1,7 @@
 import { CodeBlock } from '@/components/home/code-block'
 import { InstallTabs } from '@/components/home/install-tabs'
 import LoadingPageDemoSource from '@/registry/examples/loading-page-demo.tsx?raw'
-import { Aurora } from '@gedatou/ui'
+import { Aurora, StaggerReveal } from '@gedatou/ui'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, Home } from 'lucide-react'
 export const Route = createFileRoute('/_dashboard/')({
@@ -15,9 +15,9 @@ export const Route = createFileRoute('/_dashboard/')({
 
 function HomePage() {
   return (
-    <div className="-m-8">
+    <StaggerReveal className="flex flex-col gap-8">
       {/* Hero */}
-      <div className="relative flex min-h-90 items-center justify-center overflow-hidden">
+      <div className="relative -mx-8 -mt-8 flex min-h-90 items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Aurora speed={0.6} amplitude={0.8} blend={0.6} />
         </div>
@@ -42,21 +42,19 @@ function HomePage() {
       </div>
 
       {/* Content */}
-      <div className="mx-auto max-w-2xl space-y-12 px-8 py-12">
-        {/* Install */}
-        <section>
-          <h2 className="text-xl font-bold">安装</h2>
-          <InstallTabs className="mt-4" />
-          <p className="text-muted-foreground mt-4 text-sm">然后在入口文件中引入样式：</p>
-          <CodeBlock code="import '@gedatou/ui/styles.css'" className="mt-2" />
-        </section>
+      {/* Install */}
+      <section>
+        <h2 className="text-xl font-bold">安装</h2>
+        <InstallTabs className="mt-4" />
+        <p className="text-muted-foreground mt-4 text-sm">然后在入口文件中引入样式：</p>
+        <CodeBlock code="import '@gedatou/ui/styles.css'" className="mt-2" />
+      </section>
 
-        {/* Usage */}
-        <section>
-          <h2 className="text-xl font-bold">例如:</h2>
-          <CodeBlock code={LoadingPageDemoSource} className="mt-4" />
-        </section>
-      </div>
-    </div>
+      {/* Usage */}
+      <section>
+        <h2 className="text-xl font-bold">例如:</h2>
+        <CodeBlock code={LoadingPageDemoSource} className="mt-4" />
+      </section>
+    </StaggerReveal>
   )
 }
