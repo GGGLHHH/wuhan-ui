@@ -22,3 +22,6 @@ dist-ssr
 *.sw?
 .gitnexus
 *superpowers
+
+# Ignore Ralph loop markdown files anywhere
+*ralph-loop*.md
