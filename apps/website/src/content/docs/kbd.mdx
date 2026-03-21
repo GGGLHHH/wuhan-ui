@@ -1,0 +1,60 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import KbdDemo from '@/registry/examples/kbd-demo'
+import KbdDemoSource from '@/registry/examples/kbd-demo.tsx?raw'
+
+# Kbd
+
+用于展示键盘按键或快捷键的内联组件，常用于提示用户操作快捷方式。
+
+## Import
+
+```tsx
+import { Kbd, KbdGroup } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={KbdDemoSource}>
+  <KbdDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Kbd
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'kbd'>",
+      default: '—',
+      description: '透传原生 kbd 元素支持的所有属性',
+    },
+  ]}
+/>
+
+### KbdGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '按键组容器的自定义样式类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'div'>",
+      default: '—',
+      description: '透传原生 div 元素支持的所有属性',
+    },
+  ]}
+/>

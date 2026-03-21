@@ -1,0 +1,180 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import DropdownMenuDemo from '@/registry/examples/dropdown-menu-demo'
+import DropdownMenuDemoSource from '@/registry/examples/dropdown-menu-demo.tsx?raw'
+
+# DropdownMenu
+
+下拉菜单组件，基于 Radix UI 构建，支持分组、子菜单、复选框、单选等功能。
+
+## Import
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuGroup,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuShortcut,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={DropdownMenuDemoSource}>
+  <DropdownMenuDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下菜单的打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '菜单打开状态变化时的回调',
+    },
+    {
+      prop: 'modal',
+      type: 'boolean',
+      default: 'true',
+      description: '是否以模态方式打开（阻止外部交互）',
+    },
+  ]}
+/>
+
+### DropdownMenuContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'start'",
+      description: '内容相对于触发器的对齐方式',
+    },
+    {
+      prop: 'sideOffset',
+      type: 'number',
+      default: '4',
+      description: '内容与触发器之间的距离（像素）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### DropdownMenuItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧内边距（用于对齐无图标的项）',
+    },
+    {
+      prop: 'variant',
+      type: "'default' | 'destructive'",
+      default: "'default'",
+      description: '菜单项的样式变体',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该菜单项',
+    },
+  ]}
+/>
+
+### DropdownMenuCheckboxItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'checked',
+      type: 'boolean',
+      default: 'false',
+      description: '复选框的选中状态',
+    },
+    {
+      prop: 'onCheckedChange',
+      type: '(checked: boolean) => void',
+      default: 'undefined',
+      description: '选中状态变化时的回调',
+    },
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧内边距',
+    },
+  ]}
+/>
+
+### DropdownMenuRadioItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '-',
+      description: '单选项的值',
+    },
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧内边距',
+    },
+  ]}
+/>
+
+### DropdownMenuLabel
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧内边距',
+    },
+  ]}
+/>
+
+### DropdownMenuSubTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧内边距',
+    },
+  ]}
+/>

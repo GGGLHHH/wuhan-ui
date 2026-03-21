@@ -1,0 +1,81 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import CalendarDemo from '@/registry/examples/calendar-demo'
+import CalendarDemoSource from '@/registry/examples/calendar-demo.tsx?raw'
+
+# Calendar
+
+基于 react-day-picker 封装的日历组件，支持单选、多选和范围选择模式。
+
+## Import
+
+```tsx
+import { Calendar } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={CalendarDemoSource}>
+  <CalendarDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'mode',
+      type: "'single' | 'multiple' | 'range'",
+      default: 'undefined',
+      description: '选择模式：单选、多选或范围选择',
+    },
+    {
+      prop: 'selected',
+      type: 'Date | Date[] | DateRange | undefined',
+      default: 'undefined',
+      description: '当前选中的日期',
+    },
+    {
+      prop: 'onSelect',
+      type: '(date: Date | Date[] | DateRange | undefined) => void',
+      default: 'undefined',
+      description: '日期选中时的回调函数',
+    },
+    {
+      prop: 'showOutsideDays',
+      type: 'boolean',
+      default: 'true',
+      description: '是否显示当前月份之外的日期',
+    },
+    {
+      prop: 'captionLayout',
+      type: "'label' | 'dropdown' | 'dropdown-months' | 'dropdown-years'",
+      default: "'label'",
+      description: '月份标题的布局方式',
+    },
+    {
+      prop: 'buttonVariant',
+      type: "'ghost' | 'outline' | 'default'",
+      default: "'ghost'",
+      description: '导航按钮的样式变体',
+    },
+    {
+      prop: 'locale',
+      type: 'Locale',
+      default: 'undefined',
+      description: '国际化语言配置',
+    },
+    {
+      prop: 'disabled',
+      type: 'Matcher | Matcher[]',
+      default: 'undefined',
+      description: '禁用的日期匹配规则',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

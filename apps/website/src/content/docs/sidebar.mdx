@@ -1,0 +1,108 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SidebarDemo from '@/registry/examples/sidebar-demo'
+import SidebarDemoSource from '@/registry/examples/sidebar-demo.tsx?raw'
+
+# Sidebar
+
+侧边栏导航组件，提供应用级别的导航结构。支持展开/折叠、移动端适配、图标模式等多种交互方式。
+
+## Import
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SidebarDemoSource}>
+  <SidebarDemo />
+</ComponentPreview>
+
+## API Reference
+
+### SidebarProvider
+
+<PropsTable
+  data={[
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'true',
+      description: '非受控模式下侧边栏的默认展开状态',
+    },
+    { prop: 'open', type: 'boolean', default: 'undefined', description: '受控模式下的展开状态' },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '展开状态变化时的回调',
+    },
+  ]}
+/>
+
+### Sidebar
+
+<PropsTable
+  data={[
+    { prop: 'side', type: "'left' | 'right'", default: "'left'", description: '侧边栏位置' },
+    {
+      prop: 'variant',
+      type: "'sidebar' | 'floating' | 'inset'",
+      default: "'sidebar'",
+      description: '视觉变体',
+    },
+    {
+      prop: 'collapsible',
+      type: "'offcanvas' | 'icon' | 'none'",
+      default: "'offcanvas'",
+      description: '折叠模式',
+    },
+  ]}
+/>
+
+### SidebarMenuButton
+
+<PropsTable
+  data={[
+    { prop: 'asChild', type: 'boolean', default: 'false', description: '是否将子元素作为触发器' },
+    { prop: 'isActive', type: 'boolean', default: 'false', description: '是否为激活状态' },
+    {
+      prop: 'variant',
+      type: "'default' | 'outline'",
+      default: "'default'",
+      description: '按钮变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg'",
+      default: "'default'",
+      description: '按钮尺寸',
+    },
+    {
+      prop: 'tooltip',
+      type: 'string | TooltipContentProps',
+      default: 'undefined',
+      description: '折叠时显示的工具提示',
+    },
+  ]}
+/>
+
+### SidebarGroupLabel
+
+<PropsTable
+  data={[
+    { prop: 'asChild', type: 'boolean', default: 'false', description: '是否将子元素作为标签' },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>

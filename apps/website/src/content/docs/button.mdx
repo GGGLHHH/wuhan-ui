@@ -1,0 +1,57 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ButtonDemo from '@/registry/examples/button-demo'
+import ButtonDemoSource from '@/registry/examples/button-demo.tsx?raw'
+
+# Button
+
+用于触发操作或提交交互的基础按钮组件，提供多种视觉变体与尺寸选项。
+
+## Import
+
+```tsx
+import { Button } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ButtonDemoSource}>
+  <ButtonDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'outline' | 'secondary' | 'ghost' | 'destructive' | 'link'",
+      default: "'default'",
+      description: '按钮的视觉样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'xs' | 'sm' | 'lg' | 'icon' | 'icon-xs' | 'icon-sm' | 'icon-lg'",
+      default: "'default'",
+      description: '按钮的尺寸规格',
+    },
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将样式委托给子元素渲染',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'button'>",
+      default: '—',
+      description: '透传原生 button 元素支持的所有属性',
+    },
+  ]}
+/>

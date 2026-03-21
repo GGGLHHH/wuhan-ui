@@ -1,0 +1,116 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import TooltipDemo from '@/registry/examples/tooltip-demo'
+import TooltipDemoSource from '@/registry/examples/tooltip-demo.tsx?raw'
+
+# Tooltip
+
+工具提示组件，当用户悬停或聚焦元素时显示简短的信息提示。基于 Radix UI Tooltip 构建。
+
+## Import
+
+```tsx
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={TooltipDemoSource}>
+  <TooltipDemo />
+</ComponentPreview>
+
+## API Reference
+
+### TooltipProvider
+
+<PropsTable
+  data={[
+    {
+      prop: 'delayDuration',
+      type: 'number',
+      default: '0',
+      description: '鼠标悬停后显示提示的延迟时间（毫秒）',
+    },
+    {
+      prop: 'skipDelayDuration',
+      type: 'number',
+      default: '300',
+      description: '快速切换时跳过延迟的时间窗口（毫秒）',
+    },
+    {
+      prop: 'disableHoverableContent',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁止鼠标悬停在提示内容上时保持显示',
+    },
+  ]}
+/>
+
+### Tooltip
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的显示状态',
+    },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认显示状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '显示状态变化时的回调函数',
+    },
+  ]}
+/>
+
+### TooltipTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将触发行为合并到子元素上',
+    },
+  ]}
+/>
+
+### TooltipContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'side',
+      type: "'top' | 'right' | 'bottom' | 'left'",
+      default: "'top'",
+      description: '提示内容相对于触发元素的显示方向',
+    },
+    {
+      prop: 'sideOffset',
+      type: 'number',
+      default: '0',
+      description: '提示内容与触发元素之间的偏移距离（像素）',
+    },
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'center'",
+      description: '提示内容的对齐方式',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

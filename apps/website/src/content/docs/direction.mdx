@@ -1,0 +1,56 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import DirectionDemo from '@/registry/examples/direction-demo'
+import DirectionDemoSource from '@/registry/examples/direction-demo.tsx?raw'
+
+# Direction
+
+文本方向提供者组件，基于 Radix UI 的 Direction 原语，用于控制子组件的 LTR/RTL 布局方向。
+
+## Import
+
+```tsx
+import { DirectionProvider, useDirection } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={DirectionDemoSource}>
+  <DirectionDemo />
+</ComponentPreview>
+
+## API Reference
+
+### DirectionProvider
+
+<PropsTable
+  data={[
+    {
+      prop: 'dir',
+      type: "'ltr' | 'rtl'",
+      default: 'undefined',
+      description: '文本方向',
+    },
+    {
+      prop: 'direction',
+      type: "'ltr' | 'rtl'",
+      default: 'undefined',
+      description: '文本方向（dir 的别名，优先级更高）',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '子元素',
+    },
+  ]}
+/>
+
+### useDirection
+
+返回当前上下文中的文本方向值的 Hook。
+
+```tsx
+const direction = useDirection()
+// direction: 'ltr' | 'rtl'
+```

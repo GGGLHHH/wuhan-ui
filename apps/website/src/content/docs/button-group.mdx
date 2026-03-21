@@ -1,0 +1,79 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ButtonGroupDemo from '@/registry/examples/button-group-demo'
+import ButtonGroupDemoSource from '@/registry/examples/button-group-demo.tsx?raw'
+
+# ButtonGroup
+
+将多个按钮或输入元素组合为一个视觉整体，支持水平和垂直排列。
+
+## Import
+
+```tsx
+import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ButtonGroupDemoSource}>
+  <ButtonGroupDemo />
+</ComponentPreview>
+
+## API Reference
+
+### ButtonGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'horizontal'",
+      description: '排列方向',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ButtonGroupText
+
+<PropsTable
+  data={[
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将子元素作为根元素渲染',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ButtonGroupSeparator
+
+<PropsTable
+  data={[
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'vertical'",
+      description: '分隔线方向',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+  ]}
+/>

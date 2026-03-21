@@ -1,0 +1,103 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import CollapsibleDemo from '@/registry/examples/collapsible-demo'
+import CollapsibleDemoSource from '@/registry/examples/collapsible-demo.tsx?raw'
+
+# Collapsible
+
+可折叠内容区域组件，基于 Radix UI Collapsible 构建，支持展开和收起内容。
+
+## Import
+
+```tsx
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={CollapsibleDemoSource}>
+  <CollapsibleDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Collapsible
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: '-',
+      description: '受控模式下的展开状态',
+    },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '默认是否展开',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: '-',
+      description: '展开状态变化时的回调',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用折叠功能',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### CollapsibleTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将触发行为委托给子元素',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '触发器内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### CollapsibleContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '可折叠的内容区域',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>

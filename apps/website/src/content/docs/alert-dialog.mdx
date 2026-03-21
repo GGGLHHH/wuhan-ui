@@ -1,0 +1,115 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import AlertDialogDemo from '@/registry/examples/alert-dialog-demo'
+import AlertDialogDemoSource from '@/registry/examples/alert-dialog-demo.tsx?raw'
+
+# AlertDialog
+
+模态确认对话框，用于需要用户明确确认的破坏性或重要操作。基于 Radix UI AlertDialog 构建。
+
+## Import
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={AlertDialogDemoSource}>
+  <AlertDialogDemo />
+</ComponentPreview>
+
+## API Reference
+
+### AlertDialog
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调',
+    },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认打开状态',
+    },
+  ]}
+/>
+
+### AlertDialogContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'size',
+      type: "'default' | 'sm'",
+      default: "'default'",
+      description: '对话框尺寸',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### AlertDialogAction
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'",
+      default: "'default'",
+      description: '按钮样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg' | 'icon'",
+      default: "'default'",
+      description: '按钮尺寸',
+    },
+  ]}
+/>
+
+### AlertDialogCancel
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'",
+      default: "'outline'",
+      description: '按钮样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg' | 'icon'",
+      default: "'default'",
+      description: '按钮尺寸',
+    },
+  ]}
+/>

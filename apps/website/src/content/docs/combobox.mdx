@@ -1,0 +1,341 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ComboboxDemo from '@/registry/examples/combobox-demo'
+import ComboboxDemoSource from '@/registry/examples/combobox-demo.tsx?raw'
+
+# Combobox
+
+可搜索的下拉选择组件，基于 Base UI Combobox 构建，支持筛选、清除、分组和多选标签模式。
+
+## Import
+
+```tsx
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxContent,
+  ComboboxList,
+  ComboboxItem,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxLabel,
+  ComboboxSeparator,
+  ComboboxChips,
+  ComboboxChip,
+  ComboboxChipsInput,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ComboboxDemoSource}>
+  <ComboboxDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Combobox
+
+根组件，管理选择状态和弹出行为。
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string | string[] | null',
+      default: '-',
+      description: '受控模式下当前选中的值',
+    },
+    {
+      prop: 'defaultValue',
+      type: 'string | string[] | null',
+      default: '-',
+      description: '默认选中的值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string | string[] | null) => void',
+      default: '-',
+      description: '选中值变化时的回调',
+    },
+    {
+      prop: 'multiple',
+      type: 'boolean',
+      default: 'false',
+      description: '是否允许多选',
+    },
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: '-',
+      description: '受控模式下弹出层的展开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: '-',
+      description: '弹出层展开状态变化时的回调',
+    },
+  ]}
+/>
+
+### ComboboxInput
+
+搜索输入框，内置触发按钮和清除按钮。
+
+<PropsTable
+  data={[
+    {
+      prop: 'placeholder',
+      type: 'string',
+      default: '-',
+      description: '输入框占位文本',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用输入框',
+    },
+    {
+      prop: 'showTrigger',
+      type: 'boolean',
+      default: 'true',
+      description: '是否显示下拉触发按钮',
+    },
+    {
+      prop: 'showClear',
+      type: 'boolean',
+      default: 'false',
+      description: '是否显示清除按钮',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxContent
+
+弹出层容器，包含定位和动画逻辑。
+
+<PropsTable
+  data={[
+    {
+      prop: 'side',
+      type: "'top' | 'bottom' | 'left' | 'right'",
+      default: "'bottom'",
+      description: '弹出方向',
+    },
+    {
+      prop: 'sideOffset',
+      type: 'number',
+      default: '6',
+      description: '弹出层与触发元素的间距',
+    },
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'start'",
+      description: '弹出层对齐方式',
+    },
+    {
+      prop: 'alignOffset',
+      type: 'number',
+      default: '0',
+      description: '对齐偏移量',
+    },
+    {
+      prop: 'anchor',
+      type: 'React.RefObject<HTMLElement | null>',
+      default: '-',
+      description: '自定义锚点元素（用于 Chips 模式）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxList
+
+选项列表容器。
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxItem
+
+单个选项。
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '-',
+      description: '选项的值（必填）',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '选项内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxEmpty
+
+无匹配结果时的占位内容。
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '空状态显示内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxGroup
+
+选项分组容器。
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxLabel
+
+分组标签。
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '标签内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxSeparator
+
+选项之间的分隔线。
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxChips
+
+多选标签容器，用于展示已选中的标签。
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxChip
+
+单个标签。
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '-',
+      description: '标签对应的值',
+    },
+    {
+      prop: 'showRemove',
+      type: 'boolean',
+      default: 'true',
+      description: '是否显示移除按钮',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '标签内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxChipsInput
+
+多选标签模式下的输入框。
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>

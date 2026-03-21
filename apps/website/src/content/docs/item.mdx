@@ -1,0 +1,160 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ItemDemo from '@/registry/examples/item-demo'
+import ItemDemoSource from '@/registry/examples/item-demo.tsx?raw'
+
+# Item
+
+用于构建列表项、信息项或设置项的组合式组件，支持媒体区、标题、描述和操作区等常见布局。
+
+## Import
+
+```tsx
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemHeader,
+  ItemFooter,
+  ItemMedia,
+  ItemSeparator,
+  ItemTitle,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ItemDemoSource}>
+  <ItemDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Item
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'outline' | 'muted'",
+      default: "'default'",
+      description: '列表项的视觉样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'xs'",
+      default: "'default'",
+      description: '列表项的尺寸规格',
+    },
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将样式委托给子元素渲染',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'div'>",
+      default: '—',
+      description: '透传原生 div 元素支持的所有属性',
+    },
+  ]}
+/>
+
+### ItemGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '分组容器的自定义样式类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'div'>",
+      default: '—',
+      description: '透传原生 div 元素支持的所有属性',
+    },
+  ]}
+/>
+
+### ItemMedia
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'icon' | 'image'",
+      default: "'default'",
+      description: '媒体区域的展示类型',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '媒体区域的自定义样式类名',
+    },
+  ]}
+/>
+
+### ItemTitle
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '标题区域的自定义样式类名',
+    },
+  ]}
+/>
+
+### ItemDescription
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '描述区域的自定义样式类名',
+    },
+  ]}
+/>
+
+### ItemActions
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '操作区域的自定义样式类名',
+    },
+  ]}
+/>
+
+### ItemHeader / ItemFooter / ItemContent / ItemSeparator
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '对应布局区域的自定义样式类名',
+    },
+  ]}
+/>

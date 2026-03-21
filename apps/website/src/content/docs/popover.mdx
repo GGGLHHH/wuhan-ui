@@ -1,0 +1,106 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import PopoverDemo from '@/registry/examples/popover-demo'
+import PopoverDemoSource from '@/registry/examples/popover-demo.tsx?raw'
+
+# Popover
+
+弹出框组件，点击触发器后在其附近显示浮动内容面板。基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverDescription,
+  PopoverAnchor,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={PopoverDemoSource}>
+  <PopoverDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Popover
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调',
+    },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '默认是否打开',
+    },
+  ]}
+/>
+
+### PopoverContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'center'",
+      description: '内容对齐方式',
+    },
+    {
+      prop: 'sideOffset',
+      type: 'number',
+      default: '4',
+      description: '与触发器的间距（像素）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### PopoverTitle
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### PopoverDescription
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>

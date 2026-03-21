@@ -1,0 +1,113 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import EmptyDemo from '@/registry/examples/empty-demo'
+import EmptyDemoSource from '@/registry/examples/empty-demo.tsx?raw'
+
+# Empty
+
+空状态组件，用于在列表或页面没有数据时展示占位提示信息和操作入口。
+
+## Import
+
+```tsx
+import {
+  Empty,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={EmptyDemoSource}>
+  <EmptyDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Empty
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '子元素',
+    },
+  ]}
+/>
+
+### EmptyMedia
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'icon'",
+      default: "'default'",
+      description: "媒体样式变体。'icon' 会添加圆角背景容器",
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### EmptyTitle
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '标题内容',
+    },
+  ]}
+/>
+
+### EmptyDescription
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '描述文本',
+    },
+  ]}
+/>
+
+### EmptyHeader
+
+容器组件，用于包裹 EmptyMedia、EmptyTitle 和 EmptyDescription。
+
+### EmptyContent
+
+容器组件，用于放置操作按钮等交互元素。

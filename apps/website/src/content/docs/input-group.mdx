@@ -1,0 +1,143 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import InputGroupDemo from '@/registry/examples/input-group-demo'
+import InputGroupDemoSource from '@/registry/examples/input-group-demo.tsx?raw'
+
+# InputGroup
+
+输入框组合组件，支持在输入框前后添加图标、文本、按钮等附加元素。
+
+## Import
+
+```tsx
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={InputGroupDemoSource}>
+  <InputGroupDemo />
+</ComponentPreview>
+
+## API Reference
+
+### InputGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'div'>",
+      default: '—',
+      description: '透传原生 div 元素支持的所有属性',
+    },
+  ]}
+/>
+
+### InputGroupAddon
+
+<PropsTable
+  data={[
+    {
+      prop: 'align',
+      type: "'inline-start' | 'inline-end' | 'block-start' | 'block-end'",
+      default: "'inline-start'",
+      description: '附加元素的对齐位置',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### InputGroupButton
+
+<PropsTable
+  data={[
+    {
+      prop: 'size',
+      type: "'xs' | 'sm' | 'icon-xs' | 'icon-sm'",
+      default: "'xs'",
+      description: '按钮尺寸',
+    },
+    {
+      prop: 'variant',
+      type: "'default' | 'outline' | 'secondary' | 'ghost' | 'destructive' | 'link'",
+      default: "'ghost'",
+      description: '按钮的视觉样式变体',
+    },
+  ]}
+/>
+
+### InputGroupInput
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'input'>",
+      default: '—',
+      description: '透传原生 input 元素支持的所有属性',
+    },
+  ]}
+/>
+
+### InputGroupText
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'span'>",
+      default: '—',
+      description: '透传原生 span 元素支持的所有属性',
+    },
+  ]}
+/>
+
+### InputGroupTextarea
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'textarea'>",
+      default: '—',
+      description: '透传原生 textarea 元素支持的所有属性',
+    },
+  ]}
+/>

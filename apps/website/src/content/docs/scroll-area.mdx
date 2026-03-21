@@ -1,0 +1,66 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ScrollAreaDemo from '@/registry/examples/scroll-area-demo'
+import ScrollAreaDemoSource from '@/registry/examples/scroll-area-demo.tsx?raw'
+
+# ScrollArea
+
+自定义滚动区域组件，提供跨浏览器一致的滚动条样式，基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import { ScrollArea, ScrollBar } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ScrollAreaDemoSource}>
+  <ScrollAreaDemo />
+</ComponentPreview>
+
+## API Reference
+
+### ScrollArea
+
+<PropsTable
+  data={[
+    {
+      prop: 'type',
+      type: "'auto' | 'always' | 'scroll' | 'hover'",
+      default: "'hover'",
+      description: '滚动条的显示策略',
+    },
+    {
+      prop: 'scrollHideDelay',
+      type: 'number',
+      default: '600',
+      description: '滚动条自动隐藏的延迟时间（毫秒）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### ScrollBar
+
+<PropsTable
+  data={[
+    {
+      prop: 'orientation',
+      type: "'vertical' | 'horizontal'",
+      default: "'vertical'",
+      description: '滚动条方向',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

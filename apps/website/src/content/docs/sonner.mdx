@@ -1,0 +1,58 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SonnerDemo from '@/registry/examples/sonner-demo'
+import SonnerDemoSource from '@/registry/examples/sonner-demo.tsx?raw'
+
+# Sonner
+
+基于 Sonner 的 Toast 通知组件，支持多种类型的消息提示，集成主题切换。
+
+## Import
+
+```tsx
+import { Toaster } from '@gedatou/ui'
+import { toast } from 'sonner'
+```
+
+## Usage
+
+<ComponentPreview code={SonnerDemoSource}>
+  <SonnerDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'theme',
+      type: "'light' | 'dark' | 'system'",
+      default: "'system'",
+      description: '主题模式，默认跟随系统',
+    },
+    {
+      prop: 'position',
+      type: "'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center'",
+      default: "'bottom-right'",
+      description: 'Toast 显示位置',
+    },
+    {
+      prop: 'richColors',
+      type: 'boolean',
+      default: 'false',
+      description: '是否使用丰富的颜色样式',
+    },
+    {
+      prop: 'duration',
+      type: 'number',
+      default: '4000',
+      description: 'Toast 自动关闭时间（毫秒）',
+    },
+    {
+      prop: 'closeButton',
+      type: 'boolean',
+      default: 'false',
+      description: '是否显示关闭按钮',
+    },
+  ]}
+/>

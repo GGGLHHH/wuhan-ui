@@ -1,0 +1,40 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SeparatorDemo from '@/registry/examples/separator-demo'
+import SeparatorDemoSource from '@/registry/examples/separator-demo.tsx?raw'
+
+# Separator
+
+分隔线组件，用于在视觉上分隔内容。支持水平和垂直方向。基于 Radix UI Separator 构建。
+
+## Import
+
+```tsx
+import { Separator } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SeparatorDemoSource}>
+  <SeparatorDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'horizontal'",
+      description: '分隔线方向',
+    },
+    {
+      prop: 'decorative',
+      type: 'boolean',
+      default: 'true',
+      description: '是否为装饰性元素（true 时对辅助技术隐藏）',
+    },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>

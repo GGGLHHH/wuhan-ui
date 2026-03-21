@@ -1,0 +1,114 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ToggleGroupDemo from '@/registry/examples/toggle-group-demo'
+import ToggleGroupDemoSource from '@/registry/examples/toggle-group-demo.tsx?raw'
+
+# ToggleGroup
+
+切换按钮组组件，允许用户在一组选项中进行单选或多选切换。基于 Radix UI ToggleGroup 构建。
+
+## Import
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ToggleGroupDemoSource}>
+  <ToggleGroupDemo />
+</ComponentPreview>
+
+## API Reference
+
+### ToggleGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'type',
+      type: "'single' | 'multiple'",
+      default: 'undefined',
+      description: '选择模式，单选或多选（必填）',
+    },
+    {
+      prop: 'value',
+      type: 'string | string[]',
+      default: 'undefined',
+      description: '受控模式下的选中值',
+    },
+    {
+      prop: 'defaultValue',
+      type: 'string | string[]',
+      default: 'undefined',
+      description: '非受控模式下的默认选中值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string | string[]) => void',
+      default: 'undefined',
+      description: '选中值变化时的回调函数',
+    },
+    {
+      prop: 'variant',
+      type: "'default' | 'outline'",
+      default: "'default'",
+      description: '切换按钮组的样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg'",
+      default: "'default'",
+      description: '切换按钮组的尺寸',
+    },
+    {
+      prop: 'spacing',
+      type: 'number',
+      default: '0',
+      description: '按钮之间的间距',
+    },
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'horizontal'",
+      description: '排列方向',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用整个按钮组',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### ToggleGroupItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '选项的唯一标识值（必填）',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该选项',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

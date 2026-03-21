@@ -1,0 +1,69 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ToggleDemo from '@/registry/examples/toggle-demo'
+import ToggleDemoSource from '@/registry/examples/toggle-demo.tsx?raw'
+
+# Toggle
+
+切换按钮组件，允许用户在开启和关闭两种状态之间切换。基于 Radix UI Toggle 构建。
+
+## Import
+
+```tsx
+import { Toggle } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ToggleDemoSource}>
+  <ToggleDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'pressed',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的按下状态',
+    },
+    {
+      prop: 'defaultPressed',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认按下状态',
+    },
+    {
+      prop: 'onPressedChange',
+      type: '(pressed: boolean) => void',
+      default: 'undefined',
+      description: '按下状态变化时的回调函数',
+    },
+    {
+      prop: 'variant',
+      type: "'default' | 'outline'",
+      default: "'default'",
+      description: '切换按钮的样式变体',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg'",
+      default: "'default'",
+      description: '切换按钮的尺寸',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用切换按钮',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

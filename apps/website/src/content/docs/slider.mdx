@@ -1,0 +1,60 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SliderDemo from '@/registry/examples/slider-demo'
+import SliderDemoSource from '@/registry/examples/slider-demo.tsx?raw'
+
+# Slider
+
+允许用户在给定范围内选择一个或多个值的滑块组件，基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import { Slider } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SliderDemoSource}>
+  <SliderDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'defaultValue',
+      type: 'number[]',
+      default: 'undefined',
+      description: '滑块的默认值（非受控模式）',
+    },
+    {
+      prop: 'value',
+      type: 'number[]',
+      default: 'undefined',
+      description: '滑块的当前值（受控模式）',
+    },
+    { prop: 'min', type: 'number', default: '0', description: '最小值' },
+    { prop: 'max', type: 'number', default: '100', description: '最大值' },
+    { prop: 'step', type: 'number', default: '1', description: '步进值' },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用滑块',
+    },
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'horizontal'",
+      description: '滑块方向',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: number[]) => void',
+      default: 'undefined',
+      description: '值变化时的回调函数',
+    },
+  ]}
+/>

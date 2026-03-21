@@ -1,0 +1,236 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import MenubarDemo from '@/registry/examples/menubar-demo'
+import MenubarDemoSource from '@/registry/examples/menubar-demo.tsx?raw'
+
+# Menubar
+
+水平菜单栏组件，基于 Radix UI 构建，支持子菜单、复选项、单选项和快捷键提示。
+
+## Import
+
+```tsx
+import {
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarCheckboxItem,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSub,
+  MenubarSubTrigger,
+  MenubarSubContent,
+  MenubarLabel,
+  MenubarGroup,
+  MenubarPortal,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={MenubarDemoSource}>
+  <MenubarDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Menubar
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '菜单栏容器的自定义样式类名',
+    },
+  ]}
+/>
+
+### MenubarTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '触发按钮的自定义样式类名',
+    },
+  ]}
+/>
+
+### MenubarContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'start'",
+      description: '菜单内容的对齐方式',
+    },
+    {
+      prop: 'alignOffset',
+      type: 'number',
+      default: '-4',
+      description: '对齐偏移量（像素）',
+    },
+    {
+      prop: 'sideOffset',
+      type: 'number',
+      default: '8',
+      description: '侧边偏移量（像素）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '菜单内容的自定义样式类名',
+    },
+  ]}
+/>
+
+### MenubarItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+    {
+      prop: 'variant',
+      type: "'default' | 'destructive'",
+      default: "'default'",
+      description: '菜单项样式变体',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该菜单项',
+    },
+  ]}
+/>
+
+### MenubarCheckboxItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'checked',
+      type: 'boolean',
+      default: 'false',
+      description: '是否选中',
+    },
+    {
+      prop: 'onCheckedChange',
+      type: '(checked: boolean) => void',
+      default: 'undefined',
+      description: '选中状态变化时的回调',
+    },
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### MenubarRadioGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '当前选中的值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string) => void',
+      default: 'undefined',
+      description: '选中值变化时的回调',
+    },
+  ]}
+/>
+
+### MenubarRadioItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '—',
+      description: '单选项的值',
+    },
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### MenubarLabel
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### MenubarShortcut
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '快捷键提示的自定义样式类名',
+    },
+  ]}
+/>
+
+### MenubarSubTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### MenubarSubContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '子菜单内容的自定义样式类名',
+    },
+  ]}
+/>

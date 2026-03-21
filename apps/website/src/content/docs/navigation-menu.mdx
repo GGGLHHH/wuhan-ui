@@ -1,0 +1,99 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import NavigationMenuDemo from '@/registry/examples/navigation-menu-demo'
+import NavigationMenuDemoSource from '@/registry/examples/navigation-menu-demo.tsx?raw'
+
+# NavigationMenu
+
+用于网站主导航的菜单组件，支持下拉内容面板和键盘导航。基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={NavigationMenuDemoSource}>
+  <NavigationMenuDemo />
+</ComponentPreview>
+
+## API Reference
+
+### NavigationMenu
+
+<PropsTable
+  data={[
+    {
+      prop: 'viewport',
+      type: 'boolean',
+      default: 'true',
+      description: '是否渲染视口容器',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### NavigationMenuTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: 'undefined',
+      description: '触发器内容',
+    },
+  ]}
+/>
+
+### NavigationMenuContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### NavigationMenuLink
+
+<PropsTable
+  data={[
+    {
+      prop: 'href',
+      type: 'string',
+      default: 'undefined',
+      description: '链接地址',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>

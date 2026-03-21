@@ -1,0 +1,63 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import TextareaDemo from '@/registry/examples/textarea-demo'
+import TextareaDemoSource from '@/registry/examples/textarea-demo.tsx?raw'
+
+# Textarea
+
+多行文本输入框组件，支持自动调整高度，适用于评论、描述等场景。
+
+## Import
+
+```tsx
+import { Textarea } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={TextareaDemoSource}>
+  <TextareaDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'placeholder',
+      type: 'string',
+      default: 'undefined',
+      description: '占位提示文本',
+    },
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '受控模式下的文本值',
+    },
+    {
+      prop: 'defaultValue',
+      type: 'string',
+      default: 'undefined',
+      description: '非受控模式下的默认文本值',
+    },
+    {
+      prop: 'onChange',
+      type: '(e: ChangeEvent<HTMLTextAreaElement>) => void',
+      default: 'undefined',
+      description: '文本变化时的回调函数',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

@@ -1,0 +1,136 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ChartDemo from '@/registry/examples/chart-demo'
+import ChartDemoSource from '@/registry/examples/chart-demo.tsx?raw'
+
+# Chart
+
+基于 Recharts 的图表组件，提供统一的主题配置、工具提示和图例支持。
+
+## Import
+
+```tsx
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  type ChartConfig,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ChartDemoSource}>
+  <ChartDemo />
+</ComponentPreview>
+
+## API Reference
+
+### ChartContainer
+
+<PropsTable
+  data={[
+    {
+      prop: 'config',
+      type: 'ChartConfig',
+      default: '-',
+      description: '图表配置对象，定义每个数据系列的标签、颜色和图标',
+    },
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: 'Recharts 图表组件（如 BarChart、LineChart 等）',
+    },
+    {
+      prop: 'id',
+      type: 'string',
+      default: 'undefined',
+      description: '图表唯一标识符，用于 CSS 变量作用域',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### ChartTooltipContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'indicator',
+      type: "'dot' | 'line' | 'dashed'",
+      default: "'dot'",
+      description: '指示器样式',
+    },
+    {
+      prop: 'hideLabel',
+      type: 'boolean',
+      default: 'false',
+      description: '是否隐藏标签',
+    },
+    {
+      prop: 'hideIndicator',
+      type: 'boolean',
+      default: 'false',
+      description: '是否隐藏指示器',
+    },
+    {
+      prop: 'nameKey',
+      type: 'string',
+      default: 'undefined',
+      description: '用于从配置中查找名称的键',
+    },
+    {
+      prop: 'labelKey',
+      type: 'string',
+      default: 'undefined',
+      description: '用于从配置中查找标签的键',
+    },
+  ]}
+/>
+
+### ChartLegendContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'hideIcon',
+      type: 'boolean',
+      default: 'false',
+      description: '是否隐藏图例图标',
+    },
+    {
+      prop: 'nameKey',
+      type: 'string',
+      default: 'undefined',
+      description: '用于从配置中查找名称的键',
+    },
+    {
+      prop: 'verticalAlign',
+      type: "'top' | 'bottom'",
+      default: "'bottom'",
+      description: '图例垂直对齐方式',
+    },
+  ]}
+/>
+
+### ChartConfig
+
+```tsx
+type ChartConfig = {
+  [key: string]: {
+    label?: ReactNode
+    icon?: React.ComponentType
+  } & (
+    | { color?: string; theme?: never }
+    | { color?: never; theme: Record<'light' | 'dark', string> }
+  )
+}
+```

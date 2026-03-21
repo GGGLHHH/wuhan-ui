@@ -1,0 +1,45 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ProgressDemo from '@/registry/examples/progress-demo'
+import ProgressDemoSource from '@/registry/examples/progress-demo.tsx?raw'
+
+# Progress
+
+显示任务完成进度的进度条组件，基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import { Progress } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ProgressDemoSource}>
+  <ProgressDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'number | null',
+      default: 'undefined',
+      description: '当前进度值（0-100）',
+    },
+    {
+      prop: 'max',
+      type: 'number',
+      default: '100',
+      description: '最大进度值',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

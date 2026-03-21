@@ -1,0 +1,57 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import InputDemo from '@/registry/examples/input-demo'
+import InputDemoSource from '@/registry/examples/input-demo.tsx?raw'
+
+# Input
+
+基础文本输入框组件，支持多种输入类型和状态。
+
+## Import
+
+```tsx
+import { Input } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={InputDemoSource}>
+  <InputDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'type',
+      type: 'string',
+      default: "'text'",
+      description: '输入框类型，如 text、email、password、number 等',
+    },
+    {
+      prop: 'placeholder',
+      type: 'string',
+      default: 'undefined',
+      description: '占位提示文本',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用输入框',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'input'>",
+      default: '—',
+      description: '透传原生 input 元素支持的所有属性',
+    },
+  ]}
+/>

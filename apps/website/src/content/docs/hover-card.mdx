@@ -1,0 +1,97 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import HoverCardDemo from '@/registry/examples/hover-card-demo'
+import HoverCardDemoSource from '@/registry/examples/hover-card-demo.tsx?raw'
+
+# HoverCard
+
+鼠标悬停时显示的弹出卡片组件，适用于展示链接或元素的预览信息。基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={HoverCardDemoSource}>
+  <HoverCardDemo />
+</ComponentPreview>
+
+## API Reference
+
+### HoverCard
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的打开状态',
+    },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调函数',
+    },
+    {
+      prop: 'openDelay',
+      type: 'number',
+      default: '700',
+      description: '鼠标悬停后打开的延迟时间（毫秒）',
+    },
+    {
+      prop: 'closeDelay',
+      type: 'number',
+      default: '300',
+      description: '鼠标离开后关闭的延迟时间（毫秒）',
+    },
+  ]}
+/>
+
+### HoverCardTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将样式委托给子元素渲染',
+    },
+  ]}
+/>
+
+### HoverCardContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'center'",
+      description: '相对于触发器的对齐方式',
+    },
+    {
+      prop: 'sideOffset',
+      type: 'number',
+      default: '4',
+      description: '与触发器之间的偏移距离（像素）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

@@ -1,0 +1,216 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ContextMenuDemo from '@/registry/examples/context-menu-demo'
+import ContextMenuDemoSource from '@/registry/examples/context-menu-demo.tsx?raw'
+
+# ContextMenu
+
+右键上下文菜单组件，基于 Radix UI 构建，支持子菜单、复选项、单选项等。
+
+## Import
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ContextMenuDemoSource}>
+  <ContextMenuDemo />
+</ComponentPreview>
+
+## API Reference
+
+### ContextMenu
+
+<PropsTable
+  data={[
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '菜单打开状态变化时的回调',
+    },
+  ]}
+/>
+
+### ContextMenuTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将触发器渲染为子元素',
+    },
+  ]}
+/>
+
+### ContextMenuContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: 'side',
+      type: "'top' | 'right' | 'bottom' | 'left'",
+      default: 'undefined',
+      description: '菜单弹出方向',
+    },
+  ]}
+/>
+
+### ContextMenuItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+    {
+      prop: 'variant',
+      type: "'default' | 'destructive'",
+      default: "'default'",
+      description: '菜单项样式变体',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该菜单项',
+    },
+  ]}
+/>
+
+### ContextMenuCheckboxItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'checked',
+      type: 'boolean',
+      default: 'false',
+      description: '是否选中',
+    },
+    {
+      prop: 'onCheckedChange',
+      type: '(checked: boolean) => void',
+      default: 'undefined',
+      description: '选中状态变化时的回调',
+    },
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### ContextMenuRadioGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '当前选中的值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string) => void',
+      default: 'undefined',
+      description: '选中值变化时的回调',
+    },
+  ]}
+/>
+
+### ContextMenuRadioItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '—',
+      description: '单选项的值',
+    },
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### ContextMenuLabel
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>
+
+### ContextMenuShortcut
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### ContextMenuSubTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'inset',
+      type: 'boolean',
+      default: 'undefined',
+      description: '是否添加左侧缩进',
+    },
+  ]}
+/>

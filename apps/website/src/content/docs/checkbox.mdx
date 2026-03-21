@@ -1,0 +1,75 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import CheckboxDemo from '@/registry/examples/checkbox-demo'
+import CheckboxDemoSource from '@/registry/examples/checkbox-demo.tsx?raw'
+
+# Checkbox
+
+复选框组件，允许用户在选中和未选中状态之间切换。基于 Radix UI Checkbox 构建。
+
+## Import
+
+```tsx
+import { Checkbox } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={CheckboxDemoSource}>
+  <CheckboxDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'checked',
+      type: "boolean | 'indeterminate'",
+      default: 'undefined',
+      description: '受控模式下的选中状态',
+    },
+    {
+      prop: 'defaultChecked',
+      type: "boolean | 'indeterminate'",
+      default: 'undefined',
+      description: '非受控模式下的默认选中状态',
+    },
+    {
+      prop: 'onCheckedChange',
+      type: "(checked: boolean | 'indeterminate') => void",
+      default: 'undefined',
+      description: '选中状态变化时的回调函数',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用复选框',
+    },
+    {
+      prop: 'required',
+      type: 'boolean',
+      default: 'false',
+      description: '是否为必填项',
+    },
+    {
+      prop: 'name',
+      type: 'string',
+      default: 'undefined',
+      description: '表单提交时的字段名称',
+    },
+    {
+      prop: 'value',
+      type: 'string',
+      default: "'on'",
+      description: '表单提交时的值',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

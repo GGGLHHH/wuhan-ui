@@ -1,0 +1,139 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import BreadcrumbDemo from '@/registry/examples/breadcrumb-demo'
+import BreadcrumbDemoSource from '@/registry/examples/breadcrumb-demo.tsx?raw'
+
+# Breadcrumb
+
+面包屑导航组件，用于显示当前页面在层级结构中的位置，帮助用户快速了解和跳转到上级页面。
+
+## Import
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={BreadcrumbDemoSource}>
+  <BreadcrumbDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Breadcrumb
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### BreadcrumbList
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### BreadcrumbItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### BreadcrumbLink
+
+<PropsTable
+  data={[
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将子元素作为渲染载体（使用 Slot 模式）',
+    },
+    {
+      prop: 'href',
+      type: 'string',
+      default: 'undefined',
+      description: '链接地址',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### BreadcrumbPage
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### BreadcrumbSeparator
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '<ChevronRightIcon />',
+      description: '自定义分隔符内容，默认为右箭头图标',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### BreadcrumbEllipsis
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

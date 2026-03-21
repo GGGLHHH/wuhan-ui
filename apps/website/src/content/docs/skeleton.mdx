@@ -1,0 +1,33 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SkeletonDemo from '@/registry/examples/skeleton-demo'
+import SkeletonDemoSource from '@/registry/examples/skeleton-demo.tsx?raw'
+
+# Skeleton
+
+用于在内容加载时显示占位符，提供视觉反馈以改善用户体验。
+
+## Import
+
+```tsx
+import { Skeleton } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SkeletonDemoSource}>
+  <SkeletonDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名，用于控制骨架屏的尺寸和形状',
+    },
+  ]}
+/>

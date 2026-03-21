@@ -1,0 +1,148 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import CommandDemo from '@/registry/examples/command-demo'
+import CommandDemoSource from '@/registry/examples/command-demo.tsx?raw'
+
+# Command
+
+基于 cmdk 构建的命令面板组件，支持快速搜索、键盘导航和分组展示。
+
+## Import
+
+```tsx
+import {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={CommandDemoSource}>
+  <CommandDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Command
+
+根容器组件，包裹所有子组件。
+
+<PropsTable
+  data={[{ prop: 'className', type: 'string', default: '-', description: '自定义类名' }]}
+/>
+
+### CommandDialog
+
+将 Command 嵌入对话框中，适用于全局命令面板场景。
+
+<PropsTable
+  data={[
+    {
+      prop: 'title',
+      type: 'string',
+      default: "'Command Palette'",
+      description: '对话框标题（屏幕阅读器可见）',
+    },
+    {
+      prop: 'description',
+      type: 'string',
+      default: "'Search for a command to run...'",
+      description: '对话框描述（屏幕阅读器可见）',
+    },
+    { prop: 'open', type: 'boolean', default: 'false', description: '控制对话框的打开状态' },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: '-',
+      description: '打开状态变化时的回调',
+    },
+    { prop: 'showCloseButton', type: 'boolean', default: 'false', description: '是否显示关闭按钮' },
+    { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
+  ]}
+/>
+
+### CommandInput
+
+搜索输入框，内置搜索图标。
+
+<PropsTable
+  data={[
+    { prop: 'placeholder', type: 'string', default: '-', description: '输入框占位文本' },
+    { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
+  ]}
+/>
+
+### CommandList
+
+命令列表容器，支持滚动。
+
+<PropsTable
+  data={[{ prop: 'className', type: 'string', default: '-', description: '自定义类名' }]}
+/>
+
+### CommandEmpty
+
+无搜索结果时显示的内容。
+
+<PropsTable
+  data={[
+    { prop: 'children', type: 'ReactNode', default: '-', description: '空状态提示内容' },
+    { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
+  ]}
+/>
+
+### CommandGroup
+
+命令分组容器。
+
+<PropsTable
+  data={[
+    { prop: 'heading', type: 'string', default: '-', description: '分组标题' },
+    { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
+  ]}
+/>
+
+### CommandItem
+
+单个命令项。
+
+<PropsTable
+  data={[
+    { prop: 'disabled', type: 'boolean', default: 'false', description: '是否禁用' },
+    {
+      prop: 'onSelect',
+      type: '(value: string) => void',
+      default: '-',
+      description: '选中时的回调',
+    },
+    { prop: 'value', type: 'string', default: '-', description: '命令项的值，用于搜索过滤' },
+    { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
+  ]}
+/>
+
+### CommandShortcut
+
+显示快捷键提示文本。
+
+<PropsTable
+  data={[
+    { prop: 'children', type: 'ReactNode', default: '-', description: '快捷键文本' },
+    { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
+  ]}
+/>
+
+### CommandSeparator
+
+分组之间的分隔线。
+
+<PropsTable
+  data={[{ prop: 'className', type: 'string', default: '-', description: '自定义类名' }]}
+/>

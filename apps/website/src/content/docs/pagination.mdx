@@ -1,0 +1,106 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import PaginationDemo from '@/registry/examples/pagination-demo'
+import PaginationDemoSource from '@/registry/examples/pagination-demo.tsx?raw'
+
+# Pagination
+
+分页导航组件，用于在多页内容之间切换。支持上一页、下一页、页码和省略号。
+
+## Import
+
+```tsx
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={PaginationDemoSource}>
+  <PaginationDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Pagination
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### PaginationLink
+
+<PropsTable
+  data={[
+    {
+      prop: 'isActive',
+      type: 'boolean',
+      default: 'false',
+      description: '是否为当前激活页',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg' | 'icon'",
+      default: "'icon'",
+      description: '链接按钮尺寸',
+    },
+    {
+      prop: 'href',
+      type: 'string',
+      default: 'undefined',
+      description: '链接地址',
+    },
+  ]}
+/>
+
+### PaginationPrevious
+
+<PropsTable
+  data={[
+    {
+      prop: 'text',
+      type: 'string',
+      default: "'Previous'",
+      description: '按钮文本',
+    },
+    {
+      prop: 'href',
+      type: 'string',
+      default: 'undefined',
+      description: '链接地址',
+    },
+  ]}
+/>
+
+### PaginationNext
+
+<PropsTable
+  data={[
+    {
+      prop: 'text',
+      type: 'string',
+      default: "'Next'",
+      description: '按钮文本',
+    },
+    {
+      prop: 'href',
+      type: 'string',
+      default: 'undefined',
+      description: '链接地址',
+    },
+  ]}
+/>

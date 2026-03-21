@@ -1,0 +1,45 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import LabelDemo from '@/registry/examples/label-demo'
+import LabelDemoSource from '@/registry/examples/label-demo.tsx?raw'
+
+# Label
+
+用于为表单控件提供可访问标签的组件，基于 Radix UI Label 构建，支持与输入框等控件关联。
+
+## Import
+
+```tsx
+import { Label } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={LabelDemoSource}>
+  <LabelDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'htmlFor',
+      type: 'string',
+      default: 'undefined',
+      description: '关联的表单控件 ID',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: '...props',
+      type: 'React.ComponentProps<typeof LabelPrimitive.Root>',
+      default: '—',
+      description: '透传 Radix Label 原语支持的所有属性',
+    },
+  ]}
+/>

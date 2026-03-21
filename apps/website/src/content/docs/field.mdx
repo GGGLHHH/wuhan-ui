@@ -1,0 +1,144 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import FieldDemo from '@/registry/examples/field-demo'
+import FieldDemoSource from '@/registry/examples/field-demo.tsx?raw'
+
+# Field
+
+表单字段组件集合，提供标签、描述、错误提示等表单布局能力，支持垂直、水平和响应式排列方向。
+
+## Import
+
+```tsx
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldTitle,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={FieldDemoSource}>
+  <FieldDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Field
+
+<PropsTable
+  data={[
+    {
+      prop: 'orientation',
+      type: "'vertical' | 'horizontal' | 'responsive'",
+      default: "'vertical'",
+      description: '字段排列方向',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### FieldLabel
+
+基于 Label 组件的表单标签，支持所有 Label 属性。
+
+<PropsTable
+  data={[
+    {
+      prop: 'htmlFor',
+      type: 'string',
+      default: 'undefined',
+      description: '关联的表单控件 ID',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### FieldDescription
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义类名',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '描述文本，支持链接等富文本',
+    },
+  ]}
+/>
+
+### FieldError
+
+<PropsTable
+  data={[
+    {
+      prop: 'errors',
+      type: 'Array<{ message?: string } | undefined>',
+      default: 'undefined',
+      description: '错误对象数组，自动去重并渲染为列表',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: 'undefined',
+      description: '自定义错误内容（优先于 errors）',
+    },
+  ]}
+/>
+
+### FieldGroup
+
+字段分组容器，用于包裹多个 Field，提供统一间距。
+
+### FieldSet
+
+基于 `<fieldset>` 的语义化分组容器。
+
+### FieldLegend
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'legend' | 'label'",
+      default: "'legend'",
+      description: '标题样式变体',
+    },
+  ]}
+/>
+
+### FieldContent
+
+字段内容容器，用于包裹输入控件、描述和错误提示。
+
+### FieldTitle
+
+字段标题组件，适用于不需要 `<label>` 语义的场景。
+
+### FieldSeparator
+
+字段分隔线，可选传入 children 作为分隔文本。

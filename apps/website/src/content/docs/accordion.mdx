@@ -1,0 +1,128 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import AccordionDemo from '@/registry/examples/accordion-demo'
+import AccordionDemoSource from '@/registry/examples/accordion-demo.tsx?raw'
+
+# Accordion
+
+可折叠的内容面板组件，基于 Radix UI Accordion 构建，支持单选和多选模式。
+
+## Import
+
+```tsx
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={AccordionDemoSource}>
+  <AccordionDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Accordion
+
+<PropsTable
+  data={[
+    {
+      prop: 'type',
+      type: "'single' | 'multiple'",
+      default: '-',
+      description: '折叠模式。single 为单选，multiple 为多选',
+    },
+    {
+      prop: 'collapsible',
+      type: 'boolean',
+      default: 'false',
+      description: '单选模式下是否允许全部收起',
+    },
+    {
+      prop: 'defaultValue',
+      type: 'string | string[]',
+      default: '-',
+      description: '默认展开的面板值',
+    },
+    {
+      prop: 'value',
+      type: 'string | string[]',
+      default: '-',
+      description: '受控模式下当前展开的面板值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string | string[]) => void',
+      default: '-',
+      description: '展开状态变化时的回调',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AccordionItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '-',
+      description: '面板的唯一标识值（必填）',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该面板',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AccordionTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '触发器内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AccordionContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: '-',
+      description: '折叠面板内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>

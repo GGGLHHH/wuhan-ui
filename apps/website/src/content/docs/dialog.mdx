@@ -1,0 +1,108 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import DialogDemo from '@/registry/examples/dialog-demo'
+import DialogDemoSource from '@/registry/examples/dialog-demo.tsx?raw'
+
+# Dialog
+
+模态对话框组件，用于在当前页面上方展示重要内容或需要用户交互的信息。基于 Radix UI Dialog 构建。
+
+## Import
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={DialogDemoSource}>
+  <DialogDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Dialog
+
+<PropsTable
+  data={[
+    { prop: 'open', type: 'boolean', default: 'undefined', description: '受控模式下的打开状态' },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调',
+    },
+    {
+      prop: 'modal',
+      type: 'boolean',
+      default: 'true',
+      description: '是否以模态方式展示（阻止背景交互）',
+    },
+  ]}
+/>
+
+### DialogContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'showCloseButton',
+      type: 'boolean',
+      default: 'true',
+      description: '是否显示右上角关闭按钮',
+    },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+    {
+      prop: 'onOpenAutoFocus',
+      type: '(event: Event) => void',
+      default: 'undefined',
+      description: '打开时自动聚焦的回调',
+    },
+    {
+      prop: 'onCloseAutoFocus',
+      type: '(event: Event) => void',
+      default: 'undefined',
+      description: '关闭时自动聚焦的回调',
+    },
+    {
+      prop: 'onEscapeKeyDown',
+      type: '(event: KeyboardEvent) => void',
+      default: 'undefined',
+      description: '按下 Escape 键时的回调',
+    },
+    {
+      prop: 'onInteractOutside',
+      type: '(event: Event) => void',
+      default: 'undefined',
+      description: '点击外部区域时的回调',
+    },
+  ]}
+/>
+
+### DialogFooter
+
+<PropsTable
+  data={[
+    {
+      prop: 'showCloseButton',
+      type: 'boolean',
+      default: 'false',
+      description: '是否在底部显示关闭按钮',
+    },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>

@@ -1,0 +1,80 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import AlertDemo from '@/registry/examples/alert-demo'
+import AlertDemoSource from '@/registry/examples/alert-demo.tsx?raw'
+
+# Alert
+
+用于向用户展示重要提示信息的组件，支持标题、描述和操作区域。
+
+## Import
+
+```tsx
+import { Alert, AlertTitle, AlertDescription, AlertAction } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={AlertDemoSource}>
+  <AlertDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Alert
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'destructive'",
+      default: "'default'",
+      description: '提示样式变体',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### AlertTitle
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### AlertDescription
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### AlertAction
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

@@ -1,0 +1,45 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import AspectRatioDemo from '@/registry/examples/aspect-ratio-demo'
+import AspectRatioDemoSource from '@/registry/examples/aspect-ratio-demo.tsx?raw'
+
+# AspectRatio
+
+用于在容器宽度变化时保持固定宽高比，适合图片、视频封面和媒体卡片等场景。
+
+## Import
+
+```tsx
+import { AspectRatio } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={AspectRatioDemoSource}>
+  <AspectRatioDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'ratio',
+      type: 'number',
+      default: 'undefined',
+      description: '宽高比，例如 16 / 9、4 / 3 或 1',
+    },
+    {
+      prop: 'children',
+      type: 'React.ReactNode',
+      default: 'undefined',
+      description: '需要保持宽高比的内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义容器样式类名',
+    },
+  ]}
+/>

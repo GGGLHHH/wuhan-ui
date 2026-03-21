@@ -1,0 +1,104 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import InputOtpDemo from '@/registry/examples/input-otp-demo'
+import InputOtpDemoSource from '@/registry/examples/input-otp-demo.tsx?raw'
+
+# InputOtp
+
+一次性密码（OTP）输入组件，支持分组和分隔符，适用于验证码输入场景。基于 input-otp 构建。
+
+## Import
+
+```tsx
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={InputOtpDemoSource}>
+  <InputOtpDemo />
+</ComponentPreview>
+
+## API Reference
+
+### InputOTP
+
+<PropsTable
+  data={[
+    {
+      prop: 'maxLength',
+      type: 'number',
+      default: 'undefined',
+      description: 'OTP 输入的最大字符数',
+    },
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '受控模式下的输入值',
+    },
+    {
+      prop: 'onChange',
+      type: '(value: string) => void',
+      default: 'undefined',
+      description: '输入值变化时的回调函数',
+    },
+    {
+      prop: 'containerClassName',
+      type: 'string',
+      default: 'undefined',
+      description: '容器的自定义 CSS 类名',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### InputOTPGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### InputOTPSlot
+
+<PropsTable
+  data={[
+    {
+      prop: 'index',
+      type: 'number',
+      default: 'undefined',
+      description: '插槽在 OTP 输入中的索引位置（必填）',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### InputOTPSeparator
+
+<PropsTable
+  data={[
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'div'>",
+      default: '—',
+      description: '透传原生 div 元素支持的所有属性',
+    },
+  ]}
+/>

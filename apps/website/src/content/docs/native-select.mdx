@@ -1,0 +1,85 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import NativeSelectDemo from '@/registry/examples/native-select-demo'
+import NativeSelectDemoSource from '@/registry/examples/native-select-demo.tsx?raw'
+
+# NativeSelect
+
+基于原生 `<select>` 元素的下拉选择组件，轻量且无障碍友好。
+
+## Import
+
+```tsx
+import { NativeSelect, NativeSelectOption, NativeSelectOptGroup } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={NativeSelectDemoSource}>
+  <NativeSelectDemo />
+</ComponentPreview>
+
+## API Reference
+
+### NativeSelect
+
+<PropsTable
+  data={[
+    {
+      prop: 'size',
+      type: "'sm' | 'default'",
+      default: "'default'",
+      description: '选择框尺寸',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用',
+    },
+  ]}
+/>
+
+### NativeSelectOption
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '选项值',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该选项',
+    },
+  ]}
+/>
+
+### NativeSelectOptGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'label',
+      type: 'string',
+      default: 'undefined',
+      description: '分组标签',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>

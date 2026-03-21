@@ -10,11 +10,66 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
-import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
-import { Route as DashboardDocsStaggerRevealRouteImport } from './routes/_dashboard/docs.stagger-reveal'
-import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
-import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
+import { Route as DashboardDocsAccordionRouteImport } from './routes/_dashboard/docs.accordion'
+import { Route as DashboardDocsAlertRouteImport } from './routes/_dashboard/docs.alert'
+import { Route as DashboardDocsAlertDialogRouteImport } from './routes/_dashboard/docs.alert-dialog'
+import { Route as DashboardDocsAspectRatioRouteImport } from './routes/_dashboard/docs.aspect-ratio'
 import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
+import { Route as DashboardDocsAvatarRouteImport } from './routes/_dashboard/docs.avatar'
+import { Route as DashboardDocsBadgeRouteImport } from './routes/_dashboard/docs.badge'
+import { Route as DashboardDocsBreadcrumbRouteImport } from './routes/_dashboard/docs.breadcrumb'
+import { Route as DashboardDocsButtonRouteImport } from './routes/_dashboard/docs.button'
+import { Route as DashboardDocsButtonGroupRouteImport } from './routes/_dashboard/docs.button-group'
+import { Route as DashboardDocsCalendarRouteImport } from './routes/_dashboard/docs.calendar'
+import { Route as DashboardDocsCardRouteImport } from './routes/_dashboard/docs.card'
+import { Route as DashboardDocsCarouselRouteImport } from './routes/_dashboard/docs.carousel'
+import { Route as DashboardDocsChartRouteImport } from './routes/_dashboard/docs.chart'
+import { Route as DashboardDocsCheckboxRouteImport } from './routes/_dashboard/docs.checkbox'
+import { Route as DashboardDocsCollapsibleRouteImport } from './routes/_dashboard/docs.collapsible'
+import { Route as DashboardDocsComboboxRouteImport } from './routes/_dashboard/docs.combobox'
+import { Route as DashboardDocsCommandRouteImport } from './routes/_dashboard/docs.command'
+import { Route as DashboardDocsContextMenuRouteImport } from './routes/_dashboard/docs.context-menu'
+import { Route as DashboardDocsDialogRouteImport } from './routes/_dashboard/docs.dialog'
+import { Route as DashboardDocsDirectionRouteImport } from './routes/_dashboard/docs.direction'
+import { Route as DashboardDocsDrawerRouteImport } from './routes/_dashboard/docs.drawer'
+import { Route as DashboardDocsDropdownMenuRouteImport } from './routes/_dashboard/docs.dropdown-menu'
+import { Route as DashboardDocsEmptyRouteImport } from './routes/_dashboard/docs.empty'
+import { Route as DashboardDocsFieldRouteImport } from './routes/_dashboard/docs.field'
+import { Route as DashboardDocsHoverCardRouteImport } from './routes/_dashboard/docs.hover-card'
+import { Route as DashboardDocsInputRouteImport } from './routes/_dashboard/docs.input'
+import { Route as DashboardDocsInputGroupRouteImport } from './routes/_dashboard/docs.input-group'
+import { Route as DashboardDocsInputOtpRouteImport } from './routes/_dashboard/docs.input-otp'
+import { Route as DashboardDocsItemRouteImport } from './routes/_dashboard/docs.item'
+import { Route as DashboardDocsKbdRouteImport } from './routes/_dashboard/docs.kbd'
+import { Route as DashboardDocsLabelRouteImport } from './routes/_dashboard/docs.label'
+import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
+import { Route as DashboardDocsMenubarRouteImport } from './routes/_dashboard/docs.menubar'
+import { Route as DashboardDocsNativeSelectRouteImport } from './routes/_dashboard/docs.native-select'
+import { Route as DashboardDocsNavigationMenuRouteImport } from './routes/_dashboard/docs.navigation-menu'
+import { Route as DashboardDocsPaginationRouteImport } from './routes/_dashboard/docs.pagination'
+import { Route as DashboardDocsPopoverRouteImport } from './routes/_dashboard/docs.popover'
+import { Route as DashboardDocsProgressRouteImport } from './routes/_dashboard/docs.progress'
+import { Route as DashboardDocsRadioGroupRouteImport } from './routes/_dashboard/docs.radio-group'
+import { Route as DashboardDocsResizableRouteImport } from './routes/_dashboard/docs.resizable'
+import { Route as DashboardDocsScrollAreaRouteImport } from './routes/_dashboard/docs.scroll-area'
+import { Route as DashboardDocsSelectRouteImport } from './routes/_dashboard/docs.select'
+import { Route as DashboardDocsSeparatorRouteImport } from './routes/_dashboard/docs.separator'
+import { Route as DashboardDocsSheetRouteImport } from './routes/_dashboard/docs.sheet'
+import { Route as DashboardDocsSidebarRouteImport } from './routes/_dashboard/docs.sidebar'
+import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
+import { Route as DashboardDocsSkeletonRouteImport } from './routes/_dashboard/docs.skeleton'
+import { Route as DashboardDocsSliderRouteImport } from './routes/_dashboard/docs.slider'
+import { Route as DashboardDocsSonnerRouteImport } from './routes/_dashboard/docs.sonner'
+import { Route as DashboardDocsSpinnerRouteImport } from './routes/_dashboard/docs.spinner'
+import { Route as DashboardDocsStaggerRevealRouteImport } from './routes/_dashboard/docs.stagger-reveal'
+import { Route as DashboardDocsSwitchRouteImport } from './routes/_dashboard/docs.switch'
+import { Route as DashboardDocsTableRouteImport } from './routes/_dashboard/docs.table'
+import { Route as DashboardDocsTabsRouteImport } from './routes/_dashboard/docs.tabs'
+import { Route as DashboardDocsTextareaRouteImport } from './routes/_dashboard/docs.textarea'
+import { Route as DashboardDocsToggleRouteImport } from './routes/_dashboard/docs.toggle'
+import { Route as DashboardDocsToggleGroupRouteImport } from './routes/_dashboard/docs.toggle-group'
+import { Route as DashboardDocsTooltipRouteImport } from './routes/_dashboard/docs.tooltip'
+import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
 
 const DashboardRoute = DashboardRouteImport.update({
   id: '/_dashboard',
@@ -25,75 +80,678 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsStaggerRevealRoute =
-  DashboardDocsStaggerRevealRouteImport.update({
-    id: '/docs/stagger-reveal',
-    path: '/docs/stagger-reveal',
-    getParentRoute: () => DashboardRoute,
-  } as any)
+const DashboardDocsTooltipRoute = DashboardDocsTooltipRouteImport.update({
+  id: '/docs/tooltip',
+  path: '/docs/tooltip',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsToggleGroupRoute = DashboardDocsToggleGroupRouteImport.update({
+  id: '/docs/toggle-group',
+  path: '/docs/toggle-group',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsToggleRoute = DashboardDocsToggleRouteImport.update({
+  id: '/docs/toggle',
+  path: '/docs/toggle',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsTextareaRoute = DashboardDocsTextareaRouteImport.update({
+  id: '/docs/textarea',
+  path: '/docs/textarea',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsTabsRoute = DashboardDocsTabsRouteImport.update({
+  id: '/docs/tabs',
+  path: '/docs/tabs',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsTableRoute = DashboardDocsTableRouteImport.update({
+  id: '/docs/table',
+  path: '/docs/table',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSwitchRoute = DashboardDocsSwitchRouteImport.update({
+  id: '/docs/switch',
+  path: '/docs/switch',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsStaggerRevealRoute = DashboardDocsStaggerRevealRouteImport.update({
+  id: '/docs/stagger-reveal',
+  path: '/docs/stagger-reveal',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSpinnerRoute = DashboardDocsSpinnerRouteImport.update({
+  id: '/docs/spinner',
+  path: '/docs/spinner',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSonnerRoute = DashboardDocsSonnerRouteImport.update({
+  id: '/docs/sonner',
+  path: '/docs/sonner',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSliderRoute = DashboardDocsSliderRouteImport.update({
+  id: '/docs/slider',
+  path: '/docs/slider',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSkeletonRoute = DashboardDocsSkeletonRouteImport.update({
+  id: '/docs/skeleton',
+  path: '/docs/skeleton',
+  getParentRoute: () => DashboardRoute,
+} as any)
 const DashboardDocsSilkRoute = DashboardDocsSilkRouteImport.update({
   id: '/docs/silk',
   path: '/docs/silk',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsLoadingPageRoute =
-  DashboardDocsLoadingPageRouteImport.update({
-    id: '/docs/loading-page',
-    path: '/docs/loading-page',
-    getParentRoute: () => DashboardRoute,
-  } as any)
+const DashboardDocsSidebarRoute = DashboardDocsSidebarRouteImport.update({
+  id: '/docs/sidebar',
+  path: '/docs/sidebar',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSheetRoute = DashboardDocsSheetRouteImport.update({
+  id: '/docs/sheet',
+  path: '/docs/sheet',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSeparatorRoute = DashboardDocsSeparatorRouteImport.update({
+  id: '/docs/separator',
+  path: '/docs/separator',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsSelectRoute = DashboardDocsSelectRouteImport.update({
+  id: '/docs/select',
+  path: '/docs/select',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsScrollAreaRoute = DashboardDocsScrollAreaRouteImport.update({
+  id: '/docs/scroll-area',
+  path: '/docs/scroll-area',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsResizableRoute = DashboardDocsResizableRouteImport.update({
+  id: '/docs/resizable',
+  path: '/docs/resizable',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsRadioGroupRoute = DashboardDocsRadioGroupRouteImport.update({
+  id: '/docs/radio-group',
+  path: '/docs/radio-group',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsProgressRoute = DashboardDocsProgressRouteImport.update({
+  id: '/docs/progress',
+  path: '/docs/progress',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsPopoverRoute = DashboardDocsPopoverRouteImport.update({
+  id: '/docs/popover',
+  path: '/docs/popover',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsPaginationRoute = DashboardDocsPaginationRouteImport.update({
+  id: '/docs/pagination',
+  path: '/docs/pagination',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsNavigationMenuRoute = DashboardDocsNavigationMenuRouteImport.update({
+  id: '/docs/navigation-menu',
+  path: '/docs/navigation-menu',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsNativeSelectRoute = DashboardDocsNativeSelectRouteImport.update({
+  id: '/docs/native-select',
+  path: '/docs/native-select',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsMenubarRoute = DashboardDocsMenubarRouteImport.update({
+  id: '/docs/menubar',
+  path: '/docs/menubar',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsLoadingPageRoute = DashboardDocsLoadingPageRouteImport.update({
+  id: '/docs/loading-page',
+  path: '/docs/loading-page',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsLabelRoute = DashboardDocsLabelRouteImport.update({
+  id: '/docs/label',
+  path: '/docs/label',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsKbdRoute = DashboardDocsKbdRouteImport.update({
+  id: '/docs/kbd',
+  path: '/docs/kbd',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsItemRoute = DashboardDocsItemRouteImport.update({
+  id: '/docs/item',
+  path: '/docs/item',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsInputOtpRoute = DashboardDocsInputOtpRouteImport.update({
+  id: '/docs/input-otp',
+  path: '/docs/input-otp',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsInputGroupRoute = DashboardDocsInputGroupRouteImport.update({
+  id: '/docs/input-group',
+  path: '/docs/input-group',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsInputRoute = DashboardDocsInputRouteImport.update({
+  id: '/docs/input',
+  path: '/docs/input',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsHoverCardRoute = DashboardDocsHoverCardRouteImport.update({
+  id: '/docs/hover-card',
+  path: '/docs/hover-card',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsFieldRoute = DashboardDocsFieldRouteImport.update({
+  id: '/docs/field',
+  path: '/docs/field',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsEmptyRoute = DashboardDocsEmptyRouteImport.update({
+  id: '/docs/empty',
+  path: '/docs/empty',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsDropdownMenuRoute = DashboardDocsDropdownMenuRouteImport.update({
+  id: '/docs/dropdown-menu',
+  path: '/docs/dropdown-menu',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsDrawerRoute = DashboardDocsDrawerRouteImport.update({
+  id: '/docs/drawer',
+  path: '/docs/drawer',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsDirectionRoute = DashboardDocsDirectionRouteImport.update({
+  id: '/docs/direction',
+  path: '/docs/direction',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsDialogRoute = DashboardDocsDialogRouteImport.update({
+  id: '/docs/dialog',
+  path: '/docs/dialog',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsContextMenuRoute = DashboardDocsContextMenuRouteImport.update({
+  id: '/docs/context-menu',
+  path: '/docs/context-menu',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsCommandRoute = DashboardDocsCommandRouteImport.update({
+  id: '/docs/command',
+  path: '/docs/command',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsComboboxRoute = DashboardDocsComboboxRouteImport.update({
+  id: '/docs/combobox',
+  path: '/docs/combobox',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsCollapsibleRoute = DashboardDocsCollapsibleRouteImport.update({
+  id: '/docs/collapsible',
+  path: '/docs/collapsible',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsCheckboxRoute = DashboardDocsCheckboxRouteImport.update({
+  id: '/docs/checkbox',
+  path: '/docs/checkbox',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsChartRoute = DashboardDocsChartRouteImport.update({
+  id: '/docs/chart',
+  path: '/docs/chart',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsCarouselRoute = DashboardDocsCarouselRouteImport.update({
+  id: '/docs/carousel',
+  path: '/docs/carousel',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsCardRoute = DashboardDocsCardRouteImport.update({
+  id: '/docs/card',
+  path: '/docs/card',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsCalendarRoute = DashboardDocsCalendarRouteImport.update({
+  id: '/docs/calendar',
+  path: '/docs/calendar',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsButtonGroupRoute = DashboardDocsButtonGroupRouteImport.update({
+  id: '/docs/button-group',
+  path: '/docs/button-group',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsButtonRoute = DashboardDocsButtonRouteImport.update({
+  id: '/docs/button',
+  path: '/docs/button',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsBreadcrumbRoute = DashboardDocsBreadcrumbRouteImport.update({
+  id: '/docs/breadcrumb',
+  path: '/docs/breadcrumb',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsBadgeRoute = DashboardDocsBadgeRouteImport.update({
+  id: '/docs/badge',
+  path: '/docs/badge',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsAvatarRoute = DashboardDocsAvatarRouteImport.update({
+  id: '/docs/avatar',
+  path: '/docs/avatar',
+  getParentRoute: () => DashboardRoute,
+} as any)
 const DashboardDocsAuroraRoute = DashboardDocsAuroraRouteImport.update({
   id: '/docs/aurora',
   path: '/docs/aurora',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardDocsAspectRatioRoute = DashboardDocsAspectRatioRouteImport.update({
+  id: '/docs/aspect-ratio',
+  path: '/docs/aspect-ratio',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsAlertDialogRoute = DashboardDocsAlertDialogRouteImport.update({
+  id: '/docs/alert-dialog',
+  path: '/docs/alert-dialog',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsAlertRoute = DashboardDocsAlertRouteImport.update({
+  id: '/docs/alert',
+  path: '/docs/alert',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardDocsAccordionRoute = DashboardDocsAccordionRouteImport.update({
+  id: '/docs/accordion',
+  path: '/docs/accordion',
+  getParentRoute: () => DashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof DashboardIndexRoute
+  '/docs/accordion': typeof DashboardDocsAccordionRoute
+  '/docs/alert': typeof DashboardDocsAlertRoute
+  '/docs/alert-dialog': typeof DashboardDocsAlertDialogRoute
+  '/docs/aspect-ratio': typeof DashboardDocsAspectRatioRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
+  '/docs/avatar': typeof DashboardDocsAvatarRoute
+  '/docs/badge': typeof DashboardDocsBadgeRoute
+  '/docs/breadcrumb': typeof DashboardDocsBreadcrumbRoute
+  '/docs/button': typeof DashboardDocsButtonRoute
+  '/docs/button-group': typeof DashboardDocsButtonGroupRoute
+  '/docs/calendar': typeof DashboardDocsCalendarRoute
+  '/docs/card': typeof DashboardDocsCardRoute
+  '/docs/carousel': typeof DashboardDocsCarouselRoute
+  '/docs/chart': typeof DashboardDocsChartRoute
+  '/docs/checkbox': typeof DashboardDocsCheckboxRoute
+  '/docs/collapsible': typeof DashboardDocsCollapsibleRoute
+  '/docs/combobox': typeof DashboardDocsComboboxRoute
+  '/docs/command': typeof DashboardDocsCommandRoute
+  '/docs/context-menu': typeof DashboardDocsContextMenuRoute
+  '/docs/dialog': typeof DashboardDocsDialogRoute
+  '/docs/direction': typeof DashboardDocsDirectionRoute
+  '/docs/drawer': typeof DashboardDocsDrawerRoute
+  '/docs/dropdown-menu': typeof DashboardDocsDropdownMenuRoute
+  '/docs/empty': typeof DashboardDocsEmptyRoute
+  '/docs/field': typeof DashboardDocsFieldRoute
+  '/docs/hover-card': typeof DashboardDocsHoverCardRoute
+  '/docs/input': typeof DashboardDocsInputRoute
+  '/docs/input-group': typeof DashboardDocsInputGroupRoute
+  '/docs/input-otp': typeof DashboardDocsInputOtpRoute
+  '/docs/item': typeof DashboardDocsItemRoute
+  '/docs/kbd': typeof DashboardDocsKbdRoute
+  '/docs/label': typeof DashboardDocsLabelRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
+  '/docs/menubar': typeof DashboardDocsMenubarRoute
+  '/docs/native-select': typeof DashboardDocsNativeSelectRoute
+  '/docs/navigation-menu': typeof DashboardDocsNavigationMenuRoute
+  '/docs/pagination': typeof DashboardDocsPaginationRoute
+  '/docs/popover': typeof DashboardDocsPopoverRoute
+  '/docs/progress': typeof DashboardDocsProgressRoute
+  '/docs/radio-group': typeof DashboardDocsRadioGroupRoute
+  '/docs/resizable': typeof DashboardDocsResizableRoute
+  '/docs/scroll-area': typeof DashboardDocsScrollAreaRoute
+  '/docs/select': typeof DashboardDocsSelectRoute
+  '/docs/separator': typeof DashboardDocsSeparatorRoute
+  '/docs/sheet': typeof DashboardDocsSheetRoute
+  '/docs/sidebar': typeof DashboardDocsSidebarRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
+  '/docs/skeleton': typeof DashboardDocsSkeletonRoute
+  '/docs/slider': typeof DashboardDocsSliderRoute
+  '/docs/sonner': typeof DashboardDocsSonnerRoute
+  '/docs/spinner': typeof DashboardDocsSpinnerRoute
   '/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
+  '/docs/switch': typeof DashboardDocsSwitchRoute
+  '/docs/table': typeof DashboardDocsTableRoute
+  '/docs/tabs': typeof DashboardDocsTabsRoute
+  '/docs/textarea': typeof DashboardDocsTextareaRoute
+  '/docs/toggle': typeof DashboardDocsToggleRoute
+  '/docs/toggle-group': typeof DashboardDocsToggleGroupRoute
+  '/docs/tooltip': typeof DashboardDocsTooltipRoute
 }
 export interface FileRoutesByTo {
   '/': typeof DashboardIndexRoute
+  '/docs/accordion': typeof DashboardDocsAccordionRoute
+  '/docs/alert': typeof DashboardDocsAlertRoute
+  '/docs/alert-dialog': typeof DashboardDocsAlertDialogRoute
+  '/docs/aspect-ratio': typeof DashboardDocsAspectRatioRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
+  '/docs/avatar': typeof DashboardDocsAvatarRoute
+  '/docs/badge': typeof DashboardDocsBadgeRoute
+  '/docs/breadcrumb': typeof DashboardDocsBreadcrumbRoute
+  '/docs/button': typeof DashboardDocsButtonRoute
+  '/docs/button-group': typeof DashboardDocsButtonGroupRoute
+  '/docs/calendar': typeof DashboardDocsCalendarRoute
+  '/docs/card': typeof DashboardDocsCardRoute
+  '/docs/carousel': typeof DashboardDocsCarouselRoute
+  '/docs/chart': typeof DashboardDocsChartRoute
+  '/docs/checkbox': typeof DashboardDocsCheckboxRoute
+  '/docs/collapsible': typeof DashboardDocsCollapsibleRoute
+  '/docs/combobox': typeof DashboardDocsComboboxRoute
+  '/docs/command': typeof DashboardDocsCommandRoute
+  '/docs/context-menu': typeof DashboardDocsContextMenuRoute
+  '/docs/dialog': typeof DashboardDocsDialogRoute
+  '/docs/direction': typeof DashboardDocsDirectionRoute
+  '/docs/drawer': typeof DashboardDocsDrawerRoute
+  '/docs/dropdown-menu': typeof DashboardDocsDropdownMenuRoute
+  '/docs/empty': typeof DashboardDocsEmptyRoute
+  '/docs/field': typeof DashboardDocsFieldRoute
+  '/docs/hover-card': typeof DashboardDocsHoverCardRoute
+  '/docs/input': typeof DashboardDocsInputRoute
+  '/docs/input-group': typeof DashboardDocsInputGroupRoute
+  '/docs/input-otp': typeof DashboardDocsInputOtpRoute
+  '/docs/item': typeof DashboardDocsItemRoute
+  '/docs/kbd': typeof DashboardDocsKbdRoute
+  '/docs/label': typeof DashboardDocsLabelRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
+  '/docs/menubar': typeof DashboardDocsMenubarRoute
+  '/docs/native-select': typeof DashboardDocsNativeSelectRoute
+  '/docs/navigation-menu': typeof DashboardDocsNavigationMenuRoute
+  '/docs/pagination': typeof DashboardDocsPaginationRoute
+  '/docs/popover': typeof DashboardDocsPopoverRoute
+  '/docs/progress': typeof DashboardDocsProgressRoute
+  '/docs/radio-group': typeof DashboardDocsRadioGroupRoute
+  '/docs/resizable': typeof DashboardDocsResizableRoute
+  '/docs/scroll-area': typeof DashboardDocsScrollAreaRoute
+  '/docs/select': typeof DashboardDocsSelectRoute
+  '/docs/separator': typeof DashboardDocsSeparatorRoute
+  '/docs/sheet': typeof DashboardDocsSheetRoute
+  '/docs/sidebar': typeof DashboardDocsSidebarRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
+  '/docs/skeleton': typeof DashboardDocsSkeletonRoute
+  '/docs/slider': typeof DashboardDocsSliderRoute
+  '/docs/sonner': typeof DashboardDocsSonnerRoute
+  '/docs/spinner': typeof DashboardDocsSpinnerRoute
   '/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
+  '/docs/switch': typeof DashboardDocsSwitchRoute
+  '/docs/table': typeof DashboardDocsTableRoute
+  '/docs/tabs': typeof DashboardDocsTabsRoute
+  '/docs/textarea': typeof DashboardDocsTextareaRoute
+  '/docs/toggle': typeof DashboardDocsToggleRoute
+  '/docs/toggle-group': typeof DashboardDocsToggleGroupRoute
+  '/docs/tooltip': typeof DashboardDocsTooltipRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_dashboard': typeof DashboardRouteWithChildren
   '/_dashboard/': typeof DashboardIndexRoute
+  '/_dashboard/docs/accordion': typeof DashboardDocsAccordionRoute
+  '/_dashboard/docs/alert': typeof DashboardDocsAlertRoute
+  '/_dashboard/docs/alert-dialog': typeof DashboardDocsAlertDialogRoute
+  '/_dashboard/docs/aspect-ratio': typeof DashboardDocsAspectRatioRoute
   '/_dashboard/docs/aurora': typeof DashboardDocsAuroraRoute
+  '/_dashboard/docs/avatar': typeof DashboardDocsAvatarRoute
+  '/_dashboard/docs/badge': typeof DashboardDocsBadgeRoute
+  '/_dashboard/docs/breadcrumb': typeof DashboardDocsBreadcrumbRoute
+  '/_dashboard/docs/button': typeof DashboardDocsButtonRoute
+  '/_dashboard/docs/button-group': typeof DashboardDocsButtonGroupRoute
+  '/_dashboard/docs/calendar': typeof DashboardDocsCalendarRoute
+  '/_dashboard/docs/card': typeof DashboardDocsCardRoute
+  '/_dashboard/docs/carousel': typeof DashboardDocsCarouselRoute
+  '/_dashboard/docs/chart': typeof DashboardDocsChartRoute
+  '/_dashboard/docs/checkbox': typeof DashboardDocsCheckboxRoute
+  '/_dashboard/docs/collapsible': typeof DashboardDocsCollapsibleRoute
+  '/_dashboard/docs/combobox': typeof DashboardDocsComboboxRoute
+  '/_dashboard/docs/command': typeof DashboardDocsCommandRoute
+  '/_dashboard/docs/context-menu': typeof DashboardDocsContextMenuRoute
+  '/_dashboard/docs/dialog': typeof DashboardDocsDialogRoute
+  '/_dashboard/docs/direction': typeof DashboardDocsDirectionRoute
+  '/_dashboard/docs/drawer': typeof DashboardDocsDrawerRoute
+  '/_dashboard/docs/dropdown-menu': typeof DashboardDocsDropdownMenuRoute
+  '/_dashboard/docs/empty': typeof DashboardDocsEmptyRoute
+  '/_dashboard/docs/field': typeof DashboardDocsFieldRoute
+  '/_dashboard/docs/hover-card': typeof DashboardDocsHoverCardRoute
+  '/_dashboard/docs/input': typeof DashboardDocsInputRoute
+  '/_dashboard/docs/input-group': typeof DashboardDocsInputGroupRoute
+  '/_dashboard/docs/input-otp': typeof DashboardDocsInputOtpRoute
+  '/_dashboard/docs/item': typeof DashboardDocsItemRoute
+  '/_dashboard/docs/kbd': typeof DashboardDocsKbdRoute
+  '/_dashboard/docs/label': typeof DashboardDocsLabelRoute
   '/_dashboard/docs/loading-page': typeof DashboardDocsLoadingPageRoute
+  '/_dashboard/docs/menubar': typeof DashboardDocsMenubarRoute
+  '/_dashboard/docs/native-select': typeof DashboardDocsNativeSelectRoute
+  '/_dashboard/docs/navigation-menu': typeof DashboardDocsNavigationMenuRoute
+  '/_dashboard/docs/pagination': typeof DashboardDocsPaginationRoute
+  '/_dashboard/docs/popover': typeof DashboardDocsPopoverRoute
+  '/_dashboard/docs/progress': typeof DashboardDocsProgressRoute
+  '/_dashboard/docs/radio-group': typeof DashboardDocsRadioGroupRoute
+  '/_dashboard/docs/resizable': typeof DashboardDocsResizableRoute
+  '/_dashboard/docs/scroll-area': typeof DashboardDocsScrollAreaRoute
+  '/_dashboard/docs/select': typeof DashboardDocsSelectRoute
+  '/_dashboard/docs/separator': typeof DashboardDocsSeparatorRoute
+  '/_dashboard/docs/sheet': typeof DashboardDocsSheetRoute
+  '/_dashboard/docs/sidebar': typeof DashboardDocsSidebarRoute
   '/_dashboard/docs/silk': typeof DashboardDocsSilkRoute
+  '/_dashboard/docs/skeleton': typeof DashboardDocsSkeletonRoute
+  '/_dashboard/docs/slider': typeof DashboardDocsSliderRoute
+  '/_dashboard/docs/sonner': typeof DashboardDocsSonnerRoute
+  '/_dashboard/docs/spinner': typeof DashboardDocsSpinnerRoute
   '/_dashboard/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
+  '/_dashboard/docs/switch': typeof DashboardDocsSwitchRoute
+  '/_dashboard/docs/table': typeof DashboardDocsTableRoute
+  '/_dashboard/docs/tabs': typeof DashboardDocsTabsRoute
+  '/_dashboard/docs/textarea': typeof DashboardDocsTextareaRoute
+  '/_dashboard/docs/toggle': typeof DashboardDocsToggleRoute
+  '/_dashboard/docs/toggle-group': typeof DashboardDocsToggleGroupRoute
+  '/_dashboard/docs/tooltip': typeof DashboardDocsTooltipRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/docs/accordion'
+    | '/docs/alert'
+    | '/docs/alert-dialog'
+    | '/docs/aspect-ratio'
     | '/docs/aurora'
+    | '/docs/avatar'
+    | '/docs/badge'
+    | '/docs/breadcrumb'
+    | '/docs/button'
+    | '/docs/button-group'
+    | '/docs/calendar'
+    | '/docs/card'
+    | '/docs/carousel'
+    | '/docs/chart'
+    | '/docs/checkbox'
+    | '/docs/collapsible'
+    | '/docs/combobox'
+    | '/docs/command'
+    | '/docs/context-menu'
+    | '/docs/dialog'
+    | '/docs/direction'
+    | '/docs/drawer'
+    | '/docs/dropdown-menu'
+    | '/docs/empty'
+    | '/docs/field'
+    | '/docs/hover-card'
+    | '/docs/input'
+    | '/docs/input-group'
+    | '/docs/input-otp'
+    | '/docs/item'
+    | '/docs/kbd'
+    | '/docs/label'
     | '/docs/loading-page'
+    | '/docs/menubar'
+    | '/docs/native-select'
+    | '/docs/navigation-menu'
+    | '/docs/pagination'
+    | '/docs/popover'
+    | '/docs/progress'
+    | '/docs/radio-group'
+    | '/docs/resizable'
+    | '/docs/scroll-area'
+    | '/docs/select'
+    | '/docs/separator'
+    | '/docs/sheet'
+    | '/docs/sidebar'
     | '/docs/silk'
+    | '/docs/skeleton'
+    | '/docs/slider'
+    | '/docs/sonner'
+    | '/docs/spinner'
     | '/docs/stagger-reveal'
+    | '/docs/switch'
+    | '/docs/table'
+    | '/docs/tabs'
+    | '/docs/textarea'
+    | '/docs/toggle'
+    | '/docs/toggle-group'
+    | '/docs/tooltip'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/docs/accordion'
+    | '/docs/alert'
+    | '/docs/alert-dialog'
+    | '/docs/aspect-ratio'
     | '/docs/aurora'
+    | '/docs/avatar'
+    | '/docs/badge'
+    | '/docs/breadcrumb'
+    | '/docs/button'
+    | '/docs/button-group'
+    | '/docs/calendar'
+    | '/docs/card'
+    | '/docs/carousel'
+    | '/docs/chart'
+    | '/docs/checkbox'
+    | '/docs/collapsible'
+    | '/docs/combobox'
+    | '/docs/command'
+    | '/docs/context-menu'
+    | '/docs/dialog'
+    | '/docs/direction'
+    | '/docs/drawer'
+    | '/docs/dropdown-menu'
+    | '/docs/empty'
+    | '/docs/field'
+    | '/docs/hover-card'
+    | '/docs/input'
+    | '/docs/input-group'
+    | '/docs/input-otp'
+    | '/docs/item'
+    | '/docs/kbd'
+    | '/docs/label'
     | '/docs/loading-page'
+    | '/docs/menubar'
+    | '/docs/native-select'
+    | '/docs/navigation-menu'
+    | '/docs/pagination'
+    | '/docs/popover'
+    | '/docs/progress'
+    | '/docs/radio-group'
+    | '/docs/resizable'
+    | '/docs/scroll-area'
+    | '/docs/select'
+    | '/docs/separator'
+    | '/docs/sheet'
+    | '/docs/sidebar'
     | '/docs/silk'
+    | '/docs/skeleton'
+    | '/docs/slider'
+    | '/docs/sonner'
+    | '/docs/spinner'
     | '/docs/stagger-reveal'
+    | '/docs/switch'
+    | '/docs/table'
+    | '/docs/tabs'
+    | '/docs/textarea'
+    | '/docs/toggle'
+    | '/docs/toggle-group'
+    | '/docs/tooltip'
   id:
     | '__root__'
     | '/_dashboard'
     | '/_dashboard/'
+    | '/_dashboard/docs/accordion'
+    | '/_dashboard/docs/alert'
+    | '/_dashboard/docs/alert-dialog'
+    | '/_dashboard/docs/aspect-ratio'
     | '/_dashboard/docs/aurora'
+    | '/_dashboard/docs/avatar'
+    | '/_dashboard/docs/badge'
+    | '/_dashboard/docs/breadcrumb'
+    | '/_dashboard/docs/button'
+    | '/_dashboard/docs/button-group'
+    | '/_dashboard/docs/calendar'
+    | '/_dashboard/docs/card'
+    | '/_dashboard/docs/carousel'
+    | '/_dashboard/docs/chart'
+    | '/_dashboard/docs/checkbox'
+    | '/_dashboard/docs/collapsible'
+    | '/_dashboard/docs/combobox'
+    | '/_dashboard/docs/command'
+    | '/_dashboard/docs/context-menu'
+    | '/_dashboard/docs/dialog'
+    | '/_dashboard/docs/direction'
+    | '/_dashboard/docs/drawer'
+    | '/_dashboard/docs/dropdown-menu'
+    | '/_dashboard/docs/empty'
+    | '/_dashboard/docs/field'
+    | '/_dashboard/docs/hover-card'
+    | '/_dashboard/docs/input'
+    | '/_dashboard/docs/input-group'
+    | '/_dashboard/docs/input-otp'
+    | '/_dashboard/docs/item'
+    | '/_dashboard/docs/kbd'
+    | '/_dashboard/docs/label'
     | '/_dashboard/docs/loading-page'
+    | '/_dashboard/docs/menubar'
+    | '/_dashboard/docs/native-select'
+    | '/_dashboard/docs/navigation-menu'
+    | '/_dashboard/docs/pagination'
+    | '/_dashboard/docs/popover'
+    | '/_dashboard/docs/progress'
+    | '/_dashboard/docs/radio-group'
+    | '/_dashboard/docs/resizable'
+    | '/_dashboard/docs/scroll-area'
+    | '/_dashboard/docs/select'
+    | '/_dashboard/docs/separator'
+    | '/_dashboard/docs/sheet'
+    | '/_dashboard/docs/sidebar'
     | '/_dashboard/docs/silk'
+    | '/_dashboard/docs/skeleton'
+    | '/_dashboard/docs/slider'
+    | '/_dashboard/docs/sonner'
+    | '/_dashboard/docs/spinner'
     | '/_dashboard/docs/stagger-reveal'
+    | '/_dashboard/docs/switch'
+    | '/_dashboard/docs/table'
+    | '/_dashboard/docs/tabs'
+    | '/_dashboard/docs/textarea'
+    | '/_dashboard/docs/toggle'
+    | '/_dashboard/docs/toggle-group'
+    | '/_dashboard/docs/tooltip'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,11 +774,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/docs/tooltip': {
+      id: '/_dashboard/docs/tooltip'
+      path: '/docs/tooltip'
+      fullPath: '/docs/tooltip'
+      preLoaderRoute: typeof DashboardDocsTooltipRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/toggle-group': {
+      id: '/_dashboard/docs/toggle-group'
+      path: '/docs/toggle-group'
+      fullPath: '/docs/toggle-group'
+      preLoaderRoute: typeof DashboardDocsToggleGroupRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/toggle': {
+      id: '/_dashboard/docs/toggle'
+      path: '/docs/toggle'
+      fullPath: '/docs/toggle'
+      preLoaderRoute: typeof DashboardDocsToggleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/textarea': {
+      id: '/_dashboard/docs/textarea'
+      path: '/docs/textarea'
+      fullPath: '/docs/textarea'
+      preLoaderRoute: typeof DashboardDocsTextareaRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/tabs': {
+      id: '/_dashboard/docs/tabs'
+      path: '/docs/tabs'
+      fullPath: '/docs/tabs'
+      preLoaderRoute: typeof DashboardDocsTabsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/table': {
+      id: '/_dashboard/docs/table'
+      path: '/docs/table'
+      fullPath: '/docs/table'
+      preLoaderRoute: typeof DashboardDocsTableRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/switch': {
+      id: '/_dashboard/docs/switch'
+      path: '/docs/switch'
+      fullPath: '/docs/switch'
+      preLoaderRoute: typeof DashboardDocsSwitchRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/docs/stagger-reveal': {
       id: '/_dashboard/docs/stagger-reveal'
       path: '/docs/stagger-reveal'
       fullPath: '/docs/stagger-reveal'
       preLoaderRoute: typeof DashboardDocsStaggerRevealRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/spinner': {
+      id: '/_dashboard/docs/spinner'
+      path: '/docs/spinner'
+      fullPath: '/docs/spinner'
+      preLoaderRoute: typeof DashboardDocsSpinnerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/sonner': {
+      id: '/_dashboard/docs/sonner'
+      path: '/docs/sonner'
+      fullPath: '/docs/sonner'
+      preLoaderRoute: typeof DashboardDocsSonnerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/slider': {
+      id: '/_dashboard/docs/slider'
+      path: '/docs/slider'
+      fullPath: '/docs/slider'
+      preLoaderRoute: typeof DashboardDocsSliderRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/skeleton': {
+      id: '/_dashboard/docs/skeleton'
+      path: '/docs/skeleton'
+      fullPath: '/docs/skeleton'
+      preLoaderRoute: typeof DashboardDocsSkeletonRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/docs/silk': {
@@ -130,11 +865,291 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDocsSilkRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/docs/sidebar': {
+      id: '/_dashboard/docs/sidebar'
+      path: '/docs/sidebar'
+      fullPath: '/docs/sidebar'
+      preLoaderRoute: typeof DashboardDocsSidebarRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/sheet': {
+      id: '/_dashboard/docs/sheet'
+      path: '/docs/sheet'
+      fullPath: '/docs/sheet'
+      preLoaderRoute: typeof DashboardDocsSheetRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/separator': {
+      id: '/_dashboard/docs/separator'
+      path: '/docs/separator'
+      fullPath: '/docs/separator'
+      preLoaderRoute: typeof DashboardDocsSeparatorRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/select': {
+      id: '/_dashboard/docs/select'
+      path: '/docs/select'
+      fullPath: '/docs/select'
+      preLoaderRoute: typeof DashboardDocsSelectRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/scroll-area': {
+      id: '/_dashboard/docs/scroll-area'
+      path: '/docs/scroll-area'
+      fullPath: '/docs/scroll-area'
+      preLoaderRoute: typeof DashboardDocsScrollAreaRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/resizable': {
+      id: '/_dashboard/docs/resizable'
+      path: '/docs/resizable'
+      fullPath: '/docs/resizable'
+      preLoaderRoute: typeof DashboardDocsResizableRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/radio-group': {
+      id: '/_dashboard/docs/radio-group'
+      path: '/docs/radio-group'
+      fullPath: '/docs/radio-group'
+      preLoaderRoute: typeof DashboardDocsRadioGroupRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/progress': {
+      id: '/_dashboard/docs/progress'
+      path: '/docs/progress'
+      fullPath: '/docs/progress'
+      preLoaderRoute: typeof DashboardDocsProgressRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/popover': {
+      id: '/_dashboard/docs/popover'
+      path: '/docs/popover'
+      fullPath: '/docs/popover'
+      preLoaderRoute: typeof DashboardDocsPopoverRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/pagination': {
+      id: '/_dashboard/docs/pagination'
+      path: '/docs/pagination'
+      fullPath: '/docs/pagination'
+      preLoaderRoute: typeof DashboardDocsPaginationRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/navigation-menu': {
+      id: '/_dashboard/docs/navigation-menu'
+      path: '/docs/navigation-menu'
+      fullPath: '/docs/navigation-menu'
+      preLoaderRoute: typeof DashboardDocsNavigationMenuRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/native-select': {
+      id: '/_dashboard/docs/native-select'
+      path: '/docs/native-select'
+      fullPath: '/docs/native-select'
+      preLoaderRoute: typeof DashboardDocsNativeSelectRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/menubar': {
+      id: '/_dashboard/docs/menubar'
+      path: '/docs/menubar'
+      fullPath: '/docs/menubar'
+      preLoaderRoute: typeof DashboardDocsMenubarRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/_dashboard/docs/loading-page': {
       id: '/_dashboard/docs/loading-page'
       path: '/docs/loading-page'
       fullPath: '/docs/loading-page'
       preLoaderRoute: typeof DashboardDocsLoadingPageRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/label': {
+      id: '/_dashboard/docs/label'
+      path: '/docs/label'
+      fullPath: '/docs/label'
+      preLoaderRoute: typeof DashboardDocsLabelRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/kbd': {
+      id: '/_dashboard/docs/kbd'
+      path: '/docs/kbd'
+      fullPath: '/docs/kbd'
+      preLoaderRoute: typeof DashboardDocsKbdRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/item': {
+      id: '/_dashboard/docs/item'
+      path: '/docs/item'
+      fullPath: '/docs/item'
+      preLoaderRoute: typeof DashboardDocsItemRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/input-otp': {
+      id: '/_dashboard/docs/input-otp'
+      path: '/docs/input-otp'
+      fullPath: '/docs/input-otp'
+      preLoaderRoute: typeof DashboardDocsInputOtpRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/input-group': {
+      id: '/_dashboard/docs/input-group'
+      path: '/docs/input-group'
+      fullPath: '/docs/input-group'
+      preLoaderRoute: typeof DashboardDocsInputGroupRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/input': {
+      id: '/_dashboard/docs/input'
+      path: '/docs/input'
+      fullPath: '/docs/input'
+      preLoaderRoute: typeof DashboardDocsInputRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/hover-card': {
+      id: '/_dashboard/docs/hover-card'
+      path: '/docs/hover-card'
+      fullPath: '/docs/hover-card'
+      preLoaderRoute: typeof DashboardDocsHoverCardRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/field': {
+      id: '/_dashboard/docs/field'
+      path: '/docs/field'
+      fullPath: '/docs/field'
+      preLoaderRoute: typeof DashboardDocsFieldRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/empty': {
+      id: '/_dashboard/docs/empty'
+      path: '/docs/empty'
+      fullPath: '/docs/empty'
+      preLoaderRoute: typeof DashboardDocsEmptyRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/dropdown-menu': {
+      id: '/_dashboard/docs/dropdown-menu'
+      path: '/docs/dropdown-menu'
+      fullPath: '/docs/dropdown-menu'
+      preLoaderRoute: typeof DashboardDocsDropdownMenuRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/drawer': {
+      id: '/_dashboard/docs/drawer'
+      path: '/docs/drawer'
+      fullPath: '/docs/drawer'
+      preLoaderRoute: typeof DashboardDocsDrawerRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/direction': {
+      id: '/_dashboard/docs/direction'
+      path: '/docs/direction'
+      fullPath: '/docs/direction'
+      preLoaderRoute: typeof DashboardDocsDirectionRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/dialog': {
+      id: '/_dashboard/docs/dialog'
+      path: '/docs/dialog'
+      fullPath: '/docs/dialog'
+      preLoaderRoute: typeof DashboardDocsDialogRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/context-menu': {
+      id: '/_dashboard/docs/context-menu'
+      path: '/docs/context-menu'
+      fullPath: '/docs/context-menu'
+      preLoaderRoute: typeof DashboardDocsContextMenuRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/command': {
+      id: '/_dashboard/docs/command'
+      path: '/docs/command'
+      fullPath: '/docs/command'
+      preLoaderRoute: typeof DashboardDocsCommandRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/combobox': {
+      id: '/_dashboard/docs/combobox'
+      path: '/docs/combobox'
+      fullPath: '/docs/combobox'
+      preLoaderRoute: typeof DashboardDocsComboboxRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/collapsible': {
+      id: '/_dashboard/docs/collapsible'
+      path: '/docs/collapsible'
+      fullPath: '/docs/collapsible'
+      preLoaderRoute: typeof DashboardDocsCollapsibleRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/checkbox': {
+      id: '/_dashboard/docs/checkbox'
+      path: '/docs/checkbox'
+      fullPath: '/docs/checkbox'
+      preLoaderRoute: typeof DashboardDocsCheckboxRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/chart': {
+      id: '/_dashboard/docs/chart'
+      path: '/docs/chart'
+      fullPath: '/docs/chart'
+      preLoaderRoute: typeof DashboardDocsChartRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/carousel': {
+      id: '/_dashboard/docs/carousel'
+      path: '/docs/carousel'
+      fullPath: '/docs/carousel'
+      preLoaderRoute: typeof DashboardDocsCarouselRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/card': {
+      id: '/_dashboard/docs/card'
+      path: '/docs/card'
+      fullPath: '/docs/card'
+      preLoaderRoute: typeof DashboardDocsCardRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/calendar': {
+      id: '/_dashboard/docs/calendar'
+      path: '/docs/calendar'
+      fullPath: '/docs/calendar'
+      preLoaderRoute: typeof DashboardDocsCalendarRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/button-group': {
+      id: '/_dashboard/docs/button-group'
+      path: '/docs/button-group'
+      fullPath: '/docs/button-group'
+      preLoaderRoute: typeof DashboardDocsButtonGroupRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/button': {
+      id: '/_dashboard/docs/button'
+      path: '/docs/button'
+      fullPath: '/docs/button'
+      preLoaderRoute: typeof DashboardDocsButtonRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/breadcrumb': {
+      id: '/_dashboard/docs/breadcrumb'
+      path: '/docs/breadcrumb'
+      fullPath: '/docs/breadcrumb'
+      preLoaderRoute: typeof DashboardDocsBreadcrumbRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/badge': {
+      id: '/_dashboard/docs/badge'
+      path: '/docs/badge'
+      fullPath: '/docs/badge'
+      preLoaderRoute: typeof DashboardDocsBadgeRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/avatar': {
+      id: '/_dashboard/docs/avatar'
+      path: '/docs/avatar'
+      fullPath: '/docs/avatar'
+      preLoaderRoute: typeof DashboardDocsAvatarRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/docs/aurora': {
@@ -144,28 +1159,164 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardDocsAuroraRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/_dashboard/docs/aspect-ratio': {
+      id: '/_dashboard/docs/aspect-ratio'
+      path: '/docs/aspect-ratio'
+      fullPath: '/docs/aspect-ratio'
+      preLoaderRoute: typeof DashboardDocsAspectRatioRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/alert-dialog': {
+      id: '/_dashboard/docs/alert-dialog'
+      path: '/docs/alert-dialog'
+      fullPath: '/docs/alert-dialog'
+      preLoaderRoute: typeof DashboardDocsAlertDialogRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/alert': {
+      id: '/_dashboard/docs/alert'
+      path: '/docs/alert'
+      fullPath: '/docs/alert'
+      preLoaderRoute: typeof DashboardDocsAlertRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/accordion': {
+      id: '/_dashboard/docs/accordion'
+      path: '/docs/accordion'
+      fullPath: '/docs/accordion'
+      preLoaderRoute: typeof DashboardDocsAccordionRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
 interface DashboardRouteChildren {
   DashboardIndexRoute: typeof DashboardIndexRoute
+  DashboardDocsAccordionRoute: typeof DashboardDocsAccordionRoute
+  DashboardDocsAlertRoute: typeof DashboardDocsAlertRoute
+  DashboardDocsAlertDialogRoute: typeof DashboardDocsAlertDialogRoute
+  DashboardDocsAspectRatioRoute: typeof DashboardDocsAspectRatioRoute
   DashboardDocsAuroraRoute: typeof DashboardDocsAuroraRoute
+  DashboardDocsAvatarRoute: typeof DashboardDocsAvatarRoute
+  DashboardDocsBadgeRoute: typeof DashboardDocsBadgeRoute
+  DashboardDocsBreadcrumbRoute: typeof DashboardDocsBreadcrumbRoute
+  DashboardDocsButtonRoute: typeof DashboardDocsButtonRoute
+  DashboardDocsButtonGroupRoute: typeof DashboardDocsButtonGroupRoute
+  DashboardDocsCalendarRoute: typeof DashboardDocsCalendarRoute
+  DashboardDocsCardRoute: typeof DashboardDocsCardRoute
+  DashboardDocsCarouselRoute: typeof DashboardDocsCarouselRoute
+  DashboardDocsChartRoute: typeof DashboardDocsChartRoute
+  DashboardDocsCheckboxRoute: typeof DashboardDocsCheckboxRoute
+  DashboardDocsCollapsibleRoute: typeof DashboardDocsCollapsibleRoute
+  DashboardDocsComboboxRoute: typeof DashboardDocsComboboxRoute
+  DashboardDocsCommandRoute: typeof DashboardDocsCommandRoute
+  DashboardDocsContextMenuRoute: typeof DashboardDocsContextMenuRoute
+  DashboardDocsDialogRoute: typeof DashboardDocsDialogRoute
+  DashboardDocsDirectionRoute: typeof DashboardDocsDirectionRoute
+  DashboardDocsDrawerRoute: typeof DashboardDocsDrawerRoute
+  DashboardDocsDropdownMenuRoute: typeof DashboardDocsDropdownMenuRoute
+  DashboardDocsEmptyRoute: typeof DashboardDocsEmptyRoute
+  DashboardDocsFieldRoute: typeof DashboardDocsFieldRoute
+  DashboardDocsHoverCardRoute: typeof DashboardDocsHoverCardRoute
+  DashboardDocsInputRoute: typeof DashboardDocsInputRoute
+  DashboardDocsInputGroupRoute: typeof DashboardDocsInputGroupRoute
+  DashboardDocsInputOtpRoute: typeof DashboardDocsInputOtpRoute
+  DashboardDocsItemRoute: typeof DashboardDocsItemRoute
+  DashboardDocsKbdRoute: typeof DashboardDocsKbdRoute
+  DashboardDocsLabelRoute: typeof DashboardDocsLabelRoute
   DashboardDocsLoadingPageRoute: typeof DashboardDocsLoadingPageRoute
+  DashboardDocsMenubarRoute: typeof DashboardDocsMenubarRoute
+  DashboardDocsNativeSelectRoute: typeof DashboardDocsNativeSelectRoute
+  DashboardDocsNavigationMenuRoute: typeof DashboardDocsNavigationMenuRoute
+  DashboardDocsPaginationRoute: typeof DashboardDocsPaginationRoute
+  DashboardDocsPopoverRoute: typeof DashboardDocsPopoverRoute
+  DashboardDocsProgressRoute: typeof DashboardDocsProgressRoute
+  DashboardDocsRadioGroupRoute: typeof DashboardDocsRadioGroupRoute
+  DashboardDocsResizableRoute: typeof DashboardDocsResizableRoute
+  DashboardDocsScrollAreaRoute: typeof DashboardDocsScrollAreaRoute
+  DashboardDocsSelectRoute: typeof DashboardDocsSelectRoute
+  DashboardDocsSeparatorRoute: typeof DashboardDocsSeparatorRoute
+  DashboardDocsSheetRoute: typeof DashboardDocsSheetRoute
+  DashboardDocsSidebarRoute: typeof DashboardDocsSidebarRoute
   DashboardDocsSilkRoute: typeof DashboardDocsSilkRoute
+  DashboardDocsSkeletonRoute: typeof DashboardDocsSkeletonRoute
+  DashboardDocsSliderRoute: typeof DashboardDocsSliderRoute
+  DashboardDocsSonnerRoute: typeof DashboardDocsSonnerRoute
+  DashboardDocsSpinnerRoute: typeof DashboardDocsSpinnerRoute
   DashboardDocsStaggerRevealRoute: typeof DashboardDocsStaggerRevealRoute
+  DashboardDocsSwitchRoute: typeof DashboardDocsSwitchRoute
+  DashboardDocsTableRoute: typeof DashboardDocsTableRoute
+  DashboardDocsTabsRoute: typeof DashboardDocsTabsRoute
+  DashboardDocsTextareaRoute: typeof DashboardDocsTextareaRoute
+  DashboardDocsToggleRoute: typeof DashboardDocsToggleRoute
+  DashboardDocsToggleGroupRoute: typeof DashboardDocsToggleGroupRoute
+  DashboardDocsTooltipRoute: typeof DashboardDocsTooltipRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardIndexRoute: DashboardIndexRoute,
+  DashboardDocsAccordionRoute: DashboardDocsAccordionRoute,
+  DashboardDocsAlertRoute: DashboardDocsAlertRoute,
+  DashboardDocsAlertDialogRoute: DashboardDocsAlertDialogRoute,
+  DashboardDocsAspectRatioRoute: DashboardDocsAspectRatioRoute,
   DashboardDocsAuroraRoute: DashboardDocsAuroraRoute,
+  DashboardDocsAvatarRoute: DashboardDocsAvatarRoute,
+  DashboardDocsBadgeRoute: DashboardDocsBadgeRoute,
+  DashboardDocsBreadcrumbRoute: DashboardDocsBreadcrumbRoute,
+  DashboardDocsButtonRoute: DashboardDocsButtonRoute,
+  DashboardDocsButtonGroupRoute: DashboardDocsButtonGroupRoute,
+  DashboardDocsCalendarRoute: DashboardDocsCalendarRoute,
+  DashboardDocsCardRoute: DashboardDocsCardRoute,
+  DashboardDocsCarouselRoute: DashboardDocsCarouselRoute,
+  DashboardDocsChartRoute: DashboardDocsChartRoute,
+  DashboardDocsCheckboxRoute: DashboardDocsCheckboxRoute,
+  DashboardDocsCollapsibleRoute: DashboardDocsCollapsibleRoute,
+  DashboardDocsComboboxRoute: DashboardDocsComboboxRoute,
+  DashboardDocsCommandRoute: DashboardDocsCommandRoute,
+  DashboardDocsContextMenuRoute: DashboardDocsContextMenuRoute,
+  DashboardDocsDialogRoute: DashboardDocsDialogRoute,
+  DashboardDocsDirectionRoute: DashboardDocsDirectionRoute,
+  DashboardDocsDrawerRoute: DashboardDocsDrawerRoute,
+  DashboardDocsDropdownMenuRoute: DashboardDocsDropdownMenuRoute,
+  DashboardDocsEmptyRoute: DashboardDocsEmptyRoute,
+  DashboardDocsFieldRoute: DashboardDocsFieldRoute,
+  DashboardDocsHoverCardRoute: DashboardDocsHoverCardRoute,
+  DashboardDocsInputRoute: DashboardDocsInputRoute,
+  DashboardDocsInputGroupRoute: DashboardDocsInputGroupRoute,
+  DashboardDocsInputOtpRoute: DashboardDocsInputOtpRoute,
+  DashboardDocsItemRoute: DashboardDocsItemRoute,
+  DashboardDocsKbdRoute: DashboardDocsKbdRoute,
+  DashboardDocsLabelRoute: DashboardDocsLabelRoute,
   DashboardDocsLoadingPageRoute: DashboardDocsLoadingPageRoute,
+  DashboardDocsMenubarRoute: DashboardDocsMenubarRoute,
+  DashboardDocsNativeSelectRoute: DashboardDocsNativeSelectRoute,
+  DashboardDocsNavigationMenuRoute: DashboardDocsNavigationMenuRoute,
+  DashboardDocsPaginationRoute: DashboardDocsPaginationRoute,
+  DashboardDocsPopoverRoute: DashboardDocsPopoverRoute,
+  DashboardDocsProgressRoute: DashboardDocsProgressRoute,
+  DashboardDocsRadioGroupRoute: DashboardDocsRadioGroupRoute,
+  DashboardDocsResizableRoute: DashboardDocsResizableRoute,
+  DashboardDocsScrollAreaRoute: DashboardDocsScrollAreaRoute,
+  DashboardDocsSelectRoute: DashboardDocsSelectRoute,
+  DashboardDocsSeparatorRoute: DashboardDocsSeparatorRoute,
+  DashboardDocsSheetRoute: DashboardDocsSheetRoute,
+  DashboardDocsSidebarRoute: DashboardDocsSidebarRoute,
   DashboardDocsSilkRoute: DashboardDocsSilkRoute,
+  DashboardDocsSkeletonRoute: DashboardDocsSkeletonRoute,
+  DashboardDocsSliderRoute: DashboardDocsSliderRoute,
+  DashboardDocsSonnerRoute: DashboardDocsSonnerRoute,
+  DashboardDocsSpinnerRoute: DashboardDocsSpinnerRoute,
   DashboardDocsStaggerRevealRoute: DashboardDocsStaggerRevealRoute,
+  DashboardDocsSwitchRoute: DashboardDocsSwitchRoute,
+  DashboardDocsTableRoute: DashboardDocsTableRoute,
+  DashboardDocsTabsRoute: DashboardDocsTabsRoute,
+  DashboardDocsTextareaRoute: DashboardDocsTextareaRoute,
+  DashboardDocsToggleRoute: DashboardDocsToggleRoute,
+  DashboardDocsToggleGroupRoute: DashboardDocsToggleGroupRoute,
+  DashboardDocsTooltipRoute: DashboardDocsTooltipRoute,
 }
 
-const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
-  DashboardRouteChildren,
-)
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(DashboardRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRouteWithChildren,

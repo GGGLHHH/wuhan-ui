@@ -1,0 +1,123 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import CarouselDemo from '@/registry/examples/carousel-demo'
+import CarouselDemoSource from '@/registry/examples/carousel-demo.tsx?raw'
+
+# Carousel
+
+基于 Embla Carousel 的轮播组件，支持水平和垂直方向滚动、键盘导航和插件扩展。
+
+## Import
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={CarouselDemoSource}>
+  <CarouselDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Carousel
+
+<PropsTable
+  data={[
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'horizontal'",
+      description: '轮播滚动方向',
+    },
+    {
+      prop: 'opts',
+      type: 'CarouselOptions',
+      default: 'undefined',
+      description: 'Embla Carousel 配置选项',
+    },
+    {
+      prop: 'plugins',
+      type: 'CarouselPlugin',
+      default: 'undefined',
+      description: 'Embla Carousel 插件数组',
+    },
+    {
+      prop: 'setApi',
+      type: '(api: CarouselApi) => void',
+      default: 'undefined',
+      description: '获取轮播 API 实例的回调函数',
+    },
+  ]}
+/>
+
+### CarouselContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### CarouselItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义样式类名',
+    },
+  ]}
+/>
+
+### CarouselPrevious
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: 'string',
+      default: "'outline'",
+      description: '按钮样式变体',
+    },
+    {
+      prop: 'size',
+      type: 'string',
+      default: "'icon-sm'",
+      description: '按钮尺寸',
+    },
+  ]}
+/>
+
+### CarouselNext
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: 'string',
+      default: "'outline'",
+      description: '按钮样式变体',
+    },
+    {
+      prop: 'size',
+      type: 'string',
+      default: "'icon-sm'",
+      description: '按钮尺寸',
+    },
+  ]}
+/>

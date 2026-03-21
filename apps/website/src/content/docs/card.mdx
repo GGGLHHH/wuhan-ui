@@ -1,0 +1,53 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import CardDemo from '@/registry/examples/card-demo'
+import CardDemoSource from '@/registry/examples/card-demo.tsx?raw'
+
+# Card
+
+用于承载标题、描述、内容和操作区域的基础卡片容器组件。
+
+## Import
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardAction,
+  CardContent,
+  CardFooter,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={CardDemoSource}>
+  <CardDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'size',
+      type: "'default' | 'sm'",
+      default: "'default'",
+      description: '控制卡片的间距与内边距尺寸。',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '为 Card 及其子区域补充自定义样式类名。',
+    },
+    {
+      prop: '...props',
+      type: "React.ComponentProps<'div'>",
+      default: '-',
+      description: '继承原生 div 元素属性，可用于标题区域、内容区域与底部操作区等结构容器。',
+    },
+  ]}
+/>

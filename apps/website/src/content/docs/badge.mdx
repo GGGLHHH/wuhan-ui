@@ -1,0 +1,45 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import BadgeDemo from '@/registry/examples/badge-demo'
+import BadgeDemoSource from '@/registry/examples/badge-demo.tsx?raw'
+
+# Badge
+
+用于显示状态、标签或分类的小型标记组件，支持多种视觉变体。
+
+## Import
+
+```tsx
+import { Badge } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={BadgeDemoSource}>
+  <BadgeDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link'",
+      default: "'default'",
+      description: '徽章的视觉样式变体',
+    },
+    {
+      prop: 'asChild',
+      type: 'boolean',
+      default: 'false',
+      description: '是否将样式委托给子元素渲染',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

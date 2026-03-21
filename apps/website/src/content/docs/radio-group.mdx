@@ -1,0 +1,90 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import RadioGroupDemo from '@/registry/examples/radio-group-demo'
+import RadioGroupDemoSource from '@/registry/examples/radio-group-demo.tsx?raw'
+
+# RadioGroup
+
+单选按钮组组件，允许用户从一组选项中选择一个，基于 Radix UI 构建。
+
+## Import
+
+```tsx
+import { RadioGroup, RadioGroupItem } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={RadioGroupDemoSource}>
+  <RadioGroupDemo />
+</ComponentPreview>
+
+## API Reference
+
+### RadioGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'defaultValue',
+      type: 'string',
+      default: 'undefined',
+      description: '默认选中的值',
+    },
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '受控模式下的选中值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string) => void',
+      default: 'undefined',
+      description: '选中值变化时的回调函数',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用整个单选组',
+    },
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'vertical'",
+      description: '排列方向',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### RadioGroupItem
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '—',
+      description: '该选项的值（必填）',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用该选项',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

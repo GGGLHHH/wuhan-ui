@@ -1,0 +1,109 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SheetDemo from '@/registry/examples/sheet-demo'
+import SheetDemoSource from '@/registry/examples/sheet-demo.tsx?raw'
+
+# Sheet
+
+侧边抽屉面板组件，从屏幕边缘滑出，用于展示补充内容或表单。基于 Radix UI Dialog 构建。
+
+## Import
+
+```tsx
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SheetDemoSource}>
+  <SheetDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Sheet
+
+<PropsTable
+  data={[
+    { prop: 'open', type: 'boolean', default: 'undefined', description: '受控模式下的打开状态' },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调',
+    },
+    { prop: 'modal', type: 'boolean', default: 'true', description: '是否以模态方式展示' },
+  ]}
+/>
+
+### SheetContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'side',
+      type: "'top' | 'right' | 'bottom' | 'left'",
+      default: "'right'",
+      description: '面板滑出方向',
+    },
+    { prop: 'showCloseButton', type: 'boolean', default: 'true', description: '是否显示关闭按钮' },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+    {
+      prop: 'onOpenAutoFocus',
+      type: '(event: Event) => void',
+      default: 'undefined',
+      description: '打开时自动聚焦的回调',
+    },
+    {
+      prop: 'onCloseAutoFocus',
+      type: '(event: Event) => void',
+      default: 'undefined',
+      description: '关闭时自动聚焦的回调',
+    },
+    {
+      prop: 'onEscapeKeyDown',
+      type: '(event: KeyboardEvent) => void',
+      default: 'undefined',
+      description: '按下 Escape 键时的回调',
+    },
+  ]}
+/>
+
+### SheetHeader / SheetFooter
+
+<PropsTable
+  data={[
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>
+
+### SheetTitle
+
+<PropsTable
+  data={[
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>
+
+### SheetDescription
+
+<PropsTable
+  data={[
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>

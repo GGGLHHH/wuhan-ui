@@ -1,0 +1,63 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SwitchDemo from '@/registry/examples/switch-demo'
+import SwitchDemoSource from '@/registry/examples/switch-demo.tsx?raw'
+
+# Switch
+
+用于在开启和关闭两种状态之间切换的开关组件，基于 Radix UI Switch 构建。
+
+## Import
+
+```tsx
+import { Switch } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SwitchDemoSource}>
+  <SwitchDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'checked',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的选中状态',
+    },
+    {
+      prop: 'defaultChecked',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认选中状态',
+    },
+    {
+      prop: 'onCheckedChange',
+      type: '(checked: boolean) => void',
+      default: 'undefined',
+      description: '选中状态变化时的回调函数',
+    },
+    {
+      prop: 'size',
+      type: "'sm' | 'default'",
+      default: "'default'",
+      description: '开关尺寸',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

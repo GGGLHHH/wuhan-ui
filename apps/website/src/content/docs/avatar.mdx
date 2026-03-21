@@ -1,0 +1,149 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import AvatarDemo from '@/registry/examples/avatar-demo'
+import AvatarDemoSource from '@/registry/examples/avatar-demo.tsx?raw'
+
+# Avatar
+
+用于展示用户头像的组件，支持图片、文字回退、徽标、尺寸变体和分组显示。基于 Radix UI Avatar 原语构建。
+
+## Import
+
+```tsx
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+  AvatarBadge,
+  AvatarGroup,
+  AvatarGroupCount,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={AvatarDemoSource}>
+  <AvatarDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Avatar
+
+<PropsTable
+  data={[
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg'",
+      default: "'default'",
+      description: '头像尺寸',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AvatarImage
+
+<PropsTable
+  data={[
+    {
+      prop: 'src',
+      type: 'string',
+      default: '-',
+      description: '图片地址',
+    },
+    {
+      prop: 'alt',
+      type: 'string',
+      default: '-',
+      description: '图片替代文本',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AvatarFallback
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: '图片加载失败时的回退内容',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AvatarBadge
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: '徽标内容（如图标），sm 尺寸下自动隐藏',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AvatarGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: '一组 Avatar 组件',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### AvatarGroupCount
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: '显示剩余数量，如 "+3"',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>

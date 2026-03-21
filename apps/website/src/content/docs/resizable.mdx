@@ -1,0 +1,109 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import ResizableDemo from '@/registry/examples/resizable-demo'
+import ResizableDemoSource from '@/registry/examples/resizable-demo.tsx?raw'
+
+# Resizable
+
+可调整大小的面板组组件，支持水平和垂直方向拖拽调整，基于 react-resizable-panels 构建。
+
+## Import
+
+```tsx
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={ResizableDemoSource}>
+  <ResizableDemo />
+</ComponentPreview>
+
+## API Reference
+
+### ResizablePanelGroup
+
+<PropsTable
+  data={[
+    {
+      prop: 'direction',
+      type: "'horizontal' | 'vertical'",
+      default: '—',
+      description: '面板组的排列方向（必填）',
+    },
+    {
+      prop: 'autoSaveId',
+      type: 'string',
+      default: 'undefined',
+      description: '自动保存布局的唯一标识',
+    },
+    {
+      prop: 'onLayout',
+      type: '(sizes: number[]) => void',
+      default: 'undefined',
+      description: '布局变化时的回调函数',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### ResizablePanel
+
+<PropsTable
+  data={[
+    {
+      prop: 'defaultSize',
+      type: 'number',
+      default: 'undefined',
+      description: '面板的默认大小（百分比）',
+    },
+    {
+      prop: 'minSize',
+      type: 'number',
+      default: '10',
+      description: '面板的最小大小（百分比）',
+    },
+    {
+      prop: 'maxSize',
+      type: 'number',
+      default: 'undefined',
+      description: '面板的最大大小（百分比）',
+    },
+    {
+      prop: 'collapsible',
+      type: 'boolean',
+      default: 'false',
+      description: '是否允许折叠面板',
+    },
+  ]}
+/>
+
+### ResizableHandle
+
+<PropsTable
+  data={[
+    {
+      prop: 'withHandle',
+      type: 'boolean',
+      default: 'false',
+      description: '是否显示拖拽手柄',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用拖拽',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

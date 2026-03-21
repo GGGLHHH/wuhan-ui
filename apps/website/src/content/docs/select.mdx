@@ -1,0 +1,103 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import SelectDemo from '@/registry/examples/select-demo'
+import SelectDemoSource from '@/registry/examples/select-demo.tsx?raw'
+
+# Select
+
+下拉选择器组件，允许用户从一组预定义选项中选择一个值。基于 Radix UI Select 构建。
+
+## Import
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={SelectDemoSource}>
+  <SelectDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Select
+
+<PropsTable
+  data={[
+    { prop: 'value', type: 'string', default: 'undefined', description: '受控模式下的选中值' },
+    {
+      prop: 'defaultValue',
+      type: 'string',
+      default: 'undefined',
+      description: '非受控模式下的默认选中值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string) => void',
+      default: 'undefined',
+      description: '选中值变化时的回调',
+    },
+    { prop: 'open', type: 'boolean', default: 'undefined', description: '受控模式下的打开状态' },
+    {
+      prop: 'defaultOpen',
+      type: 'boolean',
+      default: 'false',
+      description: '非受控模式下的默认打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调',
+    },
+    { prop: 'disabled', type: 'boolean', default: 'false', description: '是否禁用' },
+  ]}
+/>
+
+### SelectTrigger
+
+<PropsTable
+  data={[
+    { prop: 'size', type: "'sm' | 'default'", default: "'default'", description: '触发器尺寸' },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>
+
+### SelectContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'position',
+      type: "'item-aligned' | 'popper'",
+      default: "'item-aligned'",
+      description: '下拉面板定位方式',
+    },
+    {
+      prop: 'align',
+      type: "'start' | 'center' | 'end'",
+      default: "'center'",
+      description: '对齐方式',
+    },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>
+
+### SelectItem
+
+<PropsTable
+  data={[
+    { prop: 'value', type: 'string', default: '—', description: '选项值（必填）' },
+    { prop: 'disabled', type: 'boolean', default: 'false', description: '是否禁用该选项' },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>

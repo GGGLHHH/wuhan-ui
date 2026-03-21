@@ -1,0 +1,122 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import TabsDemo from '@/registry/examples/tabs-demo'
+import TabsDemoSource from '@/registry/examples/tabs-demo.tsx?raw'
+
+# Tabs
+
+用于在不同内容面板之间切换的选项卡组件，基于 Radix UI Tabs 构建，支持水平和垂直方向。
+
+## Import
+
+```tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={TabsDemoSource}>
+  <TabsDemo />
+</ComponentPreview>
+
+## API Reference
+
+### Tabs
+
+<PropsTable
+  data={[
+    {
+      prop: 'defaultValue',
+      type: 'string',
+      default: 'undefined',
+      description: '默认激活的选项卡值',
+    },
+    {
+      prop: 'value',
+      type: 'string',
+      default: 'undefined',
+      description: '受控模式下当前激活的选项卡值',
+    },
+    {
+      prop: 'onValueChange',
+      type: '(value: string) => void',
+      default: 'undefined',
+      description: '选项卡切换时的回调函数',
+    },
+    {
+      prop: 'orientation',
+      type: "'horizontal' | 'vertical'",
+      default: "'horizontal'",
+      description: '选项卡方向',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### TabsList
+
+<PropsTable
+  data={[
+    {
+      prop: 'variant',
+      type: "'default' | 'line'",
+      default: "'default'",
+      description: '选项卡列表样式变体',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### TabsTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '—',
+      description: '选项卡触发器的唯一标识值',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>
+
+### TabsContent
+
+<PropsTable
+  data={[
+    {
+      prop: 'value',
+      type: 'string',
+      default: '—',
+      description: '与对应 TabsTrigger 匹配的值',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '自定义 CSS 类名',
+    },
+  ]}
+/>

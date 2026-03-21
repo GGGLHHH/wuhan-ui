@@ -1,0 +1,72 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import DrawerDemo from '@/registry/examples/drawer-demo'
+import DrawerDemoSource from '@/registry/examples/drawer-demo.tsx?raw'
+
+# Drawer
+
+基于 Vaul 的抽屉组件，支持从底部、左侧、右侧、顶部滑出，适用于移动端友好的交互场景。
+
+## Import
+
+```tsx
+import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerClose,
+} from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={DrawerDemoSource}>
+  <DrawerDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      description: '受控模式下的打开状态',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      description: '打开状态变化时的回调',
+    },
+    {
+      prop: 'direction',
+      type: "'bottom' | 'top' | 'left' | 'right'",
+      default: "'bottom'",
+      description: '抽屉滑出方向',
+    },
+    {
+      prop: 'shouldScaleBackground',
+      type: 'boolean',
+      default: 'true',
+      description: '打开时是否缩放背景',
+    },
+    {
+      prop: 'dismissible',
+      type: 'boolean',
+      default: 'true',
+      description: '是否可通过拖拽或点击遮罩关闭',
+    },
+    {
+      prop: 'modal',
+      type: 'boolean',
+      default: 'true',
+      description: '是否以模态方式打开（阻止背景交互）',
+    },
+  ]}
+/>
