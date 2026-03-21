@@ -25,7 +25,7 @@ export function ComponentPreview({ children, code, language = 'tsx' }: Component
   return (
     <div className="not-prose mt-4 mb-12 flex flex-col overflow-hidden rounded-xl border">
       {/* Preview */}
-      <div className="flex min-h-[280px] items-center justify-center">{children}</div>
+      <div className="flex min-h-[280px] items-center justify-center p-4">{children}</div>
       {/* Code */}
       <div className="relative">
         {/* Copy button */}
