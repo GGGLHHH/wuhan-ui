@@ -72,6 +72,24 @@ import { Calendar } from '@gedatou/ui'
       description: '禁用的日期匹配规则',
     },
     {
+      prop: 'classNames',
+      type: 'Partial<ClassNames>',
+      default: 'undefined',
+      description: '自定义各部分的 CSS 类名（覆盖默认类名）',
+    },
+    {
+      prop: 'formatters',
+      type: 'Partial<Formatters>',
+      default: 'undefined',
+      description: '自定义日期格式化函数',
+    },
+    {
+      prop: 'components',
+      type: 'Partial<Components>',
+      default: 'undefined',
+      description: '自定义子组件（如 Chevron、DayButton 等）',
+    },
+    {
       prop: 'className',
       type: 'string',
       default: 'undefined',

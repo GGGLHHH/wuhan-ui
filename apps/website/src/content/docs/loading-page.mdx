@@ -21,15 +21,6 @@ import { LoadingPage } from '@gedatou/ui'
 
 ## API Reference
 
-<PropsTable
-  data={[
-    {
-      prop: 'src',
-      type: 'string',
-      default: '(内置 Lottie URL)',
-      description: '自定义 Lottie 动画资源地址',
-    },
-    { prop: 'loop', type: 'boolean', default: 'true', description: '是否循环播放' },
-    { prop: 'autoplay', type: 'boolean', default: 'true', description: '是否自动播放' },
-  ]}
-/>
+该组件内部固定使用内置 Lottie 动画资源，`src`、`loop`、`autoplay` 为硬编码值，不可通过 props 覆盖。
+
+其余 `DotLottieReactProps` 属性（如 `className`、`style` 等）可通过 props 透传。

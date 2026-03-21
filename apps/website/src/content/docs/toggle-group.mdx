@@ -99,6 +99,18 @@ import { ToggleGroup, ToggleGroupItem } from '@gedatou/ui'
       description: '选项的唯一标识值（必填）',
     },
     {
+      prop: 'variant',
+      type: "'default' | 'outline'",
+      default: "'default'",
+      description: '单个选项的样式变体（覆盖组级别设置）',
+    },
+    {
+      prop: 'size',
+      type: "'default' | 'sm' | 'lg'",
+      default: "'default'",
+      description: '单个选项的尺寸（覆盖组级别设置）',
+    },
+    {
       prop: 'disabled',
       type: 'boolean',
       default: 'false',

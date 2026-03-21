@@ -5,7 +5,7 @@ import { KeyRound } from 'lucide-react'
 
 export const Route = createFileRoute('/_dashboard/docs/input-otp')({
   staticData: {
-    title: 'InputOtp',
+    title: 'InputOTP',
     icon: KeyRound,
     group: 'Components',
   },
