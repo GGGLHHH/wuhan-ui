@@ -51,6 +51,7 @@
     "embla-carousel-react": "catalog:",
     "input-otp": "catalog:",
     "lucide-react": "catalog:",
+    "motion": "^12.38.0",
     "next-themes": "catalog:",
     "ogl": "catalog:",
     "radix-ui": "catalog:",
