@@ -1,11 +1,9 @@
 import { NavMain } from '@/components/nav-main'
-import { ThemeToggle } from '@/components/theme-toggle'
 import { routeTree } from '@/routeTree.gen'
 import { buildGroupedMenuItems } from '@/utils/route-utils'
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -32,13 +30,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <NavMain key={group.label ?? '__default'} label={group.label} items={group.items} />
         ))}
       </SidebarContent>
-      <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <ThemeToggle />
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
     </Sidebar>
   )
 }
