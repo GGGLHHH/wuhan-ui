@@ -26,22 +26,28 @@ import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '@gedatou/u
 <PropsTable
   data={[
     {
-      prop: 'direction',
+      prop: 'orientation',
       type: "'horizontal' | 'vertical'",
-      default: '—',
-      description: '面板组的排列方向（必填）',
+      default: "'horizontal'",
+      description: '面板组的排列方向',
     },
     {
-      prop: 'autoSaveId',
-      type: 'string',
+      prop: 'defaultLayout',
+      type: 'Layout',
       default: 'undefined',
-      description: '自动保存布局的唯一标识',
+      description: '面板组的默认布局',
     },
     {
-      prop: 'onLayout',
-      type: '(sizes: number[]) => void',
+      prop: 'onLayoutChanged',
+      type: '(layout: Layout) => void',
       default: 'undefined',
-      description: '布局变化时的回调函数',
+      description: '布局变化完成后的回调函数',
+    },
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用调整大小功能',
     },
     {
       prop: 'className',

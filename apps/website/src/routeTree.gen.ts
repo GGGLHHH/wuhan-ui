@@ -10,66 +10,66 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
-import { Route as DashboardDocsAccordionRouteImport } from './routes/_dashboard/docs.accordion'
-import { Route as DashboardDocsAlertRouteImport } from './routes/_dashboard/docs.alert'
-import { Route as DashboardDocsAlertDialogRouteImport } from './routes/_dashboard/docs.alert-dialog'
-import { Route as DashboardDocsAspectRatioRouteImport } from './routes/_dashboard/docs.aspect-ratio'
-import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
-import { Route as DashboardDocsAvatarRouteImport } from './routes/_dashboard/docs.avatar'
-import { Route as DashboardDocsBadgeRouteImport } from './routes/_dashboard/docs.badge'
-import { Route as DashboardDocsBreadcrumbRouteImport } from './routes/_dashboard/docs.breadcrumb'
-import { Route as DashboardDocsButtonRouteImport } from './routes/_dashboard/docs.button'
-import { Route as DashboardDocsButtonGroupRouteImport } from './routes/_dashboard/docs.button-group'
-import { Route as DashboardDocsCalendarRouteImport } from './routes/_dashboard/docs.calendar'
-import { Route as DashboardDocsCardRouteImport } from './routes/_dashboard/docs.card'
-import { Route as DashboardDocsCarouselRouteImport } from './routes/_dashboard/docs.carousel'
-import { Route as DashboardDocsChartRouteImport } from './routes/_dashboard/docs.chart'
-import { Route as DashboardDocsCheckboxRouteImport } from './routes/_dashboard/docs.checkbox'
-import { Route as DashboardDocsCollapsibleRouteImport } from './routes/_dashboard/docs.collapsible'
-import { Route as DashboardDocsComboboxRouteImport } from './routes/_dashboard/docs.combobox'
-import { Route as DashboardDocsCommandRouteImport } from './routes/_dashboard/docs.command'
-import { Route as DashboardDocsContextMenuRouteImport } from './routes/_dashboard/docs.context-menu'
-import { Route as DashboardDocsDialogRouteImport } from './routes/_dashboard/docs.dialog'
-import { Route as DashboardDocsDirectionRouteImport } from './routes/_dashboard/docs.direction'
-import { Route as DashboardDocsDrawerRouteImport } from './routes/_dashboard/docs.drawer'
-import { Route as DashboardDocsDropdownMenuRouteImport } from './routes/_dashboard/docs.dropdown-menu'
-import { Route as DashboardDocsEmptyRouteImport } from './routes/_dashboard/docs.empty'
-import { Route as DashboardDocsFieldRouteImport } from './routes/_dashboard/docs.field'
-import { Route as DashboardDocsHoverCardRouteImport } from './routes/_dashboard/docs.hover-card'
-import { Route as DashboardDocsInputRouteImport } from './routes/_dashboard/docs.input'
-import { Route as DashboardDocsInputGroupRouteImport } from './routes/_dashboard/docs.input-group'
-import { Route as DashboardDocsInputOtpRouteImport } from './routes/_dashboard/docs.input-otp'
-import { Route as DashboardDocsItemRouteImport } from './routes/_dashboard/docs.item'
-import { Route as DashboardDocsKbdRouteImport } from './routes/_dashboard/docs.kbd'
-import { Route as DashboardDocsLabelRouteImport } from './routes/_dashboard/docs.label'
-import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
-import { Route as DashboardDocsMenubarRouteImport } from './routes/_dashboard/docs.menubar'
-import { Route as DashboardDocsNativeSelectRouteImport } from './routes/_dashboard/docs.native-select'
-import { Route as DashboardDocsNavigationMenuRouteImport } from './routes/_dashboard/docs.navigation-menu'
-import { Route as DashboardDocsPaginationRouteImport } from './routes/_dashboard/docs.pagination'
-import { Route as DashboardDocsPopoverRouteImport } from './routes/_dashboard/docs.popover'
-import { Route as DashboardDocsProgressRouteImport } from './routes/_dashboard/docs.progress'
-import { Route as DashboardDocsRadioGroupRouteImport } from './routes/_dashboard/docs.radio-group'
-import { Route as DashboardDocsResizableRouteImport } from './routes/_dashboard/docs.resizable'
-import { Route as DashboardDocsScrollAreaRouteImport } from './routes/_dashboard/docs.scroll-area'
-import { Route as DashboardDocsSelectRouteImport } from './routes/_dashboard/docs.select'
-import { Route as DashboardDocsSeparatorRouteImport } from './routes/_dashboard/docs.separator'
-import { Route as DashboardDocsSheetRouteImport } from './routes/_dashboard/docs.sheet'
-import { Route as DashboardDocsSidebarRouteImport } from './routes/_dashboard/docs.sidebar'
-import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
-import { Route as DashboardDocsSkeletonRouteImport } from './routes/_dashboard/docs.skeleton'
-import { Route as DashboardDocsSliderRouteImport } from './routes/_dashboard/docs.slider'
-import { Route as DashboardDocsSonnerRouteImport } from './routes/_dashboard/docs.sonner'
-import { Route as DashboardDocsSpinnerRouteImport } from './routes/_dashboard/docs.spinner'
-import { Route as DashboardDocsStaggerRevealRouteImport } from './routes/_dashboard/docs.stagger-reveal'
-import { Route as DashboardDocsSwitchRouteImport } from './routes/_dashboard/docs.switch'
-import { Route as DashboardDocsTableRouteImport } from './routes/_dashboard/docs.table'
-import { Route as DashboardDocsTabsRouteImport } from './routes/_dashboard/docs.tabs'
-import { Route as DashboardDocsTextareaRouteImport } from './routes/_dashboard/docs.textarea'
-import { Route as DashboardDocsToggleRouteImport } from './routes/_dashboard/docs.toggle'
-import { Route as DashboardDocsToggleGroupRouteImport } from './routes/_dashboard/docs.toggle-group'
-import { Route as DashboardDocsTooltipRouteImport } from './routes/_dashboard/docs.tooltip'
 import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
+import { Route as DashboardDocsTooltipRouteImport } from './routes/_dashboard/docs.tooltip'
+import { Route as DashboardDocsToggleGroupRouteImport } from './routes/_dashboard/docs.toggle-group'
+import { Route as DashboardDocsToggleRouteImport } from './routes/_dashboard/docs.toggle'
+import { Route as DashboardDocsTextareaRouteImport } from './routes/_dashboard/docs.textarea'
+import { Route as DashboardDocsTabsRouteImport } from './routes/_dashboard/docs.tabs'
+import { Route as DashboardDocsTableRouteImport } from './routes/_dashboard/docs.table'
+import { Route as DashboardDocsSwitchRouteImport } from './routes/_dashboard/docs.switch'
+import { Route as DashboardDocsStaggerRevealRouteImport } from './routes/_dashboard/docs.stagger-reveal'
+import { Route as DashboardDocsSpinnerRouteImport } from './routes/_dashboard/docs.spinner'
+import { Route as DashboardDocsSonnerRouteImport } from './routes/_dashboard/docs.sonner'
+import { Route as DashboardDocsSliderRouteImport } from './routes/_dashboard/docs.slider'
+import { Route as DashboardDocsSkeletonRouteImport } from './routes/_dashboard/docs.skeleton'
+import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
+import { Route as DashboardDocsSidebarRouteImport } from './routes/_dashboard/docs.sidebar'
+import { Route as DashboardDocsSheetRouteImport } from './routes/_dashboard/docs.sheet'
+import { Route as DashboardDocsSeparatorRouteImport } from './routes/_dashboard/docs.separator'
+import { Route as DashboardDocsSelectRouteImport } from './routes/_dashboard/docs.select'
+import { Route as DashboardDocsScrollAreaRouteImport } from './routes/_dashboard/docs.scroll-area'
+import { Route as DashboardDocsResizableRouteImport } from './routes/_dashboard/docs.resizable'
+import { Route as DashboardDocsRadioGroupRouteImport } from './routes/_dashboard/docs.radio-group'
+import { Route as DashboardDocsProgressRouteImport } from './routes/_dashboard/docs.progress'
+import { Route as DashboardDocsPopoverRouteImport } from './routes/_dashboard/docs.popover'
+import { Route as DashboardDocsPaginationRouteImport } from './routes/_dashboard/docs.pagination'
+import { Route as DashboardDocsNavigationMenuRouteImport } from './routes/_dashboard/docs.navigation-menu'
+import { Route as DashboardDocsNativeSelectRouteImport } from './routes/_dashboard/docs.native-select'
+import { Route as DashboardDocsMenubarRouteImport } from './routes/_dashboard/docs.menubar'
+import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
+import { Route as DashboardDocsLabelRouteImport } from './routes/_dashboard/docs.label'
+import { Route as DashboardDocsKbdRouteImport } from './routes/_dashboard/docs.kbd'
+import { Route as DashboardDocsItemRouteImport } from './routes/_dashboard/docs.item'
+import { Route as DashboardDocsInputOtpRouteImport } from './routes/_dashboard/docs.input-otp'
+import { Route as DashboardDocsInputGroupRouteImport } from './routes/_dashboard/docs.input-group'
+import { Route as DashboardDocsInputRouteImport } from './routes/_dashboard/docs.input'
+import { Route as DashboardDocsHoverCardRouteImport } from './routes/_dashboard/docs.hover-card'
+import { Route as DashboardDocsFieldRouteImport } from './routes/_dashboard/docs.field'
+import { Route as DashboardDocsEmptyRouteImport } from './routes/_dashboard/docs.empty'
+import { Route as DashboardDocsDropdownMenuRouteImport } from './routes/_dashboard/docs.dropdown-menu'
+import { Route as DashboardDocsDrawerRouteImport } from './routes/_dashboard/docs.drawer'
+import { Route as DashboardDocsDirectionRouteImport } from './routes/_dashboard/docs.direction'
+import { Route as DashboardDocsDialogRouteImport } from './routes/_dashboard/docs.dialog'
+import { Route as DashboardDocsContextMenuRouteImport } from './routes/_dashboard/docs.context-menu'
+import { Route as DashboardDocsCommandRouteImport } from './routes/_dashboard/docs.command'
+import { Route as DashboardDocsComboboxRouteImport } from './routes/_dashboard/docs.combobox'
+import { Route as DashboardDocsCollapsibleRouteImport } from './routes/_dashboard/docs.collapsible'
+import { Route as DashboardDocsCheckboxRouteImport } from './routes/_dashboard/docs.checkbox'
+import { Route as DashboardDocsChartRouteImport } from './routes/_dashboard/docs.chart'
+import { Route as DashboardDocsCarouselRouteImport } from './routes/_dashboard/docs.carousel'
+import { Route as DashboardDocsCardRouteImport } from './routes/_dashboard/docs.card'
+import { Route as DashboardDocsCalendarRouteImport } from './routes/_dashboard/docs.calendar'
+import { Route as DashboardDocsButtonGroupRouteImport } from './routes/_dashboard/docs.button-group'
+import { Route as DashboardDocsButtonRouteImport } from './routes/_dashboard/docs.button'
+import { Route as DashboardDocsBreadcrumbRouteImport } from './routes/_dashboard/docs.breadcrumb'
+import { Route as DashboardDocsBadgeRouteImport } from './routes/_dashboard/docs.badge'
+import { Route as DashboardDocsAvatarRouteImport } from './routes/_dashboard/docs.avatar'
+import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
+import { Route as DashboardDocsAspectRatioRouteImport } from './routes/_dashboard/docs.aspect-ratio'
+import { Route as DashboardDocsAlertDialogRouteImport } from './routes/_dashboard/docs.alert-dialog'
+import { Route as DashboardDocsAlertRouteImport } from './routes/_dashboard/docs.alert'
+import { Route as DashboardDocsAccordionRouteImport } from './routes/_dashboard/docs.accordion'
 
 const DashboardRoute = DashboardRouteImport.update({
   id: '/_dashboard',
@@ -85,11 +85,12 @@ const DashboardDocsTooltipRoute = DashboardDocsTooltipRouteImport.update({
   path: '/docs/tooltip',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsToggleGroupRoute = DashboardDocsToggleGroupRouteImport.update({
-  id: '/docs/toggle-group',
-  path: '/docs/toggle-group',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsToggleGroupRoute =
+  DashboardDocsToggleGroupRouteImport.update({
+    id: '/docs/toggle-group',
+    path: '/docs/toggle-group',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsToggleRoute = DashboardDocsToggleRouteImport.update({
   id: '/docs/toggle',
   path: '/docs/toggle',
@@ -115,11 +116,12 @@ const DashboardDocsSwitchRoute = DashboardDocsSwitchRouteImport.update({
   path: '/docs/switch',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsStaggerRevealRoute = DashboardDocsStaggerRevealRouteImport.update({
-  id: '/docs/stagger-reveal',
-  path: '/docs/stagger-reveal',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsStaggerRevealRoute =
+  DashboardDocsStaggerRevealRouteImport.update({
+    id: '/docs/stagger-reveal',
+    path: '/docs/stagger-reveal',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsSpinnerRoute = DashboardDocsSpinnerRouteImport.update({
   id: '/docs/spinner',
   path: '/docs/spinner',
@@ -195,26 +197,29 @@ const DashboardDocsPaginationRoute = DashboardDocsPaginationRouteImport.update({
   path: '/docs/pagination',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsNavigationMenuRoute = DashboardDocsNavigationMenuRouteImport.update({
-  id: '/docs/navigation-menu',
-  path: '/docs/navigation-menu',
-  getParentRoute: () => DashboardRoute,
-} as any)
-const DashboardDocsNativeSelectRoute = DashboardDocsNativeSelectRouteImport.update({
-  id: '/docs/native-select',
-  path: '/docs/native-select',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsNavigationMenuRoute =
+  DashboardDocsNavigationMenuRouteImport.update({
+    id: '/docs/navigation-menu',
+    path: '/docs/navigation-menu',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDocsNativeSelectRoute =
+  DashboardDocsNativeSelectRouteImport.update({
+    id: '/docs/native-select',
+    path: '/docs/native-select',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsMenubarRoute = DashboardDocsMenubarRouteImport.update({
   id: '/docs/menubar',
   path: '/docs/menubar',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsLoadingPageRoute = DashboardDocsLoadingPageRouteImport.update({
-  id: '/docs/loading-page',
-  path: '/docs/loading-page',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsLoadingPageRoute =
+  DashboardDocsLoadingPageRouteImport.update({
+    id: '/docs/loading-page',
+    path: '/docs/loading-page',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsLabelRoute = DashboardDocsLabelRouteImport.update({
   id: '/docs/label',
   path: '/docs/label',
@@ -260,11 +265,12 @@ const DashboardDocsEmptyRoute = DashboardDocsEmptyRouteImport.update({
   path: '/docs/empty',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsDropdownMenuRoute = DashboardDocsDropdownMenuRouteImport.update({
-  id: '/docs/dropdown-menu',
-  path: '/docs/dropdown-menu',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsDropdownMenuRoute =
+  DashboardDocsDropdownMenuRouteImport.update({
+    id: '/docs/dropdown-menu',
+    path: '/docs/dropdown-menu',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsDrawerRoute = DashboardDocsDrawerRouteImport.update({
   id: '/docs/drawer',
   path: '/docs/drawer',
@@ -280,11 +286,12 @@ const DashboardDocsDialogRoute = DashboardDocsDialogRouteImport.update({
   path: '/docs/dialog',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsContextMenuRoute = DashboardDocsContextMenuRouteImport.update({
-  id: '/docs/context-menu',
-  path: '/docs/context-menu',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsContextMenuRoute =
+  DashboardDocsContextMenuRouteImport.update({
+    id: '/docs/context-menu',
+    path: '/docs/context-menu',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsCommandRoute = DashboardDocsCommandRouteImport.update({
   id: '/docs/command',
   path: '/docs/command',
@@ -295,11 +302,12 @@ const DashboardDocsComboboxRoute = DashboardDocsComboboxRouteImport.update({
   path: '/docs/combobox',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsCollapsibleRoute = DashboardDocsCollapsibleRouteImport.update({
-  id: '/docs/collapsible',
-  path: '/docs/collapsible',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsCollapsibleRoute =
+  DashboardDocsCollapsibleRouteImport.update({
+    id: '/docs/collapsible',
+    path: '/docs/collapsible',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsCheckboxRoute = DashboardDocsCheckboxRouteImport.update({
   id: '/docs/checkbox',
   path: '/docs/checkbox',
@@ -325,11 +333,12 @@ const DashboardDocsCalendarRoute = DashboardDocsCalendarRouteImport.update({
   path: '/docs/calendar',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsButtonGroupRoute = DashboardDocsButtonGroupRouteImport.update({
-  id: '/docs/button-group',
-  path: '/docs/button-group',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsButtonGroupRoute =
+  DashboardDocsButtonGroupRouteImport.update({
+    id: '/docs/button-group',
+    path: '/docs/button-group',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsButtonRoute = DashboardDocsButtonRouteImport.update({
   id: '/docs/button',
   path: '/docs/button',
@@ -355,16 +364,18 @@ const DashboardDocsAuroraRoute = DashboardDocsAuroraRouteImport.update({
   path: '/docs/aurora',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardDocsAspectRatioRoute = DashboardDocsAspectRatioRouteImport.update({
-  id: '/docs/aspect-ratio',
-  path: '/docs/aspect-ratio',
-  getParentRoute: () => DashboardRoute,
-} as any)
-const DashboardDocsAlertDialogRoute = DashboardDocsAlertDialogRouteImport.update({
-  id: '/docs/alert-dialog',
-  path: '/docs/alert-dialog',
-  getParentRoute: () => DashboardRoute,
-} as any)
+const DashboardDocsAspectRatioRoute =
+  DashboardDocsAspectRatioRouteImport.update({
+    id: '/docs/aspect-ratio',
+    path: '/docs/aspect-ratio',
+    getParentRoute: () => DashboardRoute,
+  } as any)
+const DashboardDocsAlertDialogRoute =
+  DashboardDocsAlertDialogRouteImport.update({
+    id: '/docs/alert-dialog',
+    path: '/docs/alert-dialog',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsAlertRoute = DashboardDocsAlertRouteImport.update({
   id: '/docs/alert',
   path: '/docs/alert',
@@ -1316,7 +1327,9 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDocsTooltipRoute: DashboardDocsTooltipRoute,
 }
 
-const DashboardRouteWithChildren = DashboardRoute._addFileChildren(DashboardRouteChildren)
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRouteWithChildren,
