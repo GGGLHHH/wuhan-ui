@@ -13,7 +13,10 @@ export default defineConfig({
       target: 'react',
       autoCodeSplitting: true,
     }),
-    { enforce: 'pre', ...mdx({ rehypePlugins: [rehypeSlug] }) },
+    {
+      enforce: 'pre',
+      ...mdx({ rehypePlugins: [rehypeSlug], providerImportSource: '@mdx-js/react' }),
+    },
     tailwindcss(),
     codeInspectorPlugin({
       bundler: 'vite',
