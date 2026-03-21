@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as DashboardRouteImport } from './routes/_dashboard'
 import { Route as DashboardIndexRouteImport } from './routes/_dashboard/index'
+import { Route as DashboardDocsStaggerRevealRouteImport } from './routes/_dashboard/docs.stagger-reveal'
 import { Route as DashboardDocsSilkRouteImport } from './routes/_dashboard/docs.silk'
 import { Route as DashboardDocsLoadingPageRouteImport } from './routes/_dashboard/docs.loading-page'
 import { Route as DashboardDocsAuroraRouteImport } from './routes/_dashboard/docs.aurora'
@@ -24,6 +25,12 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardDocsStaggerRevealRoute =
+  DashboardDocsStaggerRevealRouteImport.update({
+    id: '/docs/stagger-reveal',
+    path: '/docs/stagger-reveal',
+    getParentRoute: () => DashboardRoute,
+  } as any)
 const DashboardDocsSilkRoute = DashboardDocsSilkRouteImport.update({
   id: '/docs/silk',
   path: '/docs/silk',
@@ -46,12 +53,14 @@ export interface FileRoutesByFullPath {
   '/docs/aurora': typeof DashboardDocsAuroraRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
+  '/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
 }
 export interface FileRoutesByTo {
   '/': typeof DashboardIndexRoute
   '/docs/aurora': typeof DashboardDocsAuroraRoute
   '/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/docs/silk': typeof DashboardDocsSilkRoute
+  '/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -60,12 +69,23 @@ export interface FileRoutesById {
   '/_dashboard/docs/aurora': typeof DashboardDocsAuroraRoute
   '/_dashboard/docs/loading-page': typeof DashboardDocsLoadingPageRoute
   '/_dashboard/docs/silk': typeof DashboardDocsSilkRoute
+  '/_dashboard/docs/stagger-reveal': typeof DashboardDocsStaggerRevealRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs/aurora' | '/docs/loading-page' | '/docs/silk'
+  fullPaths:
+    | '/'
+    | '/docs/aurora'
+    | '/docs/loading-page'
+    | '/docs/silk'
+    | '/docs/stagger-reveal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/docs/aurora' | '/docs/loading-page' | '/docs/silk'
+  to:
+    | '/'
+    | '/docs/aurora'
+    | '/docs/loading-page'
+    | '/docs/silk'
+    | '/docs/stagger-reveal'
   id:
     | '__root__'
     | '/_dashboard'
@@ -73,6 +93,7 @@ export interface FileRouteTypes {
     | '/_dashboard/docs/aurora'
     | '/_dashboard/docs/loading-page'
     | '/_dashboard/docs/silk'
+    | '/_dashboard/docs/stagger-reveal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -93,6 +114,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/_dashboard/docs/stagger-reveal': {
+      id: '/_dashboard/docs/stagger-reveal'
+      path: '/docs/stagger-reveal'
+      fullPath: '/docs/stagger-reveal'
+      preLoaderRoute: typeof DashboardDocsStaggerRevealRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/_dashboard/docs/silk': {
@@ -124,6 +152,7 @@ interface DashboardRouteChildren {
   DashboardDocsAuroraRoute: typeof DashboardDocsAuroraRoute
   DashboardDocsLoadingPageRoute: typeof DashboardDocsLoadingPageRoute
   DashboardDocsSilkRoute: typeof DashboardDocsSilkRoute
+  DashboardDocsStaggerRevealRoute: typeof DashboardDocsStaggerRevealRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
@@ -131,6 +160,7 @@ const DashboardRouteChildren: DashboardRouteChildren = {
   DashboardDocsAuroraRoute: DashboardDocsAuroraRoute,
   DashboardDocsLoadingPageRoute: DashboardDocsLoadingPageRoute,
   DashboardDocsSilkRoute: DashboardDocsSilkRoute,
+  DashboardDocsStaggerRevealRoute: DashboardDocsStaggerRevealRoute,
 }
 
 const DashboardRouteWithChildren = DashboardRoute._addFileChildren(

@@ -1,0 +1,47 @@
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { PropsTable } from '@/components/docs/props-table'
+import StaggerRevealDemo from '@/registry/examples/stagger-reveal-demo'
+import StaggerRevealDemoSource from '@/registry/examples/stagger-reveal-demo.tsx?raw'
+
+# StaggerReveal
+
+让被包裹的子元素从下往上依次出现的动画组件。首批可见元素会按顺序交错出现，后续滚动进入的元素即时响应。基于 [Motion](https://motion.dev) 实现。
+
+## Import
+
+```tsx
+import { StaggerReveal } from '@gedatou/ui'
+```
+
+## Usage
+
+<ComponentPreview code={StaggerRevealDemoSource}>
+  <StaggerRevealDemo />
+</ComponentPreview>
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      prop: 'stagger',
+      type: 'number',
+      default: 'duration / 首批数量',
+      description: '首批可见元素之间的间隔时间（秒）。未传时自动从 duration 推导',
+    },
+    { prop: 'duration', type: 'number', default: '0.5', description: '单个子元素动画时长（秒）' },
+    { prop: 'distance', type: 'number', default: '20', description: '初始 Y 轴偏移距离（像素）' },
+    {
+      prop: 'className',
+      type: 'string',
+      default: 'undefined',
+      description: '外层容器类名，用于控制布局',
+    },
+    {
+      prop: 'root',
+      type: 'RefObject<Element | null>',
+      default: 'undefined',
+      description: '自定义滚动容器 ref，用于在非 window 滚动场景下检测进入视口',
+    },
+  ]}
+/>
