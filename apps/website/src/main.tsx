@@ -10,9 +10,6 @@ import '@gedatou/ui/styles.css'
 
 const router = createRouter({
   routeTree,
-  defaultViewTransition: {
-    types: ['scale-fade'],
-  },
 })
 
 declare module '@tanstack/react-router' {
