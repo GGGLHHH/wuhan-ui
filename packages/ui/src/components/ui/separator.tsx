@@ -14,7 +14,7 @@ function Separator({
       decorative={decorative}
       orientation={orientation}
       className={cn(
-        'wuhanui:shrink-0 wuhanui:bg-border wuhanui:data-horizontal:h-px wuhanui:data-horizontal:w-full wuhanui:data-vertical:w-px wuhanui:data-vertical:self-stretch',
+        'bg-border shrink-0 data-horizontal:h-px data-horizontal:w-full data-vertical:w-px data-vertical:self-stretch',
         className,
       )}
       {...props}

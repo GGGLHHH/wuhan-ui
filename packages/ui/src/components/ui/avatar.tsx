@@ -14,7 +14,7 @@ function Avatar({
       data-slot="avatar"
       data-size={size}
       className={cn(
-        'wuhanui:group/avatar wuhanui:relative wuhanui:flex wuhanui:size-8 wuhanui:shrink-0 wuhanui:rounded-full wuhanui:select-none wuhanui:after:absolute wuhanui:after:inset-0 wuhanui:after:rounded-full wuhanui:after:border wuhanui:after:border-border wuhanui:after:mix-blend-darken wuhanui:data-[size=lg]:size-10 wuhanui:data-[size=sm]:size-6 wuhanui:dark:after:mix-blend-lighten',
+        'group/avatar after:border-border relative flex size-8 shrink-0 rounded-full select-none after:absolute after:inset-0 after:rounded-full after:border after:mix-blend-darken data-[size=lg]:size-10 data-[size=sm]:size-6 dark:after:mix-blend-lighten',
         className,
       )}
       {...props}
@@ -26,10 +26,7 @@ function AvatarImage({ className, ...props }: React.ComponentProps<typeof Avatar
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
-      className={cn(
-        'wuhanui:aspect-square wuhanui:size-full wuhanui:rounded-full wuhanui:object-cover',
-        className,
-      )}
+      className={cn('aspect-square size-full rounded-full object-cover', className)}
       {...props}
     />
   )
@@ -43,7 +40,7 @@ function AvatarFallback({
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"
       className={cn(
-        'wuhanui:flex wuhanui:size-full wuhanui:items-center wuhanui:justify-center wuhanui:rounded-full wuhanui:bg-muted wuhanui:text-sm wuhanui:text-muted-foreground wuhanui:group-data-[size=sm]/avatar:text-xs',
+        'bg-muted text-muted-foreground flex size-full items-center justify-center rounded-full text-sm group-data-[size=sm]/avatar:text-xs',
         className,
       )}
       {...props}
@@ -56,10 +53,10 @@ function AvatarBadge({ className, ...props }: React.ComponentProps<'span'>) {
     <span
       data-slot="avatar-badge"
       className={cn(
-        'wuhanui:absolute wuhanui:right-0 wuhanui:bottom-0 wuhanui:z-10 wuhanui:inline-flex wuhanui:items-center wuhanui:justify-center wuhanui:rounded-full wuhanui:bg-primary wuhanui:text-primary-foreground wuhanui:bg-blend-color wuhanui:ring-2 wuhanui:ring-background wuhanui:select-none',
-        'wuhanui:group-data-[size=sm]/avatar:size-2 wuhanui:group-data-[size=sm]/avatar:[&>svg]:hidden',
-        'wuhanui:group-data-[size=default]/avatar:size-2.5 wuhanui:group-data-[size=default]/avatar:[&>svg]:size-2',
-        'wuhanui:group-data-[size=lg]/avatar:size-3 wuhanui:group-data-[size=lg]/avatar:[&>svg]:size-2',
+        'bg-primary text-primary-foreground ring-background absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-blend-color ring-2 select-none',
+        'group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden',
+        'group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2',
+        'group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2',
         className,
       )}
       {...props}
@@ -72,7 +69,7 @@ function AvatarGroup({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="avatar-group"
       className={cn(
-        'wuhanui:group/avatar-group wuhanui:flex wuhanui:-space-x-2 wuhanui:*:data-[slot=avatar]:ring-2 wuhanui:*:data-[slot=avatar]:ring-background',
+        'group/avatar-group *:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2',
         className,
       )}
       {...props}
@@ -85,7 +82,7 @@ function AvatarGroupCount({ className, ...props }: React.ComponentProps<'div'>) 
     <div
       data-slot="avatar-group-count"
       className={cn(
-        'wuhanui:relative wuhanui:flex wuhanui:size-8 wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-full wuhanui:bg-muted wuhanui:text-sm wuhanui:text-muted-foreground wuhanui:ring-2 wuhanui:ring-background wuhanui:group-has-data-[size=lg]/avatar-group:size-10 wuhanui:group-has-data-[size=sm]/avatar-group:size-6 wuhanui:[&>svg]:size-4 wuhanui:group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 wuhanui:group-has-data-[size=sm]/avatar-group:[&>svg]:size-3',
+        'bg-muted text-muted-foreground ring-background relative flex size-8 shrink-0 items-center justify-center rounded-full text-sm ring-2 group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3',
         className,
       )}
       {...props}

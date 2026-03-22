@@ -45,7 +45,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       <CommandMenu open={commandOpen} onOpenChange={setCommandOpen} />
       <SidebarInset className="h-svh overflow-hidden md:m-0! md:rounded-none! md:shadow-none!">
         <header className="flex h-18 shrink-0 items-center gap-2 px-4">
-          <SidebarTrigger className="md:hidden!" />
+          <SidebarTrigger className="md:hidden" />
           <div className="ml-auto flex items-center gap-1">
             <Button
               variant="outline"

@@ -25,7 +25,7 @@ function AlertDialogOverlay({
     <AlertDialogPrimitive.Overlay
       data-slot="alert-dialog-overlay"
       className={cn(
-        'wuhanui:fixed wuhanui:inset-0 wuhanui:z-50 wuhanui:bg-black/10 wuhanui:duration-100 wuhanui:supports-backdrop-filter:backdrop-blur-xs wuhanui:data-open:animate-in wuhanui:data-open:fade-in-0 wuhanui:data-closed:animate-out wuhanui:data-closed:fade-out-0',
+        'data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0 fixed inset-0 z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs',
         className,
       )}
       {...props}
@@ -47,7 +47,7 @@ function AlertDialogContent({
         data-slot="alert-dialog-content"
         data-size={size}
         className={cn(
-          'wuhanui:group/alert-dialog-content wuhanui:fixed wuhanui:top-1/2 wuhanui:left-1/2 wuhanui:z-50 wuhanui:grid wuhanui:w-full wuhanui:-translate-x-1/2 wuhanui:-translate-y-1/2 wuhanui:gap-6 wuhanui:rounded-xl wuhanui:bg-background wuhanui:p-6 wuhanui:ring-1 wuhanui:ring-foreground/10 wuhanui:duration-100 wuhanui:outline-none wuhanui:data-[size=default]:max-w-xs wuhanui:data-[size=sm]:max-w-xs wuhanui:data-[size=default]:sm:max-w-lg wuhanui:data-open:animate-in wuhanui:data-open:fade-in-0 wuhanui:data-open:zoom-in-95 wuhanui:data-closed:animate-out wuhanui:data-closed:fade-out-0 wuhanui:data-closed:zoom-out-95',
+          'group/alert-dialog-content bg-background ring-foreground/10 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 fixed top-1/2 left-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl p-4 ring-1 duration-100 outline-none data-[size=default]:max-w-xs data-[size=sm]:max-w-xs data-[size=default]:sm:max-w-sm',
           className,
         )}
         {...props}
@@ -61,7 +61,7 @@ function AlertDialogHeader({ className, ...props }: React.ComponentProps<'div'>)
     <div
       data-slot="alert-dialog-header"
       className={cn(
-        'wuhanui:grid wuhanui:grid-rows-[auto_1fr] wuhanui:place-items-center wuhanui:gap-1.5 wuhanui:text-center wuhanui:has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] wuhanui:has-data-[slot=alert-dialog-media]:gap-x-6 wuhanui:sm:group-data-[size=default]/alert-dialog-content:place-items-start wuhanui:sm:group-data-[size=default]/alert-dialog-content:text-left wuhanui:sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]',
+        'grid grid-rows-[auto_1fr] place-items-center gap-1.5 text-center has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] has-data-[slot=alert-dialog-media]:gap-x-4 sm:group-data-[size=default]/alert-dialog-content:place-items-start sm:group-data-[size=default]/alert-dialog-content:text-left sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]',
         className,
       )}
       {...props}
@@ -74,7 +74,7 @@ function AlertDialogFooter({ className, ...props }: React.ComponentProps<'div'>)
     <div
       data-slot="alert-dialog-footer"
       className={cn(
-        'wuhanui:flex wuhanui:flex-col-reverse wuhanui:gap-2 wuhanui:group-data-[size=sm]/alert-dialog-content:grid wuhanui:group-data-[size=sm]/alert-dialog-content:grid-cols-2 wuhanui:sm:flex-row wuhanui:sm:justify-end',
+        'bg-muted/50 -mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t p-4 group-data-[size=sm]/alert-dialog-content:grid group-data-[size=sm]/alert-dialog-content:grid-cols-2 sm:flex-row sm:justify-end',
         className,
       )}
       {...props}
@@ -87,7 +87,7 @@ function AlertDialogMedia({ className, ...props }: React.ComponentProps<'div'>) 
     <div
       data-slot="alert-dialog-media"
       className={cn(
-        'wuhanui:mb-2 wuhanui:inline-flex wuhanui:size-16 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-md wuhanui:bg-muted wuhanui:sm:group-data-[size=default]/alert-dialog-content:row-span-2 wuhanui:*:[svg:not([class*=size-])]:size-8',
+        "bg-muted mb-2 inline-flex size-10 items-center justify-center rounded-md sm:group-data-[size=default]/alert-dialog-content:row-span-2 *:[svg:not([class*='size-'])]:size-6",
         className,
       )}
       {...props}
@@ -103,7 +103,7 @@ function AlertDialogTitle({
     <AlertDialogPrimitive.Title
       data-slot="alert-dialog-title"
       className={cn(
-        'wuhanui:text-lg wuhanui:font-medium wuhanui:sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2',
+        'text-base font-medium sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2',
         className,
       )}
       {...props}
@@ -119,7 +119,7 @@ function AlertDialogDescription({
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
       className={cn(
-        'wuhanui:text-sm wuhanui:text-balance wuhanui:text-muted-foreground wuhanui:md:text-pretty wuhanui:*:[a]:underline wuhanui:*:[a]:underline-offset-3 wuhanui:*:[a]:hover:text-foreground',
+        'text-muted-foreground *:[a]:hover:text-foreground text-sm text-balance md:text-pretty *:[a]:underline *:[a]:underline-offset-3',
         className,
       )}
       {...props}

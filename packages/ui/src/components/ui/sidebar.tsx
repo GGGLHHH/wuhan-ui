@@ -127,7 +127,7 @@ function SidebarProvider({
           } as React.CSSProperties
         }
         className={cn(
-          'wuhanui:group/sidebar-wrapper wuhanui:flex wuhanui:min-h-svh wuhanui:w-full wuhanui:has-data-[variant=inset]:bg-sidebar',
+          'group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full',
           className,
         )}
         {...props}
@@ -158,7 +158,7 @@ function Sidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          'wuhanui:flex wuhanui:h-full wuhanui:w-(--sidebar-width) wuhanui:flex-col wuhanui:bg-sidebar wuhanui:text-sidebar-foreground',
+          'bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col',
           className,
         )}
         {...props}
@@ -176,7 +176,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="wuhanui:w-(--sidebar-width) wuhanui:bg-sidebar wuhanui:p-0 wuhanui:text-sidebar-foreground wuhanui:[&>button]:hidden"
+          className="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
           style={
             {
               '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
@@ -184,13 +184,11 @@ function Sidebar({
           }
           side={side}
         >
-          <SheetHeader className="wuhanui:sr-only">
+          <SheetHeader className="sr-only">
             <SheetTitle>Sidebar</SheetTitle>
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
           </SheetHeader>
-          <div className="wuhanui:flex wuhanui:h-full wuhanui:w-full wuhanui:flex-col">
-            {children}
-          </div>
+          <div className="flex h-full w-full flex-col">{children}</div>
         </SheetContent>
       </Sheet>
     )
@@ -198,7 +196,7 @@ function Sidebar({
 
   return (
     <div
-      className="wuhanui:group wuhanui:peer wuhanui:hidden wuhanui:text-sidebar-foreground wuhanui:md:block"
+      className="group peer text-sidebar-foreground hidden md:block"
       data-state={state}
       data-collapsible={state === 'collapsed' ? collapsible : ''}
       data-variant={variant}
@@ -209,23 +207,23 @@ function Sidebar({
       <div
         data-slot="sidebar-gap"
         className={cn(
-          'wuhanui:relative wuhanui:w-(--sidebar-width) wuhanui:bg-transparent wuhanui:transition-[width] wuhanui:duration-200 wuhanui:ease-linear',
-          'wuhanui:group-data-[collapsible=offcanvas]:w-0',
-          'wuhanui:group-data-[side=right]:rotate-180',
+          'relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
+          'group-data-[collapsible=offcanvas]:w-0',
+          'group-data-[side=right]:rotate-180',
           variant === 'floating' || variant === 'inset'
-            ? 'wuhanui:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]'
-            : 'wuhanui:group-data-[collapsible=icon]:w-(--sidebar-width-icon)',
+            ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]'
+            : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon)',
         )}
       />
       <div
         data-slot="sidebar-container"
         data-side={side}
         className={cn(
-          'wuhanui:fixed wuhanui:inset-y-0 wuhanui:z-10 wuhanui:hidden wuhanui:h-svh wuhanui:w-(--sidebar-width) wuhanui:transition-[left,right,width] wuhanui:duration-200 wuhanui:ease-linear wuhanui:data-[side=left]:left-0 wuhanui:data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] wuhanui:data-[side=right]:right-0 wuhanui:data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] wuhanui:md:flex',
+          'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear data-[side=left]:left-0 data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] data-[side=right]:right-0 data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] md:flex',
           // Adjust the padding for floating and inset variants.
           variant === 'floating' || variant === 'inset'
-            ? 'wuhanui:p-2 wuhanui:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]'
-            : 'wuhanui:group-data-[collapsible=icon]:w-(--sidebar-width-icon) wuhanui:group-data-[side=left]:border-r wuhanui:group-data-[side=right]:border-l',
+            ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]'
+            : 'group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l',
           className,
         )}
         {...props}
@@ -233,7 +231,7 @@ function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="wuhanui:flex wuhanui:size-full wuhanui:flex-col wuhanui:bg-sidebar wuhanui:group-data-[variant=floating]:rounded-lg wuhanui:group-data-[variant=floating]:shadow-sm wuhanui:group-data-[variant=floating]:ring-1 wuhanui:group-data-[variant=floating]:ring-sidebar-border"
+          className="bg-sidebar group-data-[variant=floating]:ring-sidebar-border flex size-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1"
         >
           {children}
         </div>
@@ -258,8 +256,8 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
       }}
       {...props}
     >
-      <PanelLeftIcon className="wuhanui:" />
-      <span className="wuhanui:sr-only">Toggle Sidebar</span>
+      <PanelLeftIcon />
+      <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )
 }
@@ -276,12 +274,12 @@ function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
-        'wuhanui:absolute wuhanui:inset-y-0 wuhanui:z-20 wuhanui:hidden wuhanui:w-4 wuhanui:transition-all wuhanui:ease-linear wuhanui:group-data-[side=left]:-right-4 wuhanui:group-data-[side=right]:left-0 wuhanui:after:absolute wuhanui:after:inset-y-0 wuhanui:after:start-1/2 wuhanui:after:w-[2px] wuhanui:hover:after:bg-sidebar-border wuhanui:sm:flex wuhanui:ltr:-translate-x-1/2 wuhanui:rtl:-translate-x-1/2',
-        'wuhanui:in-data-[side=left]:cursor-w-resize wuhanui:in-data-[side=right]:cursor-e-resize',
-        'wuhanui:[[data-side=left][data-state=collapsed]_&]:cursor-e-resize wuhanui:[[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
-        'wuhanui:group-data-[collapsible=offcanvas]:translate-x-0 wuhanui:group-data-[collapsible=offcanvas]:after:left-full wuhanui:hover:group-data-[collapsible=offcanvas]:bg-sidebar',
-        'wuhanui:[[data-side=left][data-collapsible=offcanvas]_&]:-right-2',
-        'wuhanui:[[data-side=right][data-collapsible=offcanvas]_&]:-left-2',
+        'hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 transition-all ease-linear group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:absolute after:inset-y-0 after:start-1/2 after:w-[2px] sm:flex ltr:-translate-x-1/2 rtl:-translate-x-1/2',
+        'in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize',
+        '[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
+        'hover:group-data-[collapsible=offcanvas]:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full',
+        '[[data-side=left][data-collapsible=offcanvas]_&]:-right-2',
+        '[[data-side=right][data-collapsible=offcanvas]_&]:-left-2',
         className,
       )}
       {...props}
@@ -294,7 +292,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<'main'>) {
     <main
       data-slot="sidebar-inset"
       className={cn(
-        'wuhanui:relative wuhanui:flex wuhanui:w-full wuhanui:flex-1 wuhanui:flex-col wuhanui:bg-background wuhanui:md:peer-data-[variant=inset]:m-2 wuhanui:md:peer-data-[variant=inset]:ml-0 wuhanui:md:peer-data-[variant=inset]:rounded-xl wuhanui:md:peer-data-[variant=inset]:shadow-sm wuhanui:md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2',
+        'bg-background relative flex w-full flex-1 flex-col md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2',
         className,
       )}
       {...props}
@@ -307,10 +305,7 @@ function SidebarInput({ className, ...props }: React.ComponentProps<typeof Input
     <Input
       data-slot="sidebar-input"
       data-sidebar="input"
-      className={cn(
-        'wuhanui:h-8 wuhanui:w-full wuhanui:bg-background wuhanui:shadow-none',
-        className,
-      )}
+      className={cn('bg-background h-8 w-full shadow-none', className)}
       {...props}
     />
   )
@@ -321,7 +316,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="sidebar-header"
       data-sidebar="header"
-      className={cn('wuhanui:flex wuhanui:flex-col wuhanui:gap-2 wuhanui:p-2', className)}
+      className={cn('flex flex-col gap-2 p-2', className)}
       {...props}
     />
   )
@@ -332,7 +327,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
-      className={cn('wuhanui:flex wuhanui:flex-col wuhanui:gap-2 wuhanui:p-2', className)}
+      className={cn('flex flex-col gap-2 p-2', className)}
       {...props}
     />
   )
@@ -343,7 +338,7 @@ function SidebarSeparator({ className, ...props }: React.ComponentProps<typeof S
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn('wuhanui:mx-2 wuhanui:w-auto wuhanui:bg-sidebar-border', className)}
+      className={cn('bg-sidebar-border mx-2 w-auto', className)}
       {...props}
     />
   )
@@ -355,7 +350,7 @@ function SidebarContent({ className, ...props }: React.ComponentProps<'div'>) {
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        'wuhanui:no-scrollbar wuhanui:flex wuhanui:min-h-0 wuhanui:flex-1 wuhanui:flex-col wuhanui:gap-2 wuhanui:overflow-auto wuhanui:group-data-[collapsible=icon]:overflow-hidden',
+        'no-scrollbar flex min-h-0 flex-1 flex-col gap-0 overflow-auto group-data-[collapsible=icon]:overflow-hidden',
         className,
       )}
       {...props}
@@ -368,10 +363,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="sidebar-group"
       data-sidebar="group"
-      className={cn(
-        'wuhanui:relative wuhanui:flex wuhanui:w-full wuhanui:min-w-0 wuhanui:flex-col wuhanui:p-2',
-        className,
-      )}
+      className={cn('relative flex w-full min-w-0 flex-col p-2', className)}
       {...props}
     />
   )
@@ -389,7 +381,7 @@ function SidebarGroupLabel({
       data-slot="sidebar-group-label"
       data-sidebar="group-label"
       className={cn(
-        'wuhanui:flex wuhanui:h-8 wuhanui:shrink-0 wuhanui:items-center wuhanui:rounded-md wuhanui:px-2 wuhanui:text-xs wuhanui:font-medium wuhanui:text-sidebar-foreground/70 wuhanui:ring-sidebar-ring wuhanui:outline-hidden wuhanui:transition-[margin,opacity] wuhanui:duration-200 wuhanui:ease-linear wuhanui:group-data-[collapsible=icon]:-mt-8 wuhanui:group-data-[collapsible=icon]:opacity-0 wuhanui:focus-visible:ring-2 wuhanui:[&>svg]:size-4 wuhanui:[&>svg]:shrink-0',
+        'text-sidebar-foreground/70 ring-sidebar-ring flex h-8 shrink-0 items-center rounded-md px-2 text-xs font-medium outline-hidden transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0',
         className,
       )}
       {...props}
@@ -409,7 +401,7 @@ function SidebarGroupAction({
       data-slot="sidebar-group-action"
       data-sidebar="group-action"
       className={cn(
-        'wuhanui:absolute wuhanui:top-3.5 wuhanui:right-3 wuhanui:flex wuhanui:aspect-square wuhanui:w-5 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-md wuhanui:p-0 wuhanui:text-sidebar-foreground wuhanui:ring-sidebar-ring wuhanui:outline-hidden wuhanui:transition-transform wuhanui:group-data-[collapsible=icon]:hidden wuhanui:after:absolute wuhanui:after:-inset-2 wuhanui:hover:bg-sidebar-accent wuhanui:hover:text-sidebar-accent-foreground wuhanui:focus-visible:ring-2 wuhanui:md:after:hidden wuhanui:[&>svg]:size-4 wuhanui:[&>svg]:shrink-0',
+        'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0',
         className,
       )}
       {...props}
@@ -422,7 +414,7 @@ function SidebarGroupContent({ className, ...props }: React.ComponentProps<'div'
     <div
       data-slot="sidebar-group-content"
       data-sidebar="group-content"
-      className={cn('wuhanui:w-full wuhanui:text-sm', className)}
+      className={cn('w-full text-sm', className)}
       {...props}
     />
   )
@@ -433,10 +425,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<'ul'>) {
     <ul
       data-slot="sidebar-menu"
       data-sidebar="menu"
-      className={cn(
-        'wuhanui:flex wuhanui:w-full wuhanui:min-w-0 wuhanui:flex-col wuhanui:gap-1',
-        className,
-      )}
+      className={cn('flex w-full min-w-0 flex-col gap-0', className)}
       {...props}
     />
   )
@@ -447,25 +436,25 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<'li'>) {
     <li
       data-slot="sidebar-menu-item"
       data-sidebar="menu-item"
-      className={cn('wuhanui:group/menu-item wuhanui:relative', className)}
+      className={cn('group/menu-item relative', className)}
       {...props}
     />
   )
 }
 
 const sidebarMenuButtonVariants = cva(
-  'wuhanui:peer/menu-button wuhanui:group/menu-button wuhanui:flex wuhanui:w-full wuhanui:items-center wuhanui:gap-2 wuhanui:overflow-hidden wuhanui:rounded-md wuhanui:p-2 wuhanui:text-left wuhanui:text-sm wuhanui:ring-sidebar-ring wuhanui:outline-hidden wuhanui:transition-[width,height,padding] wuhanui:group-has-data-[sidebar=menu-action]/menu-item:pr-8 wuhanui:group-data-[collapsible=icon]:size-8! wuhanui:group-data-[collapsible=icon]:p-2! wuhanui:hover:bg-sidebar-accent wuhanui:hover:text-sidebar-accent-foreground wuhanui:focus-visible:ring-2 wuhanui:active:bg-sidebar-accent wuhanui:active:text-sidebar-accent-foreground wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50 wuhanui:aria-disabled:pointer-events-none wuhanui:aria-disabled:opacity-50 wuhanui:data-open:hover:bg-sidebar-accent wuhanui:data-open:hover:text-sidebar-accent-foreground wuhanui:data-active:bg-sidebar-accent wuhanui:data-active:font-medium wuhanui:data-active:text-sidebar-accent-foreground wuhanui:[&_svg]:size-4 wuhanui:[&_svg]:shrink-0 wuhanui:[&>span:last-child]:truncate',
+  'peer/menu-button group/menu-button ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground data-open:hover:bg-sidebar-accent data-open:hover:text-sidebar-accent-foreground data-active:bg-sidebar-accent data-active:text-sidebar-accent-foreground flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-active:font-medium [&_svg]:size-4 [&_svg]:shrink-0 [&>span:last-child]:truncate',
   {
     variants: {
       variant: {
-        default: 'wuhanui:hover:bg-sidebar-accent wuhanui:hover:text-sidebar-accent-foreground',
+        default: 'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
         outline:
-          'wuhanui:bg-background wuhanui:shadow-[0_0_0_1px_hsl(var(--sidebar-border))] wuhanui:hover:bg-sidebar-accent wuhanui:hover:text-sidebar-accent-foreground wuhanui:hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
+          'bg-background hover:bg-sidebar-accent hover:text-sidebar-accent-foreground shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
       },
       size: {
-        default: 'wuhanui:h-8 wuhanui:text-sm',
-        sm: 'wuhanui:h-7 wuhanui:text-xs',
-        lg: 'wuhanui:h-12 wuhanui:text-sm wuhanui:group-data-[collapsible=icon]:p-0!',
+        default: 'h-8 text-sm',
+        sm: 'h-7 text-xs',
+        lg: 'h-12 text-sm group-data-[collapsible=icon]:p-0!',
       },
     },
     defaultVariants: {
@@ -541,9 +530,9 @@ function SidebarMenuAction({
       data-slot="sidebar-menu-action"
       data-sidebar="menu-action"
       className={cn(
-        'wuhanui:absolute wuhanui:top-1.5 wuhanui:right-1 wuhanui:flex wuhanui:aspect-square wuhanui:w-5 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-md wuhanui:p-0 wuhanui:text-sidebar-foreground wuhanui:ring-sidebar-ring wuhanui:outline-hidden wuhanui:transition-transform wuhanui:group-data-[collapsible=icon]:hidden wuhanui:peer-hover/menu-button:text-sidebar-accent-foreground wuhanui:peer-data-[size=default]/menu-button:top-1.5 wuhanui:peer-data-[size=lg]/menu-button:top-2.5 wuhanui:peer-data-[size=sm]/menu-button:top-1 wuhanui:after:absolute wuhanui:after:-inset-2 wuhanui:hover:bg-sidebar-accent wuhanui:hover:text-sidebar-accent-foreground wuhanui:focus-visible:ring-2 wuhanui:md:after:hidden wuhanui:[&>svg]:size-4 wuhanui:[&>svg]:shrink-0',
+        'text-sidebar-foreground ring-sidebar-ring peer-hover/menu-button:text-sidebar-accent-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform group-data-[collapsible=icon]:hidden peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 after:absolute after:-inset-2 focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0',
         showOnHover &&
-          'wuhanui:group-focus-within/menu-item:opacity-100 wuhanui:group-hover/menu-item:opacity-100 wuhanui:peer-data-active/menu-button:text-sidebar-accent-foreground wuhanui:aria-expanded:opacity-100 wuhanui:md:opacity-0',
+          'peer-data-active/menu-button:text-sidebar-accent-foreground group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 aria-expanded:opacity-100 md:opacity-0',
         className,
       )}
       {...props}
@@ -557,7 +546,7 @@ function SidebarMenuBadge({ className, ...props }: React.ComponentProps<'div'>) 
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        'wuhanui:pointer-events-none wuhanui:absolute wuhanui:right-1 wuhanui:flex wuhanui:h-5 wuhanui:min-w-5 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-md wuhanui:px-1 wuhanui:text-xs wuhanui:font-medium wuhanui:text-sidebar-foreground wuhanui:tabular-nums wuhanui:select-none wuhanui:group-data-[collapsible=icon]:hidden wuhanui:peer-hover/menu-button:text-sidebar-accent-foreground wuhanui:peer-data-[size=default]/menu-button:top-1.5 wuhanui:peer-data-[size=lg]/menu-button:top-2.5 wuhanui:peer-data-[size=sm]/menu-button:top-1 wuhanui:peer-data-active/menu-button:text-sidebar-accent-foreground',
+        'text-sidebar-foreground peer-hover/menu-button:text-sidebar-accent-foreground peer-data-active/menu-button:text-sidebar-accent-foreground pointer-events-none absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums select-none group-data-[collapsible=icon]:hidden peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1',
         className,
       )}
       {...props}
@@ -581,17 +570,12 @@ function SidebarMenuSkeleton({
     <div
       data-slot="sidebar-menu-skeleton"
       data-sidebar="menu-skeleton"
-      className={cn(
-        'wuhanui:flex wuhanui:h-8 wuhanui:items-center wuhanui:gap-2 wuhanui:rounded-md wuhanui:px-2',
-        className,
-      )}
+      className={cn('flex h-8 items-center gap-2 rounded-md px-2', className)}
       {...props}
     >
-      {showIcon && (
-        <Skeleton className="wuhanui:size-4 wuhanui:rounded-md" data-sidebar="menu-skeleton-icon" />
-      )}
+      {showIcon && <Skeleton className="size-4 rounded-md" data-sidebar="menu-skeleton-icon" />}
       <Skeleton
-        className="wuhanui:h-4 wuhanui:max-w-(--skeleton-width) wuhanui:flex-1"
+        className="h-4 max-w-(--skeleton-width) flex-1"
         data-sidebar="menu-skeleton-text"
         style={
           {
@@ -609,7 +593,7 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<'ul'>) {
       data-slot="sidebar-menu-sub"
       data-sidebar="menu-sub"
       className={cn(
-        'wuhanui:mx-3.5 wuhanui:flex wuhanui:min-w-0 wuhanui:translate-x-px wuhanui:flex-col wuhanui:gap-1 wuhanui:border-l wuhanui:border-sidebar-border wuhanui:px-2.5 wuhanui:py-0.5 wuhanui:group-data-[collapsible=icon]:hidden',
+        'border-sidebar-border mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l px-2.5 py-0.5 group-data-[collapsible=icon]:hidden',
         className,
       )}
       {...props}
@@ -622,7 +606,7 @@ function SidebarMenuSubItem({ className, ...props }: React.ComponentProps<'li'>)
     <li
       data-slot="sidebar-menu-sub-item"
       data-sidebar="menu-sub-item"
-      className={cn('wuhanui:group/menu-sub-item wuhanui:relative', className)}
+      className={cn('group/menu-sub-item relative', className)}
       {...props}
     />
   )
@@ -648,7 +632,7 @@ function SidebarMenuSubButton({
       data-size={size}
       data-active={isActive}
       className={cn(
-        'wuhanui:flex wuhanui:h-7 wuhanui:min-w-0 wuhanui:-translate-x-px wuhanui:items-center wuhanui:gap-2 wuhanui:overflow-hidden wuhanui:rounded-md wuhanui:px-2 wuhanui:text-sidebar-foreground wuhanui:ring-sidebar-ring wuhanui:outline-hidden wuhanui:group-data-[collapsible=icon]:hidden wuhanui:hover:bg-sidebar-accent wuhanui:hover:text-sidebar-accent-foreground wuhanui:focus-visible:ring-2 wuhanui:active:bg-sidebar-accent wuhanui:active:text-sidebar-accent-foreground wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50 wuhanui:aria-disabled:pointer-events-none wuhanui:aria-disabled:opacity-50 wuhanui:data-[size=md]:text-sm wuhanui:data-[size=sm]:text-xs wuhanui:data-active:bg-sidebar-accent wuhanui:data-active:text-sidebar-accent-foreground wuhanui:[&>span:last-child]:truncate wuhanui:[&>svg]:size-4 wuhanui:[&>svg]:shrink-0 wuhanui:[&>svg]:text-sidebar-accent-foreground',
+        'text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground data-active:bg-sidebar-accent data-active:text-sidebar-accent-foreground [&>svg]:text-sidebar-accent-foreground flex h-7 min-w-0 -translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 outline-hidden group-data-[collapsible=icon]:hidden focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[size=md]:text-sm data-[size=sm]:text-xs [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
         className,
       )}
       {...props}

@@ -7,7 +7,7 @@ function Accordion({ className, ...props }: React.ComponentProps<typeof Accordio
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
-      className={cn('wuhanui:flex wuhanui:w-full wuhanui:flex-col', className)}
+      className={cn('flex w-full flex-col', className)}
       {...props}
     />
   )
@@ -20,7 +20,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn('wuhanui:not-last:border-b', className)}
+      className={cn('not-last:border-b', className)}
       {...props}
     />
   )
@@ -32,11 +32,11 @@ function AccordionTrigger({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
   return (
-    <AccordionPrimitive.Header className="wuhanui:flex">
+    <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          'wuhanui:group/accordion-trigger wuhanui:relative wuhanui:flex wuhanui:flex-1 wuhanui:items-start wuhanui:justify-between wuhanui:rounded-md wuhanui:border wuhanui:border-transparent wuhanui:py-4 wuhanui:text-left wuhanui:text-sm wuhanui:font-medium wuhanui:transition-all wuhanui:outline-none wuhanui:hover:underline wuhanui:focus-visible:border-ring wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:focus-visible:after:border-ring wuhanui:disabled:pointer-events-none wuhanui:disabled:opacity-50 wuhanui:**:data-[slot=accordion-trigger-icon]:ml-auto wuhanui:**:data-[slot=accordion-trigger-icon]:size-4 wuhanui:**:data-[slot=accordion-trigger-icon]:text-muted-foreground',
+          'group/accordion-trigger focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:after:border-ring **:data-[slot=accordion-trigger-icon]:text-muted-foreground relative flex flex-1 items-start justify-between rounded-lg border border-transparent py-2.5 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-3 disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4',
           className,
         )}
         {...props}
@@ -44,11 +44,11 @@ function AccordionTrigger({
         {children}
         <ChevronDownIcon
           data-slot="accordion-trigger-icon"
-          className="wuhanui:pointer-events-none wuhanui:shrink-0 wuhanui:group-aria-expanded/accordion-trigger:hidden"
+          className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden"
         />
         <ChevronUpIcon
           data-slot="accordion-trigger-icon"
-          className="wuhanui:pointer-events-none wuhanui:hidden wuhanui:shrink-0 wuhanui:group-aria-expanded/accordion-trigger:inline"
+          className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline"
         />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
@@ -63,12 +63,12 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="wuhanui:overflow-hidden wuhanui:text-sm wuhanui:data-open:animate-accordion-down wuhanui:data-closed:animate-accordion-up"
+      className="data-open:animate-accordion-down data-closed:animate-accordion-up overflow-hidden text-sm"
       {...props}
     >
       <div
         className={cn(
-          'wuhanui:h-(--radix-accordion-content-height) wuhanui:pt-0 wuhanui:pb-4 wuhanui:[&_a]:underline wuhanui:[&_a]:underline-offset-3 wuhanui:[&_a]:hover:text-foreground wuhanui:[&_p:not(:last-child)]:mb-4',
+          '[&_a]:hover:text-foreground h-(--radix-accordion-content-height) pt-0 pb-2.5 [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4',
           className,
         )}
       >

@@ -13,14 +13,14 @@ function Progress({
     <ProgressPrimitive.Root
       data-slot="progress"
       className={cn(
-        'wuhanui:relative wuhanui:flex wuhanui:h-1.5 wuhanui:w-full wuhanui:items-center wuhanui:overflow-x-hidden wuhanui:rounded-full wuhanui:bg-muted',
+        'bg-muted relative flex h-1 w-full items-center overflow-x-hidden rounded-full',
         className,
       )}
       {...props}
     >
       <ProgressPrimitive.Indicator
         data-slot="progress-indicator"
-        className="wuhanui:size-full wuhanui:flex-1 wuhanui:bg-primary wuhanui:transition-all"
+        className="bg-primary size-full flex-1 transition-all"
         style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       />
     </ProgressPrimitive.Root>

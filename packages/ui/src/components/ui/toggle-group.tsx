@@ -40,7 +40,7 @@ function ToggleGroup({
       data-orientation={orientation}
       style={{ '--gap': spacing } as React.CSSProperties}
       className={cn(
-        'wuhanui:group/toggle-group wuhanui:flex wuhanui:w-fit wuhanui:flex-row wuhanui:items-center wuhanui:gap-[--spacing(var(--gap))] wuhanui:rounded-md wuhanui:data-[spacing=0]:data-[variant=outline]:shadow-xs wuhanui:data-vertical:flex-col wuhanui:data-vertical:items-stretch',
+        'group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] rounded-lg data-vertical:flex-col data-vertical:items-stretch data-[size=sm]:rounded-[min(var(--radius-md),10px)]',
         className,
       )}
       {...props}
@@ -68,7 +68,7 @@ function ToggleGroupItem({
       data-size={context.size || size}
       data-spacing={context.spacing}
       className={cn(
-        'wuhanui:shrink-0 wuhanui:group-data-[spacing=0]/toggle-group:rounded-none wuhanui:group-data-[spacing=0]/toggle-group:px-2 wuhanui:group-data-[spacing=0]/toggle-group:shadow-none wuhanui:focus:z-10 wuhanui:focus-visible:z-10 wuhanui:group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-md wuhanui:group-data-vertical/toggle-group:data-[spacing=0]:first:rounded-t-md wuhanui:group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-r-md wuhanui:group-data-vertical/toggle-group:data-[spacing=0]:last:rounded-b-md wuhanui:data-[state=on]:bg-muted wuhanui:group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 wuhanui:group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 wuhanui:group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l wuhanui:group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t',
+        'shrink-0 group-data-[spacing=0]/toggle-group:rounded-none group-data-[spacing=0]/toggle-group:px-2 focus:z-10 focus-visible:z-10 group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-lg group-data-vertical/toggle-group:data-[spacing=0]:first:rounded-t-lg group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-r-lg group-data-vertical/toggle-group:data-[spacing=0]:last:rounded-b-lg group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:border-l-0 group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:border-t-0 group-data-horizontal/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-l group-data-vertical/toggle-group:data-[spacing=0]:data-[variant=outline]:first:border-t',
         toggleVariants({
           variant: context.variant || variant,
           size: context.size || size,

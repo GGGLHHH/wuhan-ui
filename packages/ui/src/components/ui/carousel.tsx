@@ -114,7 +114,7 @@ function Carousel({
     >
       <div
         onKeyDownCapture={handleKeyDown}
-        className={cn('wuhanui:relative', className)}
+        className={cn('relative', className)}
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
@@ -130,13 +130,9 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
   const { carouselRef, orientation } = useCarousel()
 
   return (
-    <div ref={carouselRef} className="wuhanui:overflow-hidden" data-slot="carousel-content">
+    <div ref={carouselRef} className="overflow-hidden" data-slot="carousel-content">
       <div
-        className={cn(
-          'wuhanui:flex',
-          orientation === 'horizontal' ? 'wuhanui:-ml-4' : 'wuhanui:-mt-4 wuhanui:flex-col',
-          className,
-        )}
+        className={cn('flex', orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col', className)}
         {...props}
       />
     </div>
@@ -152,8 +148,8 @@ function CarouselItem({ className, ...props }: React.ComponentProps<'div'>) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        'wuhanui:min-w-0 wuhanui:shrink-0 wuhanui:grow-0 wuhanui:basis-full',
-        orientation === 'horizontal' ? 'wuhanui:pl-4' : 'wuhanui:pt-4',
+        'min-w-0 shrink-0 grow-0 basis-full',
+        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
         className,
       )}
       {...props}
@@ -175,18 +171,18 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        'wuhanui:absolute wuhanui:touch-manipulation wuhanui:rounded-full',
+        'absolute touch-manipulation rounded-full',
         orientation === 'horizontal'
-          ? 'wuhanui:top-1/2 wuhanui:-left-12 wuhanui:-translate-y-1/2'
-          : 'wuhanui:-top-12 wuhanui:left-1/2 wuhanui:-translate-x-1/2 wuhanui:rotate-90',
+          ? 'top-1/2 -left-12 -translate-y-1/2'
+          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
         className,
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ChevronLeftIcon className="wuhanui:" />
-      <span className="wuhanui:sr-only">Previous slide</span>
+      <ChevronLeftIcon />
+      <span className="sr-only">Previous slide</span>
     </Button>
   )
 }
@@ -205,18 +201,18 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        'wuhanui:absolute wuhanui:touch-manipulation wuhanui:rounded-full',
+        'absolute touch-manipulation rounded-full',
         orientation === 'horizontal'
-          ? 'wuhanui:top-1/2 wuhanui:-right-12 wuhanui:-translate-y-1/2'
-          : 'wuhanui:-bottom-12 wuhanui:left-1/2 wuhanui:-translate-x-1/2 wuhanui:rotate-90',
+          ? 'top-1/2 -right-12 -translate-y-1/2'
+          : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
         className,
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ChevronRightIcon className="wuhanui:" />
-      <span className="wuhanui:sr-only">Next slide</span>
+      <ChevronRightIcon />
+      <span className="sr-only">Next slide</span>
     </Button>
   )
 }

@@ -13,7 +13,7 @@ function SelectGroup({ className, ...props }: React.ComponentProps<typeof Select
   return (
     <SelectPrimitive.Group
       data-slot="select-group"
-      className={cn('wuhanui:scroll-my-1 wuhanui:p-1', className)}
+      className={cn('scroll-my-1 p-1', className)}
       {...props}
     />
   )
@@ -36,14 +36,14 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        'wuhanui:flex wuhanui:w-fit wuhanui:items-center wuhanui:justify-between wuhanui:gap-1.5 wuhanui:rounded-md wuhanui:border wuhanui:border-input wuhanui:bg-transparent wuhanui:py-2 wuhanui:pr-2 wuhanui:pl-2.5 wuhanui:text-sm wuhanui:whitespace-nowrap wuhanui:shadow-xs wuhanui:transition-[color,box-shadow] wuhanui:outline-none wuhanui:focus-visible:border-ring wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:disabled:cursor-not-allowed wuhanui:disabled:opacity-50 wuhanui:aria-invalid:border-destructive wuhanui:aria-invalid:ring-3 wuhanui:aria-invalid:ring-destructive/20 wuhanui:data-placeholder:text-muted-foreground wuhanui:data-[size=default]:h-9 wuhanui:data-[size=sm]:h-8 wuhanui:*:data-[slot=select-value]:line-clamp-1 wuhanui:*:data-[slot=select-value]:flex wuhanui:*:data-[slot=select-value]:items-center wuhanui:*:data-[slot=select-value]:gap-1.5 wuhanui:dark:bg-input/30 wuhanui:dark:hover:bg-input/50 wuhanui:dark:aria-invalid:border-destructive/50 wuhanui:dark:aria-invalid:ring-destructive/40 wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg]:shrink-0 wuhanui:[&_svg:not([class*=size-])]:size-4',
+        "border-input focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-placeholder:text-muted-foreground dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 flex w-fit items-center justify-between gap-1.5 rounded-lg border bg-transparent py-2 pr-2 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none select-none focus-visible:ring-3 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:ring-3 data-[size=default]:h-8 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="wuhanui:pointer-events-none wuhanui:size-4 wuhanui:text-muted-foreground" />
+        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -62,9 +62,9 @@ function SelectContent({
         data-slot="select-content"
         data-align-trigger={position === 'item-aligned'}
         className={cn(
-          'wuhanui:dark wuhanui: wuhanui:relative wuhanui:z-50 wuhanui:max-h-(--radix-select-content-available-height) wuhanui:min-w-36 wuhanui:origin-(--radix-select-content-transform-origin) wuhanui:overflow-x-hidden wuhanui:overflow-y-auto wuhanui:rounded-md wuhanui:bg-popover wuhanui:text-popover-foreground wuhanui:shadow-md wuhanui:ring-1 wuhanui:ring-foreground/10 wuhanui:duration-100 wuhanui:data-[align-trigger=true]:animate-none wuhanui:data-[side=bottom]:slide-in-from-top-2 wuhanui:data-[side=left]:slide-in-from-right-2 wuhanui:data-[side=right]:slide-in-from-left-2 wuhanui:data-[side=top]:slide-in-from-bottom-2 wuhanui:data-open:animate-in wuhanui:data-open:fade-in-0 wuhanui:data-open:zoom-in-95 wuhanui:data-closed:animate-out wuhanui:data-closed:fade-out-0 wuhanui:data-closed:zoom-out-95',
+          'bg-popover text-popover-foreground ring-foreground/10 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 relative z-50 max-h-(--radix-select-content-available-height) min-w-36 origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg shadow-md ring-1 duration-100 data-[align-trigger=true]:animate-none',
           position === 'popper' &&
-            'wuhanui:data-[side=bottom]:translate-y-1 wuhanui:data-[side=left]:-translate-x-1 wuhanui:data-[side=right]:translate-x-1 wuhanui:data-[side=top]:-translate-y-1',
+            'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
           className,
         )}
         position={position}
@@ -75,8 +75,8 @@ function SelectContent({
         <SelectPrimitive.Viewport
           data-position={position}
           className={cn(
-            'wuhanui:data-[position=popper]:h-(--radix-select-trigger-height) wuhanui:data-[position=popper]:w-full wuhanui:data-[position=popper]:min-w-(--radix-select-trigger-width)',
-            position === 'popper' && 'wuhanui:',
+            'data-[position=popper]:h-(--radix-select-trigger-height) data-[position=popper]:w-full data-[position=popper]:min-w-(--radix-select-trigger-width)',
+            position === 'popper' && '',
           )}
         >
           {children}
@@ -91,10 +91,7 @@ function SelectLabel({ className, ...props }: React.ComponentProps<typeof Select
   return (
     <SelectPrimitive.Label
       data-slot="select-label"
-      className={cn(
-        'wuhanui:px-2 wuhanui:py-1.5 wuhanui:text-xs wuhanui:text-muted-foreground',
-        className,
-      )}
+      className={cn('text-muted-foreground px-1.5 py-1 text-xs', className)}
       {...props}
     />
   )
@@ -109,14 +106,14 @@ function SelectItem({
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        'wuhanui:relative wuhanui:flex wuhanui:w-full wuhanui:cursor-default wuhanui:items-center wuhanui:gap-2 wuhanui:rounded-sm wuhanui:py-1.5 wuhanui:pr-8 wuhanui:pl-2 wuhanui:text-sm wuhanui:outline-hidden wuhanui:select-none wuhanui:focus:bg-accent wuhanui:focus:text-accent-foreground wuhanui:not-data-[variant=destructive]:focus:**:text-accent-foreground wuhanui:data-disabled:pointer-events-none wuhanui:data-disabled:opacity-50 wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg]:shrink-0 wuhanui:[&_svg:not([class*=size-])]:size-4 wuhanui:*:[span]:last:flex wuhanui:*:[span]:last:items-center wuhanui:*:[span]:last:gap-2',
+        "focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
         className,
       )}
       {...props}
     >
-      <span className="wuhanui:pointer-events-none wuhanui:absolute wuhanui:right-2 wuhanui:flex wuhanui:size-4 wuhanui:items-center wuhanui:justify-center">
+      <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center">
         <SelectPrimitive.ItemIndicator>
-          <CheckIcon className="wuhanui:pointer-events-none" />
+          <CheckIcon className="pointer-events-none" />
         </SelectPrimitive.ItemIndicator>
       </span>
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -131,10 +128,7 @@ function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
-      className={cn(
-        'wuhanui:pointer-events-none wuhanui:-mx-1 wuhanui:my-1 wuhanui:h-px wuhanui:bg-border',
-        className,
-      )}
+      className={cn('bg-border pointer-events-none -mx-1 my-1 h-px', className)}
       {...props}
     />
   )
@@ -148,7 +142,7 @@ function SelectScrollUpButton({
     <SelectPrimitive.ScrollUpButton
       data-slot="select-scroll-up-button"
       className={cn(
-        'wuhanui:z-10 wuhanui:flex wuhanui:cursor-default wuhanui:items-center wuhanui:justify-center wuhanui:bg-popover wuhanui:py-1 wuhanui:[&_svg:not([class*=size-])]:size-4',
+        "bg-popover z-10 flex cursor-default items-center justify-center py-1 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
@@ -166,7 +160,7 @@ function SelectScrollDownButton({
     <SelectPrimitive.ScrollDownButton
       data-slot="select-scroll-down-button"
       className={cn(
-        'wuhanui:z-10 wuhanui:flex wuhanui:cursor-default wuhanui:items-center wuhanui:justify-center wuhanui:bg-popover wuhanui:py-1 wuhanui:[&_svg:not([class*=size-])]:size-4',
+        "bg-popover z-10 flex cursor-default items-center justify-center py-1 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}

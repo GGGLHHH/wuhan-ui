@@ -1,4 +1,4 @@
-@import 'tailwindcss' prefix(wuhanui);
+@import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/geist';
@@ -126,12 +126,12 @@
 
 @layer base {
   * {
-    @apply wuhanui:border-border wuhanui:outline-ring/50;
+    @apply border-border outline-ring/50;
   }
   body {
-    @apply wuhanui:bg-background wuhanui:text-foreground;
+    @apply bg-background text-foreground;
   }
   html {
-    @apply wuhanui:font-sans;
+    @apply font-sans;
   }
 }

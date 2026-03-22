@@ -30,7 +30,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        'wuhanui:fixed wuhanui:inset-0 wuhanui:isolate wuhanui:z-50 wuhanui:bg-black/10 wuhanui:duration-100 wuhanui:supports-backdrop-filter:backdrop-blur-xs wuhanui:data-open:animate-in wuhanui:data-open:fade-in-0 wuhanui:data-closed:animate-out wuhanui:data-closed:fade-out-0',
+        'data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0 fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs',
         className,
       )}
       {...props}
@@ -52,7 +52,7 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          'wuhanui:fixed wuhanui:top-1/2 wuhanui:left-1/2 wuhanui:z-50 wuhanui:grid wuhanui:w-full wuhanui:max-w-[calc(100%-2rem)] wuhanui:-translate-x-1/2 wuhanui:-translate-y-1/2 wuhanui:gap-6 wuhanui:rounded-xl wuhanui:bg-background wuhanui:p-6 wuhanui:text-sm wuhanui:ring-1 wuhanui:ring-foreground/10 wuhanui:duration-100 wuhanui:outline-none wuhanui:sm:max-w-md wuhanui:data-open:animate-in wuhanui:data-open:fade-in-0 wuhanui:data-open:zoom-in-95 wuhanui:data-closed:animate-out wuhanui:data-closed:fade-out-0 wuhanui:data-closed:zoom-out-95',
+          'bg-background ring-foreground/10 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl p-4 text-sm ring-1 duration-100 outline-none sm:max-w-sm',
           className,
         )}
         {...props}
@@ -60,13 +60,9 @@ function DialogContent({
         {children}
         {showCloseButton && (
           <DialogPrimitive.Close data-slot="dialog-close" asChild>
-            <Button
-              variant="ghost"
-              className="wuhanui:absolute wuhanui:top-4 wuhanui:right-4"
-              size="icon-sm"
-            >
+            <Button variant="ghost" className="absolute top-2 right-2" size="icon-sm">
               <XIcon />
-              <span className="wuhanui:sr-only">Close</span>
+              <span className="sr-only">Close</span>
             </Button>
           </DialogPrimitive.Close>
         )}
@@ -77,11 +73,7 @@ function DialogContent({
 
 function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div
-      data-slot="dialog-header"
-      className={cn('wuhanui:flex wuhanui:flex-col wuhanui:gap-2', className)}
-      {...props}
-    />
+    <div data-slot="dialog-header" className={cn('flex flex-col gap-2', className)} {...props} />
   )
 }
 
@@ -97,7 +89,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        'wuhanui:flex wuhanui:flex-col-reverse wuhanui:gap-2 wuhanui:sm:flex-row wuhanui:sm:justify-end',
+        'bg-muted/50 -mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t p-4 sm:flex-row sm:justify-end',
         className,
       )}
       {...props}
@@ -116,7 +108,7 @@ function DialogTitle({ className, ...props }: React.ComponentProps<typeof Dialog
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn('wuhanui:leading-none wuhanui:font-medium', className)}
+      className={cn('text-base leading-none font-medium', className)}
       {...props}
     />
   )
@@ -130,7 +122,7 @@ function DialogDescription({
     <DialogPrimitive.Description
       data-slot="dialog-description"
       className={cn(
-        'wuhanui:text-sm wuhanui:text-muted-foreground wuhanui:*:[a]:underline wuhanui:*:[a]:underline-offset-3 wuhanui:*:[a]:hover:text-foreground',
+        'text-muted-foreground *:[a]:hover:text-foreground text-sm *:[a]:underline *:[a]:underline-offset-3',
         className,
       )}
       {...props}

@@ -6,12 +6,10 @@ import * as React from 'react'
 function Pagination({ className, ...props }: React.ComponentProps<'nav'>) {
   return (
     <nav
+      role="navigation"
       aria-label="pagination"
       data-slot="pagination"
-      className={cn(
-        'wuhanui:mx-auto wuhanui:flex wuhanui:w-full wuhanui:justify-center',
-        className,
-      )}
+      className={cn('mx-auto flex w-full justify-center', className)}
       {...props}
     />
   )
@@ -21,7 +19,7 @@ function PaginationContent({ className, ...props }: React.ComponentProps<'ul'>) 
   return (
     <ul
       data-slot="pagination-content"
-      className={cn('wuhanui:flex wuhanui:items-center wuhanui:gap-1', className)}
+      className={cn('flex items-center gap-0.5', className)}
       {...props}
     />
   )
@@ -58,11 +56,11 @@ function PaginationPrevious({
     <PaginationLink
       aria-label="Go to previous page"
       size="default"
-      className={cn('wuhanui:pl-2!', className)}
+      className={cn('pl-1.5!', className)}
       {...props}
     >
-      <ChevronLeftIcon data-icon="inline-start" className="wuhanui:" />
-      <span className="wuhanui:hidden wuhanui:sm:block">{text}</span>
+      <ChevronLeftIcon data-icon="inline-start" />
+      <span className="hidden sm:block">{text}</span>
     </PaginationLink>
   )
 }
@@ -76,11 +74,11 @@ function PaginationNext({
     <PaginationLink
       aria-label="Go to next page"
       size="default"
-      className={cn('wuhanui:pr-2!', className)}
+      className={cn('pr-1.5!', className)}
       {...props}
     >
-      <span className="wuhanui:hidden wuhanui:sm:block">{text}</span>
-      <ChevronRightIcon data-icon="inline-end" className="wuhanui:" />
+      <span className="hidden sm:block">{text}</span>
+      <ChevronRightIcon data-icon="inline-end" />
     </PaginationLink>
   )
 }
@@ -91,13 +89,13 @@ function PaginationEllipsis({ className, ...props }: React.ComponentProps<'span'
       aria-hidden
       data-slot="pagination-ellipsis"
       className={cn(
-        'wuhanui:flex wuhanui:size-9 wuhanui:items-center wuhanui:justify-center wuhanui:[&_svg:not([class*=size-])]:size-4',
+        "flex size-8 items-center justify-center [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
     >
       <MoreHorizontalIcon />
-      <span className="wuhanui:sr-only">More pages</span>
+      <span className="sr-only">More pages</span>
     </span>
   )
 }

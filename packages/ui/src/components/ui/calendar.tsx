@@ -25,7 +25,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        'wuhanui:group/calendar wuhanui:bg-background wuhanui:p-3 wuhanui:[--cell-radius:var(--radius-md)] wuhanui:[--cell-size:--spacing(8)] wuhanui:in-data-[slot=card-content]:bg-transparent wuhanui:in-data-[slot=popover-content]:bg-transparent',
+        'group/calendar bg-background p-2 [--cell-radius:var(--radius-md)] [--cell-size:--spacing(7)] in-data-[slot=card-content]:bg-transparent in-data-[slot=popover-content]:bg-transparent',
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className,
@@ -37,96 +37,78 @@ function Calendar({
         ...formatters,
       }}
       classNames={{
-        root: cn('wuhanui:w-fit', defaultClassNames.root),
-        months: cn(
-          'wuhanui:relative wuhanui:flex wuhanui:flex-col wuhanui:gap-4 wuhanui:md:flex-row',
-          defaultClassNames.months,
-        ),
-        month: cn(
-          'wuhanui:flex wuhanui:w-full wuhanui:flex-col wuhanui:gap-4',
-          defaultClassNames.month,
-        ),
+        root: cn('w-fit', defaultClassNames.root),
+        months: cn('relative flex flex-col gap-4 md:flex-row', defaultClassNames.months),
+        month: cn('flex w-full flex-col gap-4', defaultClassNames.month),
         nav: cn(
-          'wuhanui:absolute wuhanui:inset-x-0 wuhanui:top-0 wuhanui:flex wuhanui:w-full wuhanui:items-center wuhanui:justify-between wuhanui:gap-1',
+          'absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1',
           defaultClassNames.nav,
         ),
         button_previous: cn(
           buttonVariants({ variant: buttonVariant }),
-          'wuhanui:size-(--cell-size) wuhanui:p-0 wuhanui:select-none wuhanui:aria-disabled:opacity-50',
+          'size-(--cell-size) p-0 select-none aria-disabled:opacity-50',
           defaultClassNames.button_previous,
         ),
         button_next: cn(
           buttonVariants({ variant: buttonVariant }),
-          'wuhanui:size-(--cell-size) wuhanui:p-0 wuhanui:select-none wuhanui:aria-disabled:opacity-50',
+          'size-(--cell-size) p-0 select-none aria-disabled:opacity-50',
           defaultClassNames.button_next,
         ),
         month_caption: cn(
-          'wuhanui:flex wuhanui:h-(--cell-size) wuhanui:w-full wuhanui:items-center wuhanui:justify-center wuhanui:px-(--cell-size)',
+          'flex h-(--cell-size) w-full items-center justify-center px-(--cell-size)',
           defaultClassNames.month_caption,
         ),
         dropdowns: cn(
-          'wuhanui:flex wuhanui:h-(--cell-size) wuhanui:w-full wuhanui:items-center wuhanui:justify-center wuhanui:gap-1.5 wuhanui:text-sm wuhanui:font-medium',
+          'flex h-(--cell-size) w-full items-center justify-center gap-1.5 text-sm font-medium',
           defaultClassNames.dropdowns,
         ),
-        dropdown_root: cn(
-          'wuhanui: wuhanui:relative wuhanui:rounded-(--cell-radius)',
-          defaultClassNames.dropdown_root,
-        ),
-        dropdown: cn(
-          'wuhanui:absolute wuhanui:inset-0 wuhanui:bg-popover wuhanui:opacity-0',
-          defaultClassNames.dropdown,
-        ),
+        dropdown_root: cn('relative rounded-(--cell-radius)', defaultClassNames.dropdown_root),
+        dropdown: cn('bg-popover absolute inset-0 opacity-0', defaultClassNames.dropdown),
         caption_label: cn(
-          'wuhanui:font-medium wuhanui:select-none',
+          'font-medium select-none',
           captionLayout === 'label'
-            ? 'wuhanui:text-sm'
-            : 'wuhanui: wuhanui:flex wuhanui:items-center wuhanui:gap-1 wuhanui:rounded-(--cell-radius) wuhanui:text-sm wuhanui:[&>svg]:size-3.5 wuhanui:[&>svg]:text-muted-foreground',
+            ? 'text-sm'
+            : '[&>svg]:text-muted-foreground flex items-center gap-1 rounded-(--cell-radius) text-sm [&>svg]:size-3.5',
           defaultClassNames.caption_label,
         ),
-        table: 'wuhanui:w-full wuhanui:border-collapse',
-        weekdays: cn('wuhanui:flex', defaultClassNames.weekdays),
+        table: 'w-full border-collapse',
+        weekdays: cn('flex', defaultClassNames.weekdays),
         weekday: cn(
-          'wuhanui:flex-1 wuhanui:rounded-(--cell-radius) wuhanui:text-[0.8rem] wuhanui:font-normal wuhanui:text-muted-foreground wuhanui:select-none',
+          'text-muted-foreground flex-1 rounded-(--cell-radius) text-[0.8rem] font-normal select-none',
           defaultClassNames.weekday,
         ),
-        week: cn('wuhanui:mt-2 wuhanui:flex wuhanui:w-full', defaultClassNames.week),
-        week_number_header: cn(
-          'wuhanui:w-(--cell-size) wuhanui:select-none',
-          defaultClassNames.week_number_header,
-        ),
+        week: cn('mt-2 flex w-full', defaultClassNames.week),
+        week_number_header: cn('w-(--cell-size) select-none', defaultClassNames.week_number_header),
         week_number: cn(
-          'wuhanui:text-[0.8rem] wuhanui:text-muted-foreground wuhanui:select-none',
+          'text-muted-foreground text-[0.8rem] select-none',
           defaultClassNames.week_number,
         ),
         day: cn(
-          'wuhanui:group/day wuhanui:relative wuhanui:aspect-square wuhanui:h-full wuhanui:w-full wuhanui:rounded-(--cell-radius) wuhanui:p-0 wuhanui:text-center wuhanui:select-none wuhanui:[&:last-child[data-selected=true]_button]:rounded-r-(--cell-radius)',
+          'group/day relative aspect-square h-full w-full rounded-(--cell-radius) p-0 text-center select-none [&:last-child[data-selected=true]_button]:rounded-r-(--cell-radius)',
           props.showWeekNumber
-            ? 'wuhanui:[&:nth-child(2)[data-selected=true]_button]:rounded-l-(--cell-radius)'
-            : 'wuhanui:[&:first-child[data-selected=true]_button]:rounded-l-(--cell-radius)',
+            ? '[&:nth-child(2)[data-selected=true]_button]:rounded-l-(--cell-radius)'
+            : '[&:first-child[data-selected=true]_button]:rounded-l-(--cell-radius)',
           defaultClassNames.day,
         ),
         range_start: cn(
-          'wuhanui:relative wuhanui:isolate wuhanui:z-0 wuhanui:rounded-l-(--cell-radius) wuhanui:bg-muted wuhanui:after:absolute wuhanui:after:inset-y-0 wuhanui:after:right-0 wuhanui:after:w-4 wuhanui:after:bg-muted',
+          'bg-muted after:bg-muted relative isolate z-0 rounded-l-(--cell-radius) after:absolute after:inset-y-0 after:right-0 after:w-4',
           defaultClassNames.range_start,
         ),
-        range_middle: cn('wuhanui:rounded-none', defaultClassNames.range_middle),
+        range_middle: cn('rounded-none', defaultClassNames.range_middle),
         range_end: cn(
-          'wuhanui:relative wuhanui:isolate wuhanui:z-0 wuhanui:rounded-r-(--cell-radius) wuhanui:bg-muted wuhanui:after:absolute wuhanui:after:inset-y-0 wuhanui:after:left-0 wuhanui:after:w-4 wuhanui:after:bg-muted',
+          'bg-muted after:bg-muted relative isolate z-0 rounded-r-(--cell-radius) after:absolute after:inset-y-0 after:left-0 after:w-4',
           defaultClassNames.range_end,
         ),
         today: cn(
-          'wuhanui:rounded-(--cell-radius) wuhanui:bg-muted wuhanui:text-foreground wuhanui:data-[selected=true]:rounded-none',
+          'bg-muted text-foreground rounded-(--cell-radius) data-[selected=true]:rounded-none',
           defaultClassNames.today,
         ),
         outside: cn(
-          'wuhanui:text-muted-foreground wuhanui:aria-selected:text-muted-foreground',
+          'text-muted-foreground aria-selected:text-muted-foreground',
           defaultClassNames.outside,
         ),
-        disabled: cn(
-          'wuhanui:text-muted-foreground wuhanui:opacity-50',
-          defaultClassNames.disabled,
-        ),
-        hidden: cn('wuhanui:invisible', defaultClassNames.hidden),
+        disabled: cn('text-muted-foreground opacity-50', defaultClassNames.disabled),
+        hidden: cn('invisible', defaultClassNames.hidden),
         ...classNames,
       }}
       components={{
@@ -135,24 +117,20 @@ function Calendar({
         },
         Chevron: ({ className, orientation, ...props }) => {
           if (orientation === 'left') {
-            return (
-              <ChevronLeftIcon className={cn('wuhanui: wuhanui:size-4', className)} {...props} />
-            )
+            return <ChevronLeftIcon className={cn('size-4', className)} {...props} />
           }
 
           if (orientation === 'right') {
-            return (
-              <ChevronRightIcon className={cn('wuhanui: wuhanui:size-4', className)} {...props} />
-            )
+            return <ChevronRightIcon className={cn('size-4', className)} {...props} />
           }
 
-          return <ChevronDownIcon className={cn('wuhanui:size-4', className)} {...props} />
+          return <ChevronDownIcon className={cn('size-4', className)} {...props} />
         },
         DayButton: ({ ...props }) => <CalendarDayButton locale={locale} {...props} />,
         WeekNumber: ({ children, ...props }) => {
           return (
             <td {...props}>
-              <div className="wuhanui:flex wuhanui:size-(--cell-size) wuhanui:items-center wuhanui:justify-center wuhanui:text-center">
+              <div className="flex size-(--cell-size) items-center justify-center text-center">
                 {children}
               </div>
             </td>
@@ -195,7 +173,7 @@ function CalendarDayButton({
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        'wuhanui:relative wuhanui:isolate wuhanui:z-10 wuhanui:flex wuhanui:aspect-square wuhanui:size-auto wuhanui:w-full wuhanui:min-w-(--cell-size) wuhanui:flex-col wuhanui:gap-1 wuhanui:border-0 wuhanui:leading-none wuhanui:font-normal wuhanui:group-data-[focused=true]/day:relative wuhanui:group-data-[focused=true]/day:z-10 wuhanui:group-data-[focused=true]/day:border-ring wuhanui:group-data-[focused=true]/day:ring-[3px] wuhanui:group-data-[focused=true]/day:ring-ring/50 wuhanui:data-[range-end=true]:rounded-(--cell-radius) wuhanui:data-[range-end=true]:rounded-r-(--cell-radius) wuhanui:data-[range-end=true]:bg-primary wuhanui:data-[range-end=true]:text-primary-foreground wuhanui:data-[range-middle=true]:rounded-none wuhanui:data-[range-middle=true]:bg-muted wuhanui:data-[range-middle=true]:text-foreground wuhanui:data-[range-start=true]:rounded-(--cell-radius) wuhanui:data-[range-start=true]:rounded-l-(--cell-radius) wuhanui:data-[range-start=true]:bg-primary wuhanui:data-[range-start=true]:text-primary-foreground wuhanui:data-[selected-single=true]:bg-primary wuhanui:data-[selected-single=true]:text-primary-foreground wuhanui:dark:hover:text-foreground wuhanui:[&>span]:text-xs wuhanui:[&>span]:opacity-70',
+        'group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50 data-[range-end=true]:bg-primary data-[range-end=true]:text-primary-foreground data-[range-middle=true]:bg-muted data-[range-middle=true]:text-foreground data-[range-start=true]:bg-primary data-[range-start=true]:text-primary-foreground data-[selected-single=true]:bg-primary data-[selected-single=true]:text-primary-foreground dark:hover:text-foreground relative isolate z-10 flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 border-0 leading-none font-normal group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] data-[range-end=true]:rounded-(--cell-radius) data-[range-end=true]:rounded-r-(--cell-radius) data-[range-middle=true]:rounded-none data-[range-start=true]:rounded-(--cell-radius) data-[range-start=true]:rounded-l-(--cell-radius) [&>span]:text-xs [&>span]:opacity-70',
         defaultClassNames.day,
         className,
       )}

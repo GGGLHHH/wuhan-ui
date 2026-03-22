@@ -9,7 +9,7 @@ function RadioGroup({
   return (
     <RadioGroupPrimitive.Root
       data-slot="radio-group"
-      className={cn('wuhanui:grid wuhanui:w-full wuhanui:gap-3', className)}
+      className={cn('grid w-full gap-2', className)}
       {...props}
     />
   )
@@ -23,16 +23,16 @@ function RadioGroupItem({
     <RadioGroupPrimitive.Item
       data-slot="radio-group-item"
       className={cn(
-        'wuhanui:group/radio-group-item wuhanui:peer wuhanui:relative wuhanui:flex wuhanui:aspect-square wuhanui:size-4 wuhanui:shrink-0 wuhanui:rounded-full wuhanui:border wuhanui:border-input wuhanui:outline-none wuhanui:after:absolute wuhanui:after:-inset-x-3 wuhanui:after:-inset-y-2 wuhanui:focus-visible:border-ring wuhanui:focus-visible:ring-3 wuhanui:focus-visible:ring-ring/50 wuhanui:disabled:cursor-not-allowed wuhanui:disabled:opacity-50 wuhanui:aria-invalid:border-destructive wuhanui:aria-invalid:ring-3 wuhanui:aria-invalid:ring-destructive/20 wuhanui:aria-invalid:aria-checked:border-primary wuhanui:dark:bg-input/30 wuhanui:dark:aria-invalid:border-destructive/50 wuhanui:dark:aria-invalid:ring-destructive/40 wuhanui:data-checked:border-primary wuhanui:data-checked:bg-primary wuhanui:data-checked:text-primary-foreground wuhanui:dark:data-checked:bg-primary',
+        'group/radio-group-item peer border-input focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground dark:data-checked:bg-primary relative flex aspect-square size-4 shrink-0 rounded-full border outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:ring-3 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:ring-3',
         className,
       )}
       {...props}
     >
       <RadioGroupPrimitive.Indicator
         data-slot="radio-group-indicator"
-        className="wuhanui:flex wuhanui:size-4 wuhanui:items-center wuhanui:justify-center"
+        className="flex size-4 items-center justify-center"
       >
-        <span className="wuhanui:absolute wuhanui:top-1/2 wuhanui:left-1/2 wuhanui:size-2 wuhanui:-translate-x-1/2 wuhanui:-translate-y-1/2 wuhanui:rounded-full wuhanui:bg-primary-foreground" />
+        <span className="bg-primary-foreground absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   )

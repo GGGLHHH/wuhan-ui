@@ -52,7 +52,7 @@ function ChartContainer({
         data-slot="chart"
         data-chart={chartId}
         className={cn(
-          'wuhanui:flex wuhanui:aspect-video wuhanui:justify-center wuhanui:text-xs wuhanui:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground wuhanui:[&_.recharts-cartesian-grid_line[stroke="%23ccc"]]:stroke-border/50 wuhanui:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border wuhanui:[&_.recharts-dot[stroke="%23fff"]]:stroke-transparent wuhanui:[&_.recharts-layer]:outline-hidden wuhanui:[&_.recharts-polar-grid_[stroke="%23ccc"]]:stroke-border wuhanui:[&_.recharts-radial-bar-background-sector]:fill-muted wuhanui:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted wuhanui:[&_.recharts-reference-line_[stroke="%23ccc"]]:stroke-border wuhanui:[&_.recharts-sector]:outline-hidden wuhanui:[&_.recharts-sector[stroke="%23fff"]]:stroke-transparent wuhanui:[&_.recharts-surface]:outline-hidden',
+          "[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-sector]:outline-hidden [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-surface]:outline-hidden",
           className,
         )}
         {...props}
@@ -134,9 +134,7 @@ function ChartTooltipContent({
 
     if (labelFormatter) {
       return (
-        <div className={cn('wuhanui:font-medium', labelClassName)}>
-          {labelFormatter(value, payload)}
-        </div>
+        <div className={cn('font-medium', labelClassName)}>{labelFormatter(value, payload)}</div>
       )
     }
 
@@ -144,7 +142,7 @@ function ChartTooltipContent({
       return null
     }
 
-    return <div className={cn('wuhanui:font-medium', labelClassName)}>{value}</div>
+    return <div className={cn('font-medium', labelClassName)}>{value}</div>
   }, [label, labelFormatter, payload, hideLabel, labelClassName, config, labelKey])
 
   if (!active || !payload?.length) {
@@ -156,12 +154,12 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        'wuhanui:grid wuhanui:min-w-32 wuhanui:items-start wuhanui:gap-1.5 wuhanui:rounded-lg wuhanui:border wuhanui:border-border/50 wuhanui:bg-background wuhanui:px-2.5 wuhanui:py-1.5 wuhanui:text-xs wuhanui:shadow-xl',
+        'border-border/50 bg-background grid min-w-32 items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
         className,
       )}
     >
       {!nestLabel ? tooltipLabel : null}
-      <div className="wuhanui:grid wuhanui:gap-1.5">
+      <div className="grid gap-1.5">
         {payload
           .filter((item) => item.type !== 'none')
           .map((item, index) => {
@@ -173,8 +171,8 @@ function ChartTooltipContent({
               <div
                 key={item.dataKey}
                 className={cn(
-                  'wuhanui:flex wuhanui:w-full wuhanui:flex-wrap wuhanui:items-stretch wuhanui:gap-2 wuhanui:[&>svg]:h-2.5 wuhanui:[&>svg]:w-2.5 wuhanui:[&>svg]:text-muted-foreground',
-                  indicator === 'dot' && 'wuhanui:items-center',
+                  '[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5',
+                  indicator === 'dot' && 'items-center',
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
@@ -187,7 +185,7 @@ function ChartTooltipContent({
                       !hideIndicator && (
                         <div
                           className={cn(
-                            'wuhanui:shrink-0 wuhanui:rounded-[2px] wuhanui:border-(--color-border) wuhanui:bg-(--color-bg)',
+                            'shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)',
                             {
                               'h-2.5 w-2.5': indicator === 'dot',
                               'w-1': indicator === 'line',
@@ -207,18 +205,18 @@ function ChartTooltipContent({
                     )}
                     <div
                       className={cn(
-                        'wuhanui:flex wuhanui:flex-1 wuhanui:justify-between wuhanui:leading-none',
-                        nestLabel ? 'wuhanui:items-end' : 'wuhanui:items-center',
+                        'flex flex-1 justify-between leading-none',
+                        nestLabel ? 'items-end' : 'items-center',
                       )}
                     >
-                      <div className="wuhanui:grid wuhanui:gap-1.5">
+                      <div className="grid gap-1.5">
                         {nestLabel ? tooltipLabel : null}
-                        <span className="wuhanui:text-muted-foreground">
+                        <span className="text-muted-foreground">
                           {itemConfig?.label || item.name}
                         </span>
                       </div>
                       {item.value && (
-                        <span className="wuhanui:font-mono wuhanui:font-medium wuhanui:text-foreground wuhanui:tabular-nums">
+                        <span className="text-foreground font-mono font-medium tabular-nums">
                           {item.value.toLocaleString()}
                         </span>
                       )}
@@ -255,8 +253,8 @@ function ChartLegendContent({
   return (
     <div
       className={cn(
-        'wuhanui:flex wuhanui:items-center wuhanui:justify-center wuhanui:gap-4',
-        verticalAlign === 'top' ? 'wuhanui:pb-3' : 'wuhanui:pt-3',
+        'flex items-center justify-center gap-4',
+        verticalAlign === 'top' ? 'pb-3' : 'pt-3',
         className,
       )}
     >
@@ -270,14 +268,14 @@ function ChartLegendContent({
             <div
               key={item.value}
               className={cn(
-                'wuhanui:flex wuhanui:items-center wuhanui:gap-1.5 wuhanui:[&>svg]:h-3 wuhanui:[&>svg]:w-3 wuhanui:[&>svg]:text-muted-foreground',
+                '[&>svg]:text-muted-foreground flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3',
               )}
             >
               {itemConfig?.icon && !hideIcon ? (
                 <itemConfig.icon />
               ) : (
                 <div
-                  className="wuhanui:h-2 wuhanui:w-2 wuhanui:shrink-0 wuhanui:rounded-[2px]"
+                  className="h-2 w-2 shrink-0 rounded-[2px]"
                   style={{
                     backgroundColor: item.color,
                   }}

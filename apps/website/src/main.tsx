@@ -5,8 +5,8 @@ import { createRoot } from 'react-dom/client'
 import { routeTree } from './routeTree.gen'
 
 import './index.css'
-import './styles/transitions.css'
 import '@gedatou/ui/styles.css'
+import './styles/transitions.css'
 
 const router = createRouter({
   routeTree,

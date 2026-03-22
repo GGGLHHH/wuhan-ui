@@ -4,14 +4,14 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { Slot } from 'radix-ui'
 
 const buttonGroupVariants = cva(
-  'wuhanui:flex wuhanui:w-fit wuhanui:items-stretch wuhanui:*:focus-visible:relative wuhanui:*:focus-visible:z-10 wuhanui:has-[>[data-slot=button-group]]:gap-2 wuhanui:has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md wuhanui:[&>[data-slot=select-trigger]:not([class*=w-])]:w-fit wuhanui:[&>input]:flex-1',
+  "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-lg [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
   {
     variants: {
       orientation: {
         horizontal:
-          'wuhanui:[&>*:not(:first-child)]:rounded-l-none wuhanui:[&>*:not(:first-child)]:border-l-0 wuhanui:[&>*:not(:last-child)]:rounded-r-none wuhanui:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-r-md!',
+          '[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none [&>[data-slot]:not(:has(~[data-slot]))]:rounded-r-lg!',
         vertical:
-          'wuhanui:flex-col wuhanui:[&>*:not(:first-child)]:rounded-t-none wuhanui:[&>*:not(:first-child)]:border-t-0 wuhanui:[&>*:not(:last-child)]:rounded-b-none wuhanui:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-md!',
+          'flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none [&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-lg!',
       },
     },
     defaultVariants: {
@@ -48,7 +48,7 @@ function ButtonGroupText({
   return (
     <Comp
       className={cn(
-        'wuhanui:flex wuhanui:items-center wuhanui:gap-2 wuhanui:rounded-md wuhanui:border wuhanui:bg-muted wuhanui:px-2.5 wuhanui:text-sm wuhanui:font-medium wuhanui:shadow-xs wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg:not([class*=size-])]:size-4',
+        "bg-muted flex items-center gap-2 rounded-lg border px-2.5 text-sm font-medium [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
@@ -66,7 +66,7 @@ function ButtonGroupSeparator({
       data-slot="button-group-separator"
       orientation={orientation}
       className={cn(
-        'wuhanui:relative wuhanui:self-stretch wuhanui:bg-input wuhanui:data-horizontal:mx-px wuhanui:data-horizontal:w-auto wuhanui:data-vertical:my-px wuhanui:data-vertical:h-auto',
+        'bg-input relative self-stretch data-horizontal:mx-px data-horizontal:w-auto data-vertical:my-px data-vertical:h-auto',
         className,
       )}
       {...props}

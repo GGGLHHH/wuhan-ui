@@ -6,7 +6,7 @@ function Empty({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="empty"
       className={cn(
-        'wuhanui:flex wuhanui:w-full wuhanui:min-w-0 wuhanui:flex-1 wuhanui:flex-col wuhanui:items-center wuhanui:justify-center wuhanui:gap-4 wuhanui:rounded-lg wuhanui:border-dashed wuhanui:p-12 wuhanui:text-center wuhanui:text-balance',
+        'flex w-full min-w-0 flex-1 flex-col items-center justify-center gap-4 rounded-xl border-dashed p-6 text-center text-balance',
         className,
       )}
       {...props}
@@ -18,22 +18,19 @@ function EmptyHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-header"
-      className={cn(
-        'wuhanui:flex wuhanui:max-w-sm wuhanui:flex-col wuhanui:items-center wuhanui:gap-2',
-        className,
-      )}
+      className={cn('flex max-w-sm flex-col items-center gap-2', className)}
       {...props}
     />
   )
 }
 
 const emptyMediaVariants = cva(
-  'wuhanui:mb-2 wuhanui:flex wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:[&_svg]:pointer-events-none wuhanui:[&_svg]:shrink-0',
+  'mb-2 flex shrink-0 items-center justify-center [&_svg]:pointer-events-none [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: 'wuhanui:bg-transparent',
-        icon: 'wuhanui:flex wuhanui:size-10 wuhanui:shrink-0 wuhanui:items-center wuhanui:justify-center wuhanui:rounded-lg wuhanui:bg-muted wuhanui:text-foreground wuhanui:[&_svg:not([class*=size-])]:size-6',
+        default: 'bg-transparent',
+        icon: "bg-muted text-foreground flex size-8 shrink-0 items-center justify-center rounded-lg [&_svg:not([class*='size-'])]:size-4",
       },
     },
     defaultVariants: {
@@ -61,7 +58,7 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="empty-title"
-      className={cn('wuhanui:text-lg wuhanui:font-medium wuhanui:tracking-tight', className)}
+      className={cn('text-sm font-medium tracking-tight', className)}
       {...props}
     />
   )
@@ -72,7 +69,7 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<'p'>) {
     <div
       data-slot="empty-description"
       className={cn(
-        'wuhanui:text-sm/relaxed wuhanui:text-muted-foreground wuhanui:[&>a]:underline wuhanui:[&>a]:underline-offset-4 wuhanui:[&>a:hover]:text-primary',
+        'text-muted-foreground [&>a:hover]:text-primary text-sm/relaxed [&>a]:underline [&>a]:underline-offset-4',
         className,
       )}
       {...props}
@@ -85,7 +82,7 @@ function EmptyContent({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="empty-content"
       className={cn(
-        'wuhanui:flex wuhanui:w-full wuhanui:max-w-sm wuhanui:min-w-0 wuhanui:flex-col wuhanui:items-center wuhanui:gap-4 wuhanui:text-sm wuhanui:text-balance',
+        'flex w-full max-w-sm min-w-0 flex-col items-center gap-2.5 text-sm text-balance',
         className,
       )}
       {...props}

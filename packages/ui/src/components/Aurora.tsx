@@ -205,5 +205,5 @@ export default function Aurora(props: AuroraProps) {
     }
   }, [amplitude, blend, colorStops])
 
-  return <div ref={ctnDom} className="wuhanui:w-full wuhanui:h-full" />
+  return <div ref={ctnDom} className="h-full w-full" />
 }

@@ -57,7 +57,7 @@
     "radix-ui": "catalog:",
     "react-day-picker": "catalog:",
     "react-resizable-panels": "catalog:",
-    "recharts": "catalog:",
+    "recharts": "2.15.4",
     "sonner": "catalog:",
     "tailwind-merge": "catalog:",
     "tailwindcss": "catalog:",
