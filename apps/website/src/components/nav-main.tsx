@@ -181,7 +181,7 @@ export function NavMain({ items, label }: { items: IMenuItem[]; label?: string }
     <SidebarNavigationContext value={navigation}>
       <SidebarGroup>
         {label && <SidebarGroupLabel>{label}</SidebarGroupLabel>}
-        <SidebarMenu>
+        <SidebarMenu className="gap-1">
           {items.map((item) => (
             <NavMenuItem key={item.id} item={item} />
           ))}
