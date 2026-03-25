@@ -72,7 +72,8 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 ## Review Checklist for Agents
 
 - [ ] Run `vp install` after pulling remote changes and before getting started.
-- [ ] Run `vp check` and `vp test` to validate changes.
+- [ ] From the workspace root, run `vp check` and `vp run test -r` to validate changes.
+- [ ] Inside an individual package or app, use that workspace's local `vp test`.
 <!--VITE PLUS END-->
 
 <!-- gitnexus:start -->

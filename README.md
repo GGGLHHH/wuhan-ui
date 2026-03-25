@@ -16,6 +16,9 @@ vp run ready
 vp run test -r
 ```
 
+Use `vp run test -r` from the workspace root. `vp test` only runs the current
+directory's Vitest config and does not aggregate workspace-local aliases.
+
 - Build the monorepo:
 
 ```bash
