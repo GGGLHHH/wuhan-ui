@@ -16,6 +16,34 @@ function SheetClose({ ...props }: React.ComponentProps<typeof SheetPrimitive.Clo
   return <SheetPrimitive.Close data-slot="sheet-close" {...props} />
 }
 
+function SheetContentClose({
+  className,
+  children,
+  type = 'button',
+  variant = 'ghost',
+  size = 'icon-sm',
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  return (
+    <SheetPrimitive.Close data-slot="sheet-content-close" asChild>
+      <Button
+        type={type}
+        variant={variant}
+        size={size}
+        className={cn('absolute top-3 right-3', className)}
+        {...props}
+      >
+        {children ?? (
+          <>
+            <XIcon />
+            <span className="sr-only">Close</span>
+          </>
+        )}
+      </Button>
+    </SheetPrimitive.Close>
+  )
+}
+
 function SheetPortal({ ...props }: React.ComponentProps<typeof SheetPrimitive.Portal>) {
   return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
 }
@@ -40,11 +68,9 @@ function SheetContent({
   className,
   children,
   side = 'right',
-  showCloseButton = true,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: 'top' | 'right' | 'bottom' | 'left'
-  showCloseButton?: boolean
 }) {
   return (
     <SheetPortal>
@@ -59,14 +85,6 @@ function SheetContent({
         {...props}
       >
         {children}
-        {showCloseButton && (
-          <SheetPrimitive.Close data-slot="sheet-close" asChild>
-            <Button variant="ghost" className="absolute top-3 right-3" size="icon-sm">
-              <XIcon />
-              <span className="sr-only">Close</span>
-            </Button>
-          </SheetPrimitive.Close>
-        )}
       </SheetPrimitive.Content>
     </SheetPortal>
   )
@@ -120,6 +138,7 @@ export {
   SheetTrigger,
   SheetClose,
   SheetContent,
+  SheetContentClose,
   SheetHeader,
   SheetFooter,
   SheetTitle,

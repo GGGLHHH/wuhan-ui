@@ -2,6 +2,7 @@ import {
   Button,
   Dialog,
   DialogContent,
+  DialogContentClose,
   DialogDescription,
   DialogFooter,
   DialogHeader,
@@ -18,6 +19,7 @@ export default function DialogDemo() {
         <Button variant="outline">编辑个人资料</Button>
       </DialogTrigger>
       <DialogContent>
+        <DialogContentClose />
         <DialogHeader>
           <DialogTitle>编辑个人资料</DialogTitle>
           <DialogDescription>修改你的个人信息，完成后点击保存。</DialogDescription>

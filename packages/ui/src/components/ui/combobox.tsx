@@ -44,35 +44,66 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
   )
 }
 
+function ComboboxInputAddon({
+  className,
+  align = 'inline-end',
+  ...props
+}: React.ComponentProps<typeof InputGroupAddon>) {
+  return (
+    <InputGroupAddon
+      data-slot="combobox-input-addon"
+      align={align}
+      className={cn(className)}
+      {...props}
+    />
+  )
+}
+
+function ComboboxInputTrigger({
+  className,
+  children,
+  disabled,
+  ...props
+}: ComboboxPrimitive.Trigger.Props) {
+  return (
+    <InputGroupButton
+      size="icon-xs"
+      variant="ghost"
+      asChild
+      data-slot="combobox-input-trigger"
+      className={cn(
+        'group-has-data-[slot=combobox-input-clear]/input-group:hidden data-pressed:bg-transparent',
+        className,
+      )}
+      disabled={disabled}
+    >
+      <ComboboxPrimitive.Trigger
+        data-slot="combobox-trigger"
+        className="[&_svg:not([class*='size-'])]:size-4"
+        {...props}
+      >
+        {children}
+        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4" />
+      </ComboboxPrimitive.Trigger>
+    </InputGroupButton>
+  )
+}
+
+function ComboboxInputClear({ ...props }: ComboboxPrimitive.Clear.Props) {
+  return <ComboboxClear data-slot="combobox-input-clear" {...props} />
+}
+
 function ComboboxInput({
   className,
   children,
   disabled = false,
-  showTrigger = true,
-  showClear = false,
   ...props
 }: ComboboxPrimitive.Input.Props & {
-  showTrigger?: boolean
-  showClear?: boolean
+  children?: React.ReactNode
 }) {
   return (
     <InputGroup className={cn('w-auto', className)}>
       <ComboboxPrimitive.Input render={<InputGroupInput disabled={disabled} />} {...props} />
-      <InputGroupAddon align="inline-end">
-        {showTrigger && (
-          <InputGroupButton
-            size="icon-xs"
-            variant="ghost"
-            asChild
-            data-slot="input-group-button"
-            className="group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent"
-            disabled={disabled}
-          >
-            <ComboboxTrigger />
-          </InputGroupButton>
-        )}
-        {showClear && <ComboboxClear disabled={disabled} />}
-      </InputGroupAddon>
       {children}
     </InputGroup>
   )
@@ -207,14 +238,7 @@ function ComboboxChips({
   )
 }
 
-function ComboboxChip({
-  className,
-  children,
-  showRemove = true,
-  ...props
-}: ComboboxPrimitive.Chip.Props & {
-  showRemove?: boolean
-}) {
+function ComboboxChip({ className, children, ...props }: ComboboxPrimitive.Chip.Props) {
   return (
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
@@ -225,16 +249,20 @@ function ComboboxChip({
       {...props}
     >
       {children}
-      {showRemove && (
-        <ComboboxPrimitive.ChipRemove
-          render={<Button variant="ghost" size="icon-xs" />}
-          className="-ml-1 opacity-50 hover:opacity-100"
-          data-slot="combobox-chip-remove"
-        >
-          <XIcon className="pointer-events-none" />
-        </ComboboxPrimitive.ChipRemove>
-      )}
     </ComboboxPrimitive.Chip>
+  )
+}
+
+function ComboboxChipRemove({ className, ...props }: ComboboxPrimitive.ChipRemove.Props) {
+  return (
+    <ComboboxPrimitive.ChipRemove
+      render={<Button variant="ghost" size="icon-xs" />}
+      className={cn('-ml-1 opacity-50 hover:opacity-100', className)}
+      data-slot="combobox-chip-remove"
+      {...props}
+    >
+      <XIcon className="pointer-events-none" />
+    </ComboboxPrimitive.ChipRemove>
   )
 }
 
@@ -255,6 +283,9 @@ function useComboboxAnchor() {
 export {
   Combobox,
   ComboboxInput,
+  ComboboxInputAddon,
+  ComboboxInputTrigger,
+  ComboboxInputClear,
   ComboboxContent,
   ComboboxList,
   ComboboxItem,
@@ -265,6 +296,7 @@ export {
   ComboboxSeparator,
   ComboboxChips,
   ComboboxChip,
+  ComboboxChipRemove,
   ComboboxChipsInput,
   ComboboxTrigger,
   ComboboxValue,

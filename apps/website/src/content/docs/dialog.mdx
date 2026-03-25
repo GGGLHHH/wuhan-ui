@@ -13,8 +13,10 @@ import DialogDemoSource from '@/registry/examples/dialog-demo.tsx?raw'
 import {
   Dialog,
   DialogContent,
+  DialogContentClose,
   DialogDescription,
   DialogFooter,
+  DialogFooterClose,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -59,12 +61,6 @@ import {
 
 <PropsTable
   data={[
-    {
-      prop: 'showCloseButton',
-      type: 'boolean',
-      default: 'true',
-      description: '是否显示右上角关闭按钮',
-    },
     { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
     {
       prop: 'onOpenAutoFocus',
@@ -93,16 +89,31 @@ import {
   ]}
 />
 
+### DialogContentClose
+
+<PropsTable
+  data={[
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+    { prop: 'children', type: 'ReactNode', default: '关闭图标', description: '自定义关闭按钮内容' },
+    { prop: 'variant', type: 'Button variant', default: "'ghost'", description: '按钮视觉变体' },
+    { prop: 'size', type: 'Button size', default: "'icon-sm'", description: '按钮尺寸' },
+  ]}
+/>
+
 ### DialogFooter
 
 <PropsTable
   data={[
-    {
-      prop: 'showCloseButton',
-      type: 'boolean',
-      default: 'false',
-      description: '是否在底部显示关闭按钮',
-    },
+    { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
+  ]}
+/>
+
+### DialogFooterClose
+
+<PropsTable
+  data={[
+    { prop: 'children', type: 'ReactNode', default: "'Close'", description: '关闭按钮文本或内容' },
+    { prop: 'variant', type: 'Button variant', default: "'outline'", description: '按钮视觉变体' },
     { prop: 'className', type: 'string', default: 'undefined', description: '自定义样式类名' },
   ]}
 />

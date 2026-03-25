@@ -43,6 +43,8 @@ import {
 
 将 Command 嵌入对话框中，适用于全局命令面板场景。
 
+如需显式关闭按钮，请额外从 `@gedatou/ui` 导入 `DialogContentClose` 并在 `children` 中组合。
+
 <PropsTable
   data={[
     {
@@ -64,7 +66,6 @@ import {
       default: '-',
       description: '打开状态变化时的回调',
     },
-    { prop: 'showCloseButton', type: 'boolean', default: 'false', description: '是否显示关闭按钮' },
     { prop: 'className', type: 'string', default: '-', description: '自定义类名' },
   ]}
 />

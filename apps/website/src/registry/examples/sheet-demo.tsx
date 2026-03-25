@@ -5,6 +5,7 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
+  SheetContentClose,
   SheetDescription,
   SheetFooter,
   SheetHeader,
@@ -19,6 +20,7 @@ export default function SheetDemo() {
         <Button variant="outline">打开面板</Button>
       </SheetTrigger>
       <SheetContent>
+        <SheetContentClose />
         <SheetHeader>
           <SheetTitle>编辑个人资料</SheetTitle>
           <SheetDescription>在这里修改你的个人信息，完成后点击保存。</SheetDescription>

@@ -13,6 +13,9 @@ import ComboboxDemoSource from '@/registry/examples/combobox-demo.tsx?raw'
 import {
   Combobox,
   ComboboxInput,
+  ComboboxInputAddon,
+  ComboboxInputTrigger,
+  ComboboxInputClear,
   ComboboxContent,
   ComboboxList,
   ComboboxItem,
@@ -22,6 +25,7 @@ import {
   ComboboxSeparator,
   ComboboxChips,
   ComboboxChip,
+  ComboboxChipRemove,
   ComboboxChipsInput,
 } from '@gedatou/ui'
 ```
@@ -81,7 +85,7 @@ import {
 
 ### ComboboxInput
 
-搜索输入框，内置触发按钮和清除按钮。
+搜索输入框，通过子组件显式组合触发按钮和清除按钮。
 
 <PropsTable
   data={[
@@ -98,16 +102,73 @@ import {
       description: '是否禁用输入框',
     },
     {
-      prop: 'showTrigger',
-      type: 'boolean',
-      default: 'true',
-      description: '是否显示下拉触发按钮',
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: '输入框尾部显式组合的 addon / trigger / clear 内容',
     },
     {
-      prop: 'showClear',
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxInputAddon
+
+<PropsTable
+  data={[
+    {
+      prop: 'children',
+      type: 'ReactNode',
+      default: '-',
+      description: '输入框尾部的操作内容',
+    },
+    {
+      prop: 'align',
+      type: "'inline-start' | 'inline-end' | 'block-start' | 'block-end'",
+      default: "'inline-end'",
+      description: 'addon 对齐方式',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxInputTrigger
+
+<PropsTable
+  data={[
+    {
+      prop: 'disabled',
       type: 'boolean',
       default: 'false',
-      description: '是否显示清除按钮',
+      description: '是否禁用触发按钮',
+    },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxInputClear
+
+<PropsTable
+  data={[
+    {
+      prop: 'disabled',
+      type: 'boolean',
+      default: 'false',
+      description: '是否禁用清除按钮',
     },
     {
       prop: 'className',
@@ -305,17 +366,24 @@ import {
       description: '标签对应的值',
     },
     {
-      prop: 'showRemove',
-      type: 'boolean',
-      default: 'true',
-      description: '是否显示移除按钮',
-    },
-    {
       prop: 'children',
       type: 'React.ReactNode',
       default: '-',
       description: '标签内容',
     },
+    {
+      prop: 'className',
+      type: 'string',
+      default: '-',
+      description: '自定义类名',
+    },
+  ]}
+/>
+
+### ComboboxChipRemove
+
+<PropsTable
+  data={[
     {
       prop: 'className',
       type: 'string',

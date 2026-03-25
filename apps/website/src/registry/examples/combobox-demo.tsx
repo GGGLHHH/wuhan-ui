@@ -3,6 +3,9 @@ import {
   ComboboxContent,
   ComboboxEmpty,
   ComboboxInput,
+  ComboboxInputAddon,
+  ComboboxInputClear,
+  ComboboxInputTrigger,
   ComboboxItem,
   ComboboxList,
 } from '@gedatou/ui'
@@ -24,7 +27,12 @@ export default function ComboboxDemo() {
 
   return (
     <Combobox value={value} onValueChange={setValue}>
-      <ComboboxInput placeholder="选择框架..." showClear />
+      <ComboboxInput placeholder="选择框架...">
+        <ComboboxInputAddon>
+          <ComboboxInputTrigger />
+          <ComboboxInputClear />
+        </ComboboxInputAddon>
+      </ComboboxInput>
       <ComboboxContent>
         <ComboboxList>
           <ComboboxEmpty>未找到匹配项</ComboboxEmpty>
