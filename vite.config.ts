@@ -7,7 +7,7 @@ export default defineConfig({
   lint: {
     plugins: ['react', 'typescript'],
     options: { typeAware: true, typeCheck: true },
-    ignorePatterns: ['src/routeTree.gen.ts', 'src/contracts/generated/**'],
+    ignorePatterns: ['src/routeTree.gen.ts', 'src/contracts/generated/**', 'routeTree.gen.ts'],
     rules: {
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
