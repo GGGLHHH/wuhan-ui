@@ -7,7 +7,14 @@ export default defineConfig({
   lint: {
     plugins: ['react', 'typescript'],
     options: { typeAware: true, typeCheck: true },
-    ignorePatterns: ['src/routeTree.gen.ts', 'src/contracts/generated/**', 'routeTree.gen.ts'],
+    ignorePatterns: [
+      'src/routeTree.gen.ts',
+      'src/contracts/generated/**',
+      'routeTree.gen.ts',
+      'apps/website/src/routeTree.gen.ts',
+      '.claude/**',
+      '.codex/**',
+    ],
     rules: {
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
@@ -27,6 +34,7 @@ export default defineConfig({
     ],
   },
   fmt: {
+    ignorePatterns: ['apps/website/src/routeTree.gen.ts', '.claude/**', '.codex/**'],
     printWidth: 100,
     singleQuote: true,
     semi: false,

@@ -72,15 +72,14 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 ## Review Checklist for Agents
 
 - [ ] Run `vp install` after pulling remote changes and before getting started.
-- [ ] From the workspace root, run `vp check` and `vp run test -r` to validate changes.
-- [ ] Inside an individual package or app, use that workspace's local `vp test`.
+- [ ] Run `vp check` and `vp test` to validate changes.
 <!--VITE PLUS END-->
 
 <!-- gitnexus:start -->
 
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **wuhan-ui** (775 symbols, 1682 relationships, 5 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **wuhan-ui** (1264 symbols, 2199 relationships, 7 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
