@@ -1,10 +1,12 @@
 {
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "oxc.fmt.configPath": "./vite.config.ts",
-  "editor.formatOnSave": true,
+  "oxc.fixKind": "dangerous_fix_or_suggestion",
+  "editor.formatOnSave": false,
   "editor.formatOnSaveMode": "file",
   "editor.codeActionsOnSave": {
-    "source.fixAll.oxc": "explicit"
+    "source.fixAll.oxc": "explicit",
+    "source.format.oxc": "explicit"
   },
   "[javascript]": {
     "editor.defaultFormatter": "oxc.oxc-vscode"
